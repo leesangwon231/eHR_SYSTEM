@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 //12130123���� �̻�� zxczxc  test 123
 
+//hello guys i want to go home
+
 
 /**
  * Handles requests for the application home page.

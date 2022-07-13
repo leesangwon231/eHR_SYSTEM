@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 //hello guys i want to go home
 
-//이상원 뭐해~
+//이상원 화이팅 할 수 있다.
 
 
 /**

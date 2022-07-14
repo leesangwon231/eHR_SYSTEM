@@ -11,11 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-//12130123���� �̻�� zxczxc  test 123
-
-//hello guys i want to go home
-
-//이상원 화이팅 할 수 있다.
 
 
 /**
@@ -40,7 +35,7 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "home";
+		return "index";
 	}
 	
 }

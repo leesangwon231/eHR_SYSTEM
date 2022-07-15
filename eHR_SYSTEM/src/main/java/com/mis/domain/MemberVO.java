@@ -3,55 +3,93 @@ package com.mis.domain;
 import java.util.Date;
 
 public class MemberVO {
-
-	private String userid;
-	private String userpw;
-	private String username;
-	private String email;
-	private Date regdate;
-	private Date updatedate;
 	
-	public String getUserid() {
-		return userid;
+	private int memNo;
+	private String memName;
+	private String memPw;
+	private String memEmail;
+	private int memZipcode;
+	private String memAddr1;
+	private String memAddr2;
+	private Date memHiredate;
+	private String memRes;
+	private int jgNo;
+	private int deptNo;
+	
+	public int getMemNo() {
+		return memNo;
 	}
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setMemNo(int memNo) {
+		this.memNo = memNo;
 	}
-	public String getUserpw() {
-		return userpw;
+	public String getMemName() {
+		return memName;
 	}
-	public void setUserpw(String userpw) {
-		this.userpw = userpw;
+	public void setMemName(String memName) {
+		this.memName = memName;
 	}
-	public String getUsername() {
-		return username;
+	public String getMemPw() {
+		return memPw;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setMemPw(String memPw) {
+		this.memPw = memPw;
 	}
-	public String getEmail() {
-		return email;
+	public String getMemEmail() {
+		return memEmail;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setMemEmail(String memEmail) {
+		this.memEmail = memEmail;
 	}
-	public Date getRegdate() {
-		return regdate;
+	public int getMemZipcode() {
+		return memZipcode;
 	}
-	public void setRegdate(Date regdate) {
-		this.regdate = regdate;
+	public void setMemZipcode(int memZipcode) {
+		this.memZipcode = memZipcode;
 	}
-	public Date getUpdatedate() {
-		return updatedate;
+	public String getMemAddr1() {
+		return memAddr1;
 	}
-	public void setUpdatedate(Date updatedate) {
-		this.updatedate = updatedate;
+	public void setMemAddr1(String memAddr1) {
+		this.memAddr1 = memAddr1;
 	}
+	public String getMemAddr2() {
+		return memAddr2;
+	}
+	public void setMemAddr2(String memAddr2) {
+		this.memAddr2 = memAddr2;
+	}
+	public Date getMemHiredate() {
+		return memHiredate;
+	}
+	public void setMemHiredate(Date memHiredate) {
+		this.memHiredate = memHiredate;
+	}
+	public String getMemRes() {
+		return memRes;
+	}
+	public void setMemRes(String memRes) {
+		this.memRes = memRes;
+	}
+	public int getJgNo() {
+		return jgNo;
+	}
+	public void setJgNo(int jgNo) {
+		this.jgNo = jgNo;
+	}
+	public int getDeptNo() {
+		return deptNo;
+	}
+	public void setDeptNo(int deptNo) {
+		this.deptNo = deptNo;
+	}
+	
 	@Override
 	public String toString() {
-		return "MemberVO [userid=" + userid + ", userpw=" + userpw + ", username=" + username + ", email=" + email
-				+ "]";
+		return "TblMemberVO [memNo=" + memNo + ", memName=" + memName + ", memPw=" + memPw + ", memEmail=" + memEmail
+				+ ", memZipcode=" + memZipcode + ", memAddr1=" + memAddr1 + ", memAddr2=" + memAddr2 + ", memHiredate="
+				+ memHiredate + ", memRes=" + memRes + ", jgNo=" + jgNo + ", deptNo=" + deptNo + "]";
 	}
-
 	
+
+
 }

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 
 //오늘도 상원이는 편의점에 간다.
+//please
 @Controller
 public class HomeController {
 	

@@ -30,7 +30,7 @@
 	                  <tr>
 	                     <th style="width: 10px">직종번호</th>
 	                     <th>직종명</th>
-	                     <th>직군번호</th>
+	                     <th>직군명</th>
 	                  </tr>
 	               </thead>
 	               <tbody>
@@ -38,7 +38,7 @@
 	                     <tr>
 	                        <td>${jobVO.jobNo}</td>
 	                        <td><a href='/job/read?jobNo=${jobVO.jobNo}'>${jobVO.jobName}</a></td>
-	                        <td>${jobVO.jgNo}</td>
+	                        <td>${jobVO.jgName}</td>
 	                     </tr>
 	                  </c:forEach>
 	               </tbody>

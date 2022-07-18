@@ -12,33 +12,31 @@ import com.mis.domain.SearchCriteria;
 import com.mis.persistence.JobDAO;
 
 @Service
-public class JobServiceImpl implements JobService{
-	
+public class JobServiceImpl implements JobService {
+
 	@Inject
 	private JobDAO dao;
 
 	@Override
 	public void register(JobVO vo) throws Exception {
-		// TODO Auto-generated method stub
-		
+		dao.create(vo);
+
 	}
 
 	@Override
 	public JobVO read(int jobNo) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.read(jobNo);
 	}
 
 	@Override
 	public void modify(JobVO vo) throws Exception {
-		// TODO Auto-generated method stub
-		
+		dao.update(vo);
+
 	}
 
 	@Override
 	public void remove(Integer jobNo) throws Exception {
-		// TODO Auto-generated method stub
-		
+		dao.delete(jobNo);
 	}
 
 	@Override
@@ -48,26 +46,22 @@ public class JobServiceImpl implements JobService{
 
 	@Override
 	public List<JobVO> listCriteria(Criteria cri) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.listCriteria(cri);
 	}
 
 	@Override
 	public int listCountCriteria(Criteria cri) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return dao.listCountCriteria(cri);
 	}
 
 	@Override
 	public List<JobVO> listSearch(SearchCriteria cri) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.listSearch(cri);
 	}
 
 	@Override
 	public int listSearchCount(SearchCriteria cri) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return dao.listSearchCount(cri);
 	}
 
 }

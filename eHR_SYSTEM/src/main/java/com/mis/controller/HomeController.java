@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Handles requests for the application home page.
  */
 
-//오늘도 상원이는 편의점에 간다.
+//�삤�뒛�룄 �긽�썝�씠�뒗 �렪�쓽�젏�뿉 媛꾨떎.
 //please
 @Controller
 public class HomeController {
@@ -36,7 +36,7 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "login";
+		return "index";
 	}
 	
 }

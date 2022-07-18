@@ -63,7 +63,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-battery-full"></i></div>
                                 	직군
                             </a>
-                            <a class="nav-link" href="tables.html">
+                            <a class="nav-link" href="/job/list">
                                 <div class="sb-nav-link-icon"><i class="fas fa-battery-half"></i></div>
                                 	직종
                             </a>

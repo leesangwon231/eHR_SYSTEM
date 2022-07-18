@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.mis.domain.JobVO;
 import com.mis.domain.JobgroupVO;
+import com.mis.domain.LcategoryVO;
 import com.mis.persistence.LcategoryDAO;
 
 @Service
@@ -24,6 +25,31 @@ public class LcategoryServiceImpl implements LcategoryService{
 	@Override
 	public List<JobVO> selectJob(int jgNo) throws Exception {
 		return dao.selectJob(jgNo);
+	}
+
+	@Override
+	public void register(LcategoryVO vo) throws Exception {
+		dao.register(vo);
+	}
+
+	@Override
+	public LcategoryVO read(int lNo) throws Exception {
+		return dao.read(lNo);
+	}
+
+	@Override
+	public void update(LcategoryVO vo) throws Exception {
+		dao.update(vo);
+	}
+
+	@Override
+	public void delete(int lNo) throws Exception {
+		dao.delete(lNo);
+	}
+
+	@Override
+	public List<LcategoryVO> list() throws Exception {
+		return dao.list();
 	}
 	
 	

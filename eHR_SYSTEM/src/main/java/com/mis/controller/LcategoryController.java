@@ -27,7 +27,7 @@ public class LcategoryController {
 	@Inject
 	private LcategoryService service;
 	
-	@RequestMapping(value="/list", method=RequestMethod.GET)
+	@RequestMapping(value="/a", method=RequestMethod.GET)
 	public void listGET(Model model) throws Exception{
 		model.addAttribute("jobGroup", service.selectJobGroup());
 		logger.info("register GET .......");
@@ -39,17 +39,24 @@ public class LcategoryController {
 		
 		ResponseEntity<List<JobVO>> entity = null;
 		try {
-			entity = new ResponseEntity<>(service.selectJob(jgNo), HttpStatus.OK);
+			entity = new ResponseEntity<List<JobVO>>(service.selectJob(jgNo), HttpStatus.OK);
 		} catch (Exception e) {
 			e.printStackTrace();
-			entity = new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+			entity = new ResponseEntity<List<JobVO>>(HttpStatus.BAD_REQUEST);
 		}
 		return entity;
 		
 		
-		
+	}
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	public void listAll(Model model) throws Exception {
+		model.addAttribute("list", service.list());
 	}
 	
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	public void register(Model model) throws Exception {
+		
+	}
 	/*
 	@RequestMapping(value="/list", method=RequestMethod.POST)
 	public String listPOST(BoardVO vo , RedirectAttributes rttr) throws Exception{

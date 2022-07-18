@@ -11,4 +11,26 @@
 		SELECT JOB_NO, JOB_NAME, JG_NO FROM TBL_JOB WHERE JG_NO = #{jgNo}
 	</select>
 	
+	<select id = "read" resultType="com.mis.domain.LcategoryVO">
+		SELECT * FROM TBL_LCATEGORY WHERE l_NO = #{lNo}
+	</select>
+	
+	<insert id="register">
+		INSERT INTO TBL_LCATEGORY VALUES(L_SEQ.NEXTVAL,#{lName},#{jobNo})
+	</insert>
+	
+	<update id="update">
+		UPDATE TBL_LCATEGORY SET L_NAME = #{lName}, JOB_NO = #{jobNo} WHERE L_NO = #{lNo}
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM TBL_LCATEGORY WHERE L_NO = #{lNo}
+	</delete>
+	
+	<select id="list" resultType="com.mis.domain.LcategoryVO">
+	select a.l_no, a.l_name, b.job_name, b.jg_name from TBL_LCATEGORY a inner join (select job_name, jg_name, a.job_no from tbl_job a inner join tbl_jobgroup b on a.JG_NO = b.jg_no) b
+	on a.JOB_NO = b.job_no 
+	</select>
+	
+	
 </mapper>

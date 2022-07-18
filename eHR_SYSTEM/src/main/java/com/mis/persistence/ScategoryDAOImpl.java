@@ -54,8 +54,8 @@ public class ScategoryDAOImpl implements ScategoryDAO{
 	}
 
 	@Override
-	public List<LcategoryVO> selectLcategory(int lNo) throws Exception {
-		return session.selectList(namespace+".selectLcategory");
+	public List<LcategoryVO> selectLcategory(int jobNo) throws Exception {
+		return session.selectList(namespace+".selectLcategory",jobNo);
 	}
 
 	@Override

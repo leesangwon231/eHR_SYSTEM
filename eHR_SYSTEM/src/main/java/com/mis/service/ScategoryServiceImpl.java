@@ -53,8 +53,8 @@ public class ScategoryServiceImpl implements ScategoryService{
 	}
 
 	@Override
-	public List<LcategoryVO> selectLcategory(int lNo) throws Exception {
-		return dao.selectLcategory(lNo);
+	public List<LcategoryVO> selectLcategory(int jobNo) throws Exception {
+		return dao.selectLcategory(jobNo);
 	}
 
 	@Override

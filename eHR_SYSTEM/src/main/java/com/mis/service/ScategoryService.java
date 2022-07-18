@@ -24,6 +24,6 @@ public interface ScategoryService {
 
 	public List<JobVO> selectJob(int jgNo) throws Exception;
 	
-	public List<LcategoryVO> selectLcategory(int lNo) throws Exception;
+	public List<LcategoryVO> selectLcategory(int jobNo) throws Exception;
 
 }

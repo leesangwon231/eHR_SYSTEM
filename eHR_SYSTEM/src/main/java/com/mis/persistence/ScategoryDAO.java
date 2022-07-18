@@ -25,6 +25,6 @@ public interface ScategoryDAO {
 
 	public List<JobVO> selectJob(int jgNo) throws Exception; //직종
 
-	public List<LcategoryVO> selectLcategory(int lNo) throws Exception; //대분류
+	public List<LcategoryVO> selectLcategory(int jobNo) throws Exception; //대분류
 
 }

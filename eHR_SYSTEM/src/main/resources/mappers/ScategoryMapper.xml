@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mis.mapper.ScategoryMapper">
+
+	<insert id="create">
+		INSERT INTO TBL_SCATEGOTY (S_NO, S_NAME, S_YEAR,
+		S_QUARTER, S_MONTH, S_DAY, L_NO)
+		VALUES (SEQ_S_SEQ.NEXTVAL, #{sName},
+		#{sYear}, #{sQuarter}, #{sMonth}, #{sDay}, #{lNo})
+	</insert>
+
+	<select id="read">
+		<!-- SELECT S.S_NO, S.S_NAME, S.S_YEAR, S.S_QUARTER, S.S_MONTH, S.S_DAY 
+			FROM TBL_SCATEGORY S LEFT OUTER JOIN TBL_LCATEGORY L ON S.L_NO = L.L_NO LEFT 
+			OUTER JOIN TBL_JOBGROUP JG ON JG.JG_NO = J.JG_NO LEFT OUTER JOIN TBL_JOB 
+			J ON J.JOB_NO = L.JOB_NO ORDER BY S_NO DESC -->
+		<!-- FROM TBL_SCATEGORY S, TBL_LCATEGORY L WHERE S.L_NO = L.L_NO AND S_NO 
+			= #{sNo} -->
+			
+		SELECT S.S_NO, S.S_NAME, S.S_YEAR, S.S_QUARTER, S.S_MONTH, S.S_DAY,
+				S.L_NO, L.L_NAME, L.JOB_NO, J.JOB_NAME, J.JG_NO, G.JG_NAME
+		FROM TBL_SCATEGORY S, TBL_LCATEGORY L, TBL_JOB J, TBL_JOBGROUP G 
+		WHERE S.L_NO = L.L_NO AND L.JOB_NO = J.JOB_NO AND J.JG_NO = G.JG_NO		
+		
+	</select>
+
+	<update id="update">
+		UPDATE TBL_SCATEGORY SET
+		S_NAME = #{sName}
+		S_YEAR =
+		#{sYear}
+		S_QUARTER = #{sQuarter}
+		S_MONTH = #{sMonth}
+		S_DAY = #{sDay}
+		L_NO
+		= #{lNo}
+		WHERE S_NO = #{sNo}
+	</update>
+
+	 <select id="list" resultType="com.mis.domain.ScategoryVO">
+	 	SELECT S.S_NO, S.S_NAME, L.L_NAME, J.JOB_NAME, G.JG_NAME
+		FROM TBL_SCATEGORY S, TBL_LCATEGORY L, TBL_JOB J, TBL_JOBGROUP G 
+		WHERE S.L_NO = L.L_NO AND L.JOB_NO = J.JOB_NO AND J.JG_NO = G.JG_NO	
+	</select> 
+
+	<delete id="delete">
+		DELETE FROM TBL_SCATEGORY
+		WHERE S_NO = #{sNo}
+	</delete>
+
+	<select id="selectJobGroup"
+		resultType="com.mis.domain.JobgroupVO">
+		SELECT JG_NO, JG_NAME FROM TBL_JOBGROUP
+	</select>
+
+	<select id="selectJob" resultType="com.mis.domain.JobVO">
+		SELECT JOB_NO, JOB_NAME, JG_NO
+		FROM TBL_JOB WHERE JG_NO = #{jgNo}
+	</select>
+
+	<select id="selectLcategory"
+		resultType="com.mis.domain.LcategoryVO">
+		SELECT L_NO, L_NAME, JOB_NO FROM TBL_LCATEGORY WHERE L_NO =
+		#{lNo}
+	</select>
+
+
+
+
+
+</mapper>

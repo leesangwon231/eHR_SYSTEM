@@ -3,6 +3,8 @@ package com.mis.domain;
 public class ScategoryVO {
 
 	private int sNo;
+	private String jobName;
+	private String jgName;
 	private String sName;
 	private int sYear;
 	private int sQuarter;
@@ -16,6 +18,18 @@ public class ScategoryVO {
 	}
 	public void setsNo(int sNo) {
 		this.sNo = sNo;
+	}
+	public String getJobName() {
+		return jobName;
+	}
+	public void setJobName(String jobName) {
+		this.jobName = jobName;
+	}
+	public String getJgName() {
+		return jgName;
+	}
+	public void setJgName(String jgName) {
+		this.jgName = jgName;
 	}
 	public String getsName() {
 		return sName;
@@ -62,9 +76,12 @@ public class ScategoryVO {
 	
 	@Override
 	public String toString() {
-		return "TblScategoryVO [sNo=" + sNo + ", sName=" + sName + ", sYear=" + sYear + ", sQuarter=" + sQuarter
-				+ ", sMonth=" + sMonth + ", sDay=" + sDay + ", sUnit=" + sUnit + ", lNo=" + lNo + "]";
+		return "ScategoryVO [sNo=" + sNo + ", jobName=" + jobName + ", jgName=" + jgName + ", sName=" + sName
+				+ ", sYear=" + sYear + ", sQuarter=" + sQuarter + ", sMonth=" + sMonth + ", sDay=" + sDay + ", sUnit="
+				+ sUnit + ", lNo=" + lNo + "]";
 	}
+	
+	
 	
 	
 }

@@ -3,8 +3,25 @@
 
 <mapper namespace="com.mis.mapper.JobgroupMapper">
 
+	<insert id = "create">
+	insert into tbl_board (bno,title,content,writer)
+	values(seq_board.nextval, #{title}, #{content}, #{writer})
+	</insert>
 	
-
+	<select id="read" resultType="com.mis.domain.JobgroupVO">
+	select * from tbl_jobgroup where jg_no = #{jgNo}
+	</select>
+	
+	<update id="update">
+	update tbl_board set title=#{title}, content=#{content},writer=#{writer}
+	where bno = #{bno}
+	</update>
+	
+	<delete id="delete">
+	delete from tbl_jobgroup where jg_no=#{jgNo} 
+	</delete>
+	
+<!--이거 조인 해야 하는겅가용? 몰ㄹ무 무ㅜㅜㅜ  -->
 	<select id="listAll" resultType="com.mis.domain.JobgroupVO">
 		select * from tbl_jobgroup
 	</select>

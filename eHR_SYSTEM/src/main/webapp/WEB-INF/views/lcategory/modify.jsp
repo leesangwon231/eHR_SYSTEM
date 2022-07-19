@@ -8,13 +8,13 @@
 <div id="layoutSidenav_content">
    <main>
 	   <div class="container-fluid px-4">
-	      <h1 class="mt-4" style='text-align: left; margin-bottom: 30px;'>대분류 등록</h1>
+	      <h1 class="mt-4" style='text-align: left; margin-bottom: 30px;'>대분류 수정</h1>
 				<div class="container-fluid px-5">
 	                    <div class="pt-5">
 	                        <div class="row" >
 		                        <div class="col-lg-1">
 								</div>
-								<form role="form" method="post" name="frm" >
+								<form role="form" method="post" name="frm" action="modify">
 			                        <div class="col-lg-10">
 			                        	<div class="row p-5">
 				                    		<div class="col-1">
@@ -24,7 +24,8 @@
 				                        		<select name="jgNo" id="jgNo" class = "form-select" onchange="selectJobGroup(value);">
 			                                    	<option value="0">직군을 선택해 주세요</option>
 			                                        <c:forEach items="${jobGroup}" var="jobGroupVO">
-														<option value=${jobGroupVO.jgNo}>${jobGroupVO.jgName}</option>
+														<option value="${jobGroupVO.jgNo}"
+														<c:if test ="${jobGroupVO.jgNo == lVo.jgNo}">selected="selected"</c:if>>${jobGroupVO.jgName}</option>
 													</c:forEach>
 												</select>
 				                        	</div>
@@ -44,7 +45,7 @@
 				                        		<label for="exampleInputEmail1">대분류 번호</label>
 				                        	</div>
 		                        			<div class="col-8">
-				                        		<input type="text" id = "lNo" name="lNo" class = "form-select" readonly="readonly" value= 1>
+				                        		<input type="text" id = "lNo" name="lNo" class = "form-select" readonly="readonly" value="${lVo.lNo}">
 				                        	</div>
 			                        	</div>
 			                        	<div class="row p-5">
@@ -52,7 +53,7 @@
 				                        		<label for="exampleInputEmail1">대분류 명</label>
 				                        	</div>
 		                        			<div class="col-8">
-				                       			<input type="text" id = "lName" name="lName" class = "form-select">
+				                       			<input type="text" id = "lName" name="lName" class = "form-select" value="${lVo.lName}">
 				                       		</div>
 			                        	</div>
 			                       	</div>
@@ -63,8 +64,8 @@
 	                  	</div>
                         <div class="mt-4">
                        	 	<div class="offset-9">
-		                       	<input type="button" class="btn btn-primary" id = "btn_submit" name ="btn_submit" value="등록">
-		                    	<input type="button" class="btn btn-primary" onclick="location.href='./list'" value="취소">
+		                       	<input type="button" class="btn btn-primary" id = "btn_submit" name ="btn_submit" value="수정">
+		                    	<input type="button" class="btn btn-primary" onclick="location.href='./read?lNo=${lVo.lNo}'" value="취소">
 		                	</div>
                         </div>      
                		</div>
@@ -99,17 +100,56 @@
 <script>
 	$(document).ready(function() {
 		var formObj = $("form[role='form']");
-		console.log(formObj);
+		var jgNo = "<c:out value ='${lVo.jgNo}'/>"
+		var jobNo = "<c:out value ='${lVo.jobNo}'/>"
+		
 		$("#btn_submit").on("click", function() {
-			register();
+			modify();
 		});
+
+	   	if(jgNo === "0"){
+            $("#jobNo option").remove();
+            job = "<option value='0'>직종을 선택해주세요</option>";
+            $("#jobNo").append(job);
+            return false;
+        }
+ 
+	   	$.ajax({
+			type : 'GET',
+			url : "/lcategory/jobList",
+			data : {
+				jgNo : jgNo,
+			},
+			success : function(data) {
+				job = "<option value='0'>직종을 선택해주세요</option>"; 
+				$("#jobNo option").remove(); 
+				$.each(data , function (key, value) {
+					test = (jobNo == value.jobNo);
+					console.log(test);
+					if(test){
+						job += "<option value=" + value.jobNo + " selected='selected'>" + value.jobName + "</option>";
+					}else{
+						job += "<option value=" + value.jobNo + ">" + value.jobName + "</option>";
+					}
+				}); 
+	                $("#jobNo").append(job);
+			},
+			error : function(jqXHR, textStatus, errorThrown) {
+				alert("ERROR : " + textStatus + " : " + errorThrown);
+			}
+
+		});
+	
 	});
 </script>
+
+
 
 <script>
 	function selectJobGroup(jgNo) {
 	   
 		var jgNo = jgNo;
+	    var jobNo = "<c:out value ='${lVo.jobNo}'/>"
 	    
 	   	if(jgNo === "0"){
             $("#jobNo option").remove();

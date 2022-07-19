@@ -7,6 +7,7 @@ public class LcategoryVO {
 	private int jobNo;
 	private String jobName;
 	private String jgName;
+	private int jgNo;
 	public int getlNo() {
 		return lNo;
 	}
@@ -37,10 +38,16 @@ public class LcategoryVO {
 	public void setJgName(String jgName) {
 		this.jgName = jgName;
 	}
+	public int getJgNo() {
+		return jgNo;
+	}
+	public void setJgNo(int jgNo) {
+		this.jgNo = jgNo;
+	}
 	@Override
 	public String toString() {
 		return "LcategoryVO [lNo=" + lNo + ", lName=" + lName + ", jobNo=" + jobNo + ", jobName=" + jobName
-				+ ", jgName=" + jgName + "]";
+				+ ", jgName=" + jgName + ", jgNo=" + jgNo + "]";
 	}
 	
 	

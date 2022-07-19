@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mis.domain.JobVO;
+import com.mis.domain.LcategoryVO;
 import com.mis.service.LcategoryService;
 
 @Controller
@@ -26,12 +28,6 @@ public class LcategoryController {
 	
 	@Inject
 	private LcategoryService service;
-	
-	@RequestMapping(value="/a", method=RequestMethod.GET)
-	public void listGET(Model model) throws Exception{
-		model.addAttribute("jobGroup", service.selectJobGroup());
-		logger.info("register GET .......");
-	}
 	
 	@ResponseBody
 	@RequestMapping(value="/jobList", method=RequestMethod.GET)
@@ -51,21 +47,56 @@ public class LcategoryController {
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public void listAll(Model model) throws Exception {
 		model.addAttribute("list", service.list());
+		logger.info("list get......");
 	}
 	
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
-	public void register(Model model) throws Exception {
-		
-	}
-	/*
-	@RequestMapping(value="/list", method=RequestMethod.POST)
-	public String listPOST(BoardVO vo , RedirectAttributes rttr) throws Exception{
-		logger.info("register POST .......");
-		
-		service.register(vo);
-		rttr.addFlashAttribute("msg","SUCCESS");
-		return "redirect:/board/listAll";
+	public void registerGET(Model model) throws Exception {
+		model.addAttribute("jobGroup", service.selectJobGroup());
 	}
 	
-	*/
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	public String registerPOST(RedirectAttributes rttr , LcategoryVO vo) throws Exception {
+			service.register(vo);
+			rttr.addFlashAttribute("msg", "REGISTER");
+
+			return "redirect:/lcategory/list";
+		
+	}
+	
+	@RequestMapping(value = "/read", method = RequestMethod.GET)
+	public void read(@RequestParam("lNo") int lNo, Model model)
+			throws Exception {
+
+		model.addAttribute("lVo", service.read(lNo));
+		
+		
+	}
+	
+	@RequestMapping(value="/modify" , method = RequestMethod.GET)
+	public void modifyGET(@RequestParam("lNo") int lNo , Model model) throws Exception{
+		System.out.println(service.read(lNo));
+		model.addAttribute("jobGroup", service.selectJobGroup());
+		model.addAttribute("lVo", service.read(lNo));
+	}
+	
+	@RequestMapping(value="/modify" , method = RequestMethod.POST)
+	public String modifyPOST(LcategoryVO vo , Model model, RedirectAttributes rttr) throws Exception{
+		service.update(vo);
+		
+		rttr.addFlashAttribute("msg", "MODIFY");
+		
+		return "redirect:/lcategory/list";
+	}
+	
+	@RequestMapping(value="/delete" , method = RequestMethod.POST)
+	public String deletePOST(@RequestParam("lNo") int lNo, Model model, RedirectAttributes rttr) throws Exception{
+		
+		service.delete(lNo);
+		
+		rttr.addFlashAttribute("msg", "REMOVE");
+		
+		return "redirect:/lcategory/list";
+	}
+	
 }

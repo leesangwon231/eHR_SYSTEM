@@ -8,25 +8,20 @@
 <div id="layoutSidenav_content">
    <main>
 	   <div class="container-fluid px-4">
-	      <h1 class="mt-4" style='text-align: left; margin-bottom: 30px;'>대분류 등록</h1>
+	      <h1 class="mt-4" style='text-align: left; margin-bottom: 30px;'>대분류 상세보기</h1>
 				<div class="container-fluid px-5">
 	                    <div class="pt-5">
 	                        <div class="row" >
 		                        <div class="col-lg-1">
 								</div>
-								<form role="form" method="post" name="frm" >
+								<form role="form" method="post" name="frm">
 			                        <div class="col-lg-10">
 			                        	<div class="row p-5">
 				                    		<div class="col-1">
 				                        		<label for="exampleInputEmail1">직군</label>
 				                        	</div>
 		                        			<div class="col-9">
-				                        		<select name="jgNo" id="jgNo" class = "form-select" onchange="selectJobGroup(value);">
-			                                    	<option value="0">직군을 선택해 주세요</option>
-			                                        <c:forEach items="${jobGroup}" var="jobGroupVO">
-														<option value=${jobGroupVO.jgNo}>${jobGroupVO.jgName}</option>
-													</c:forEach>
-												</select>
+		                        				<input type="text" id = "jgName" name="jgName" class = "form-select" readonly="readonly" value="${lVo.jgName}">
 				                        	</div>
 			                        	</div>
 			                        	<div class="row p-5">
@@ -34,9 +29,7 @@
 				                        		<label for="exampleInputEmail1">직종</label>
 				                        	</div>
 		                        			<div class="col-9">
-				                        		<select name="jobNo" id="jobNo" class = "form-select">
-	                                             	<option value="0">직종을 선택해 주세요</option>
-	                                             </select>
+		                        				<input type="text" id = "jobName" name="jobName" class = "form-select" readonly="readonly" value="${lVo.jobName}">
 				                        	</div>
 			                        	</div>
 			                        	<div class="row p-5">
@@ -44,7 +37,7 @@
 				                        		<label for="exampleInputEmail1">대분류 번호</label>
 				                        	</div>
 		                        			<div class="col-8">
-				                        		<input type="text" id = "lNo" name="lNo" class = "form-select" readonly="readonly" value= 1>
+				                        		<input type="text" id = "lNo" name="lNo" class = "form-select" readonly="readonly" value="${lVo.lNo}">
 				                        	</div>
 			                        	</div>
 			                        	<div class="row p-5">
@@ -52,7 +45,7 @@
 				                        		<label for="exampleInputEmail1">대분류 명</label>
 				                        	</div>
 		                        			<div class="col-8">
-				                       			<input type="text" id = "lName" name="lName" class = "form-select">
+				                       			<input type="text" id = "lName" name="lName" class = "form-select" value="${lVo.lName}">
 				                       		</div>
 			                        	</div>
 			                       	</div>
@@ -63,7 +56,8 @@
 	                  	</div>
                         <div class="mt-4">
                        	 	<div class="offset-9">
-		                       	<input type="button" class="btn btn-primary" id = "btn_submit" name ="btn_submit" value="등록">
+                       	 		<input type="button" class="btn btn-primary" id = "btn_delete"  name ="btn_delete" value="삭제">
+		                       	<input type="button" class="btn btn-primary" id = "btn_modify" onclick="location.href='./modify?lNo=${lVo.lNo}'"name ="btn_update" value="수정">
 		                    	<input type="button" class="btn btn-primary" onclick="location.href='./list'" value="취소">
 		                	</div>
                         </div>      
@@ -100,9 +94,13 @@
 	$(document).ready(function() {
 		var formObj = $("form[role='form']");
 		console.log(formObj);
-		$("#btn_submit").on("click", function() {
-			register();
+		$("#btn_delete").on("click", function() {
+			remove();
+			formObj.attr("action", "/lcategory/delete");
+			
 		});
+		
+		
 	});
 </script>
 

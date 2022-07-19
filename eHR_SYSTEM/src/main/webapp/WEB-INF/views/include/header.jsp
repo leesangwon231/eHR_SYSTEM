@@ -88,7 +88,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-check"></i></div>업무승인
                             </a>
 						<div class="sb-sidenav-menu-heading">부서</div>
-                            <a class="nav-link collapsed" href="#" >
+                            <a class="nav-link collapsed" href="/dept/list" >
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 	부서 목록
                             </a>

@@ -50,9 +50,14 @@ public class JournalVO {
 	
 	@Override
 	public String toString() {
-		return "TblJournalVO [jnNo=" + jnNo + ", jnWdate=" + jnWdate + ", jnApno=" + jnApno + ", jnSatisfaction="
+		return "JournalVO [jnNo=" + jnNo + ", jnWdate=" + jnWdate + ", jnApno=" + jnApno + ", jnSatisfaction="
 				+ jnSatisfaction + ", jnApproval=" + jnApproval + ", memNo=" + memNo + "]";
 	}
 	
 	
 }
+	
+	
+	
+	
+

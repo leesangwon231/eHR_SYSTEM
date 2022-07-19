@@ -28,7 +28,7 @@
 <body class="sb-nav-fixed">
 	<nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 		<!-- Navbar Brand-->
-		<a class="navbar-brand ps-3" href="/">eHR SYSTEM</a>
+		<a class="navbar-brand ps-3" href="/journal/list">eHR SYSTEM</a>
 		<!-- Sidebar Toggle-->
 		<button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle">
 			<i class="fas fa-bars"></i>
@@ -81,10 +81,10 @@
 						</c:if>
 						
 						<div class="sb-sidenav-menu-heading">업무보고</div>
-                            <a class="nav-link" href="/index">
+                            <a class="nav-link" href="/journal/list">
                                 <div class="sb-nav-link-icon"><i class="fas fa-file-contract"></i></div>업무일지 목록
                             </a>
-                            <a class="nav-link" href="/journal/list">
+                            <a class="nav-link" href="/#">
                                 <div class="sb-nav-link-icon"><i class="fas fa-check"></i></div>업무승인
                             </a>
 						<div class="sb-sidenav-menu-heading">부서</div>
@@ -97,7 +97,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-battery-full"></i></div>
                                 	직군
                             </a>
-                            <a class="nav-link" href="tables.html">
+                            <a class="nav-link" href="/job/list">
                                 <div class="sb-nav-link-icon"><i class="fas fa-battery-half"></i></div>
                                 	직종
                             </a>
@@ -105,7 +105,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-battery-quarter"></i></div>
                                		 대분류
                             </a>
-                             <a class="nav-link" href="tables.html">
+                             <a class="nav-link" href="/scategory/list">
                                 <div class="sb-nav-link-icon"><i class="fas fa-battery-empty"></i></div>
                                		 소분류
                             </a>

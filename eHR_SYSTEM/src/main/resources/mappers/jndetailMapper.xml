@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mis.mapper.JndetailMapper">
+
+	<insert id="create">
+		<selectKey keyProperty="jndNo" resultType="int" order="BEFORE">
+			SELECT SEQ_JNDETAIL.NEXTVAL FROM DUAL
+		</selectKey>
+		INSERT INTO TBL_JNDETAIL (JND_NO, JND_PROGRESS, JND_NOTE, JND_HISTORY)
+		VALUES (#{jndNo}, #{jndProgress}, #{jndNote}, #{jndHistory})
+	</insert>
+	
+	<select id="read" resultType="com.mis.domain.JndetailVO">
+		SELECT A.JND_NO, A.JND_PROGRESS, A.JND_NOTE, A.JND_HISTORY, B.JN_NO, C.S_NO 
+		FROM TBL_JNDETAIL A, TBL_JOURNAL B, TBL_SCATEGORY C
+		WHERE A.JN_NO = B.JN_NO
+		AND A.S_NO = C.S_NO
+	</select>
+
+	<update id="update">
+		UPDATE TBL_JNDETAIL SET JND_HISTORY = #{jndHistory},
+		JND_NOTE = #{jndNote}, JND_PROGRESS = #{jndProgress}
+		WHERE JND_NO = #{jndNo}
+	</update>
+
+	<delete id="delete">
+		DELETE FROM TBL_JNDETAIL WHERE JND_NO = #{jndNo}
+	</delete>
+
+	<!-- 다중 파일 등록 -->
+	<insert id="insertFile">
+		INSERT INTO TBL_JN_FILE (JNFILE_NO, JNFILE_NAME, JND_NO)
+		VALUES (SEQ_JNFILE.NEXTVAL, #{jnfileName}, #{jndNo})
+	</insert>
+	
+	<!-- 다중 파일 삭제 -->
+	<delete id="deleteFile">
+		DELETE FROM TBL_JNFILE WHERE JND_NO = #{jndNo}
+	</delete>
+	
+	<!-- 파일 목록 -->
+	<select id="fileList" resultType="com.mis.domain.JnfileVO">
+		SELECT JNFILE_NO, 
+			   SUBSTR(JNFILE_NAME,50) AS JNFILE_NAME,
+			   JNFILE_NAME AS JNFILE_LOC,
+			   JND_NO
+		FROM TBL_JN_FILE
+		WHERE JND_NO = #{jndNo}	   
+	</select>
+
+</mapper>

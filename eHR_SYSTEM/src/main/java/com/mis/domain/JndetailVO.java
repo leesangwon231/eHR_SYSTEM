@@ -1,5 +1,8 @@
 package com.mis.domain;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class JndetailVO {
 	private int jndNo;
 	private int jndProgress;
@@ -7,6 +10,8 @@ public class JndetailVO {
 	private String jndHistory;
 	private int jnNo;
 	private int sNo;
+	private String[] files;
+	private ArrayList<JnfileVO> fileList;
 	
 	public int getJndNo() {
 		return jndNo;
@@ -44,12 +49,22 @@ public class JndetailVO {
 	public void setsNo(int sNo) {
 		this.sNo = sNo;
 	}
-	
+	public String[] getFiles() {
+		return files;
+	}
+	public void setFiles(String[] files) {
+		this.files = files;
+	}
+	public ArrayList<JnfileVO> getFileList() {
+		return fileList;
+	}
+	public void setFileList(ArrayList<JnfileVO> fileList) {
+		this.fileList = fileList;
+	}
 	@Override
 	public String toString() {
-		return "TblJndetailVO [jndNo=" + jndNo + ", jndProgress=" + jndProgress + ", jndNote=" + jndNote
-				+ ", jndHistory=" + jndHistory + ", jnNo=" + jnNo + ", sNo=" + sNo + "]";
+		return "JndetailVO [jndNo=" + jndNo + ", jndProgress=" + jndProgress + ", jndNote=" + jndNote + ", jndHistory="
+				+ jndHistory + ", jnNo=" + jnNo + ", sNo=" + sNo + ", files=" + Arrays.toString(files) + ", fileList="
+				+ fileList + "]";
 	}
-
-	
 }

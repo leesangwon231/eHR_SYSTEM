@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mis.mapper.JournalMapper">
+
+	<insert id="create">
+		insert into tbl_journal(jn_no,jn_wdate,jn_satisfaction,jn_approval)
+		values(seq_board.nextval, sysdate, #{jnSatisfaction}, #{jnApproval})
+	</insert>
+
+	<select id="read" resultType="com.mis.domain.JournalVO">
+		select * from tbl_journal where journal_no = #{jnNo}
+	</select>
+
+	<!-- <update id="update">
+		update tbl_journal set title=#{title}, content=#{content}, writer=#{writer}
+		where bno = #{bno}
+	</update>
+ -->
+	<!-- <delete id="delete">
+		delete from tbl_job where job_no=#{jobNo}
+	</delete> -->
+
+	<select id="list" resultType="com.mis.domain.JournalVO">
+		SELECT A.JN_NO, A.JN_WDATE, A.JN_APPROVAL, A.JN_SATISFACTION, B.JN_NO
+		FROM TBL_JOURNAL A, tbl_jndetail B
+		WHERE A.JN_NO = B.JN_NO
+	</select>
+	
+	<!-- <select id="listCriteria" resultType="com.mis.domain.BoardVO">
+		 <![CDATA[
+    select rnum,  bno, title, content, writer, regdate, viewcnt from (
+    select rownum rnum,  bno, title, content, writer, regdate, viewcnt 
+    from(select * from tbl_board where bno > 0 order by bno desc, regdate desc))
+    where (rnum >= #{pageStart} AND rnum <= #{pageEnd})
+ ]]>
+	</select>
+	
+	<select id="listCountCriteria" resultType="int">
+		<![CDATA[SELECT count(*) FROM TBL_BOARD WHERE bno > 0]]>
+	</select>
+	
+	<sql id="search">
+      <if test="searchType != null">
+         <if test="searchType == 't'.toString()">
+            and title like '%' || #{keyword} || '%'
+         </if>
+         <if test="searchType == 'c'.toString()">
+            and content like '%' || #{keyword} || '%'
+         </if>
+         <if test="searchType == 'w'.toString()">
+            and writer like '%' || #{keyword} || '%'
+         </if>
+         <if test="searchType == 'tc'.toString()">
+            and (title like '%' || #{keyword} || '%' )
+            OR
+            (content like '%' || #{keyword} || '%' )
+         </if>
+         <if test="searchType == 'cw'.toString()">
+            and (content like '%' || #{keyword} || '%' )
+            OR
+            (writer like '%' || #{keyword} || '%' )
+         </if>
+         <if test="searchType == 'tcw'.toString()">
+            and (title like '%' || #{keyword} || '%' )
+            OR
+            (content like '%' || #{keyword} || '%' )
+            OR
+            (writer like '%' || #{keyword} || '%' )
+         </if>
+      </if>
+   </sql>
+
+   <select id="listSearchCriteria"
+      resultType="com.mis.domain.BoardVO">
+    <![CDATA[
+   select * from (
+    select 
+        rownum rnum,  bno, title, content, writer, regdate, viewcnt 
+    from 
+         tbl_board where bno > 0 
+    ]]>
+      <include refid="search"></include>
+      
+    <![CDATA[         
+   order by bno desc ) where (rnum >= #{pageStart} AND rnum <= #{pageEnd}) 
+ order by bno desc, regdate desc
+     ]]>
+   </select>
+
+
+   <select id="listSearchCountCriteria" resultType="int">
+    <![CDATA[
+   select count(*)
+    from 
+         tbl_board where bno > 0 
+    ]]>
+      <include refid="search"></include>
+   </select> -->
+</mapper>

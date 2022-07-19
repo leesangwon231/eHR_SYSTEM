@@ -12,7 +12,7 @@
 	      <div class="card mb-4">
 	         <div class="card-header">
 	            <i class="bi bi-megaphone"></i> 직종 목록
-	            	<button class="btn btn-outline-dark btn-sm" id="newBtn" style="float: right; padding: 0 auto 0 auto;">새 게시글 작성</button>
+	            	<button class="btn btn-outline-dark btn-sm" id="newBtn" style="float: right; padding: 0 auto 0 auto;">등록</button>
 	         </div>
 	         <div class="card-body">
 	         <c:if test="${empty list}">
@@ -29,8 +29,8 @@
 	               <thead>
 	                  <tr>
 	                     <th style="width: 10px">직종번호</th>
-	                     <th>직종명</th>
-	                     <th>직군명</th>
+	                     <th>직종</th>
+	                     <th>직군</th>
 	                  </tr>
 	               </thead>
 	               <tbody>

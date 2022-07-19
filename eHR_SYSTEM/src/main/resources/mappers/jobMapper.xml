@@ -3,18 +3,21 @@
 
 <mapper namespace="com.mis.mapper.JobMapper">
 
+	<select id="selectJobGroup" resultType="com.mis.domain.JobgroupVO">
+		SELECT JG_NO, JG_NAME FROM TBL_JOBGROUP
+	</select>
+
 	<insert id="create">
-		insert into tbl_board(bno,title,content,writer)
-		values(seq_board.nextval, #{title}, #{content}, #{writer})
+		insert into tbl_job values(j_seq.nextval, #{jobName}, #{jgNo})
 	</insert>
 
 	<select id="read" resultType="com.mis.domain.JobVO">
-		select * from tbl_job where job_no = #{jobNo}
+		select j.job_no, j.job_name, g.jg_name from tbl_job j inner join tbl_jobgroup g
+		on j.jg_no = g.jg_no where j.job_no = #{jobNo}
 	</select>
 
 	<update id="update">
-		update tbl_board set title=#{title}, content=#{content}, writer=#{writer}
-		where bno = #{bno}
+		update tbl_job set job_name=#{jobName}, jg_no = #{jgNo} where job_no = #{jobNo}
 	</update>
 
 	<delete id="delete">

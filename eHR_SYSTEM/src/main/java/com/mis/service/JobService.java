@@ -4,9 +4,12 @@ import java.util.List;
 
 import com.mis.domain.Criteria;
 import com.mis.domain.JobVO;
+import com.mis.domain.JobgroupVO;
 import com.mis.domain.SearchCriteria;
 
 public interface JobService {
+	
+	public List<JobgroupVO> selectJobGroup() throws Exception;
 	
 	public void register(JobVO vo) throws Exception;
 

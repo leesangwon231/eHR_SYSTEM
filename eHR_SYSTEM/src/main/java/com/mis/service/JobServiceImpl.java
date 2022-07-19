@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.mis.domain.Criteria;
 import com.mis.domain.JobVO;
+import com.mis.domain.JobgroupVO;
 import com.mis.domain.SearchCriteria;
 import com.mis.persistence.JobDAO;
 
@@ -16,6 +17,11 @@ public class JobServiceImpl implements JobService {
 
 	@Inject
 	private JobDAO dao;
+	
+	@Override
+	public List<JobgroupVO> selectJobGroup() throws Exception {
+		return dao.selectJobGroup();
+	}
 
 	@Override
 	public void register(JobVO vo) throws Exception {
@@ -63,5 +69,6 @@ public class JobServiceImpl implements JobService {
 	public int listSearchCount(SearchCriteria cri) throws Exception {
 		return dao.listSearchCount(cri);
 	}
+
 
 }

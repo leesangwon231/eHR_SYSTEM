@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.mis.domain.Criteria;
 import com.mis.domain.JobVO;
+import com.mis.domain.JobgroupVO;
 import com.mis.domain.SearchCriteria;
 
 @Repository
@@ -18,6 +19,11 @@ public class JobDAOImpl implements JobDAO{
 	private SqlSession session;
 	
 	private static String namespace = "com.mis.mapper.JobMapper";
+	
+	@Override
+	public List<JobgroupVO> selectJobGroup() throws Exception {
+		return session.selectList(namespace + ".selectJobGroup");
+	}
 
 	@Override
 	public void create(JobVO vo) throws Exception {
@@ -66,5 +72,6 @@ public class JobDAOImpl implements JobDAO{
 	public int listSearchCount(SearchCriteria cri) throws Exception {
 		return session.selectOne(namespace + ".listSearchCount", cri);
 	}
+
 
 }

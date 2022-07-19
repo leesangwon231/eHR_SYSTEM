@@ -65,7 +65,7 @@
                         <div class="mt-4">
                        	 	<div class="offset-9">
 		                       	<input type="button" class="btn btn-primary" id = "btn_submit" name ="btn_submit" value="수정">
-		                    	<input type="button" class="btn btn-primary" onclick="location.href='./read?lNo=${lVo.lNo}'" value="취소">
+		                    	<input type="button" class="btn btn-primary" onclick="location.href='/lcategory/read?lNo=${lVo.lNo}'" value="취소">
 		                	</div>
                         </div>      
                		</div>

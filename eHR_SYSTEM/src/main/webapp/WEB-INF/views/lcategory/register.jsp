@@ -64,7 +64,7 @@
                         <div class="mt-4">
                        	 	<div class="offset-9">
 		                       	<input type="button" class="btn btn-primary" id = "btn_submit" name ="btn_submit" value="등록">
-		                    	<input type="button" class="btn btn-primary" onclick="location.href='./list'" value="취소">
+		                    	<input type="button" class="btn btn-primary" onclick="location.href='/lcategory/list'" value="취소">
 		                	</div>
                         </div>      
                		</div>

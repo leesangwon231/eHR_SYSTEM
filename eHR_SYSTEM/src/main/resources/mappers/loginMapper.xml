@@ -4,7 +4,7 @@
 <mapper namespace="com.mis.mapper.loginMapper">
 
 	<select id="login" resultType="com.mis.domain.MemberVO">
-		SELECT * FROM TBL_MEMBER WHRER MEM_NO = #{memNo} and MEM_PW = #{memPW}
+		SELECT * FROM TBL_MEMBER WHERE MEM_NO = #{memNo} and MEM_PW = #{memPw}
 	</select>
 
 </mapper>

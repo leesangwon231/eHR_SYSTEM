@@ -22,17 +22,13 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 		HttpSession session = request.getSession();
 
 		ModelMap modelMap = modelAndView.getModelMap();
-		Object MemberVO = modelMap.get("MemberVO");
-
-		if (MemberVO != null) {
-
+		Object loginVO = modelMap.get("loginVO");
+		if (loginVO != null) {
 			logger.info("new login success");
-			System.out.println(MemberVO);
-			session.setAttribute(LOGIN, MemberVO);
+			session.setAttribute(LOGIN, loginVO);
 
 			Object dest = session.getAttribute("dest");
-
-			response.sendRedirect(dest != null ? (String) dest : "/");
+			response.sendRedirect(dest != null ? (String) dest : "/journal/list");
 
 		}
 

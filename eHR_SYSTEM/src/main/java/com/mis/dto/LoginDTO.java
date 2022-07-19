@@ -3,27 +3,22 @@ package com.mis.dto;
 public class LoginDTO {
 	
 	private int memNo;
-	private String mempw;
-	
+	private String memPw;
 	public int getMemNo() {
 		return memNo;
 	}
 	public void setMemNo(int memNo) {
 		this.memNo = memNo;
 	}
-	public String getMempw() {
-		return mempw;
+	public String getMemPw() {
+		return memPw;
 	}
-	public void setMempw(String mempw) {
-		this.mempw = mempw;
+	public void setMemPw(String memPw) {
+		this.memPw = memPw;
 	}
-	
 	@Override
 	public String toString() {
-		return "LoginDTO [memNo=" + memNo + ", mempw=" + mempw + "]";
+		return "LoginDTO [memNo=" + memNo + ", memPw=" + memPw + "]";
 	}
 	
-	
-	
-
 }

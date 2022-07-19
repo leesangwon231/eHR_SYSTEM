@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <%@include file="../include/header.jsp"%>
-<script type="text/javascript" src="/resources/js/lcategory.js"></script>
+<script type="text/javascript" src="/resources/js/scategory.js"></script>
 <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
 <div id="layoutSidenav_content">
    <main>
@@ -21,7 +21,7 @@
 				                        		<label for="exampleInputEmail1">직군</label>
 				                        	</div>
 		                        			<div class="col-9">
-				                        		<select name="jgNo" id="jgNo" class = "form-select" onchange="selectJobGroup(value);">
+		                        				<select name="jgNo" id="jgNo" class = "form-select" onchange="selectJobGroup(value);">
 			                                    	<option value="0">직군을 선택해 주세요</option>
 			                                        <c:forEach items="${jobGroup}" var="jobGroupVO">
 														<option value="${jobGroupVO.jgNo}"
@@ -35,27 +35,69 @@
 				                        		<label for="exampleInputEmail1">직종</label>
 				                        	</div>
 		                        			<div class="col-9">
-				                        		<select name="jobNo" id="jobNo" class = "form-select">
+		                        				<select name="jobNo" id="jobNo" class = "form-select" onchange="selectLcategory(value);">
 	                                             	<option value="0">직종을 선택해 주세요</option>
 	                                             </select>
 				                        	</div>
 			                        	</div>
 			                        	<div class="row p-5">
 				                        	<div class="col-2">
-				                        		<label for="exampleInputEmail1">대분류 번호</label>
+				                        		<label for="exampleInputEmail1">대분류 </label>
 				                        	</div>
 		                        			<div class="col-8">
-				                        		<input type="text" id = "lNo" name="lNo" class = "form-select" readonly="readonly" value="${lVo.lNo}">
+				                        		<select name="lNo" id="lNo" class = "form-select">
+                                             	<option value="0">대분류를 선택해 주세요</option>	
+											</select>
 				                        	</div>
 			                        	</div>
 			                        	<div class="row p-5">
 				                        	<div class="col-2">
-				                        		<label for="exampleInputEmail1">대분류 명</label>
+				                        		<label for="exampleInputEmail1">소분류 번호</label>
 				                        	</div>
 		                        			<div class="col-8">
-				                       			<input type="text" id = "lName" name="lName" class = "form-select" value="${lVo.lName}">
+				                       			<input type="text" id = "sNo" name="sNo" class = "form-select"  value="${sVo.sNo}" readonly="readonly">
 				                       		</div>
 			                        	</div>
+			                        	<div class="row p-5">
+				                        	<div class="col-2">
+				                        		<label for="exampleInputEmail1">소분류명</label>
+				                        	</div>
+		                        			<div class="col-8">
+				                       			<input type="text" id = "sName" name="sName" class = "form-select"  value="${sVo.sName}" >
+				                       		</div>
+			                        	</div>
+			                        	<div class="row p-5">
+				                        	<div class="col-2">
+				                        		<label for="exampleInputEmail1">연</label>
+				                        	</div>
+		                        			<div class="col-3">
+				                       			<input type="text" id = "sYear" name="sYear" class = "form-select"  value="${sVo.sYear}">
+				                       		</div>
+				                       		<div class="col-2">
+				                        		<label for="exampleInputEmail1">월</label>
+				                        	</div>
+		                        			<div class="col-3">
+				                       			<input type="text" id = "sMonth" name="sMonth" class = "form-select"  value="${sVo.sMonth}">
+				                       		</div>
+			                        	</div>
+			                        
+			                        	<div class="row p-5">
+				                        	<div class="col-2">
+				                        		<label for="exampleInputEmail1">분기</label>
+				                        	</div>
+		                        			<div class="col-3">
+				                       			<input type="text" id = "sQuarter" name="sQuarter" class = "form-select"  value="${sVo.sQuarter}">
+				                       		</div>
+				                       	
+				                        	<div class="col-2">
+				                        		<label for="exampleInputEmail1">일</label>
+				                        	</div>
+		                        			<div class="col-3">
+				                       			<input type="text" id = "sDay" name="sDay" class = "form-select"  value="${sVo.sDay}">
+				                       		</div>
+			                        	</div>
+			                        	
+			                        	
 			                       	</div>
 		                       	</form>
 		                       	<div class="col-lg-1" >
@@ -100,9 +142,12 @@
 <script>
 	$(document).ready(function() {
 		var formObj = $("form[role='form']");
-		var jgNo = "<c:out value ='${lVo.jgNo}'/>"
-		var jobNo = "<c:out value ='${lVo.jobNo}'/>"
-		var lNo = "<c:out value ='${lVo.lNo}'/>"
+		var jgNo = "<c:out value ='${sVo.jgNo}'/>"
+		var jobNo = "<c:out value ='${sVo.jobNo}'/>"
+		var lNo = "<c:out value ='${sVo.lNo}'/>"
+		console.log(jgNo);
+		console.log(jobNo);
+		console.log(lNo);
 		
 		$("#btn_submit").on("click", function() {
 			modify();
@@ -150,7 +195,7 @@
 	function selectJobGroup(jgNo) {
 	   
 		var jgNo = jgNo;
-	    var jobNo = "<c:out value ='${lVo.jobNo}'/>"
+	    var jobNo = "<c:out value ='${sVo.jobNo}'/>"
 	    
 	   	if(jgNo === "0"){
             $("#jobNo option").remove();
@@ -161,7 +206,7 @@
  
 	   	$.ajax({
 			type : 'GET',
-			url : "/lcategory/jobList",
+			url : "/scategory/jobList",
 			data : {
 				jgNo : jgNo,
 			},
@@ -181,7 +226,38 @@
 		});
 	   }                           
 	
+	   function selectLcategory(jobNo) {
+		   
+			var jobNo = jobNo;
+		    
+		   	if(jobNo === "0"){
+	            $("#lcategory option").remove();
+	            lcategory = "<option value='0'>대분류를 선택해주세요</option>";
+	            $("#lcategory").append(lcategory);
+	            return false;
+	        }
+	 
+		   	$.ajax({
+				type : 'GET',
+				url : "/scategory/lcList",
+				data : {
+					jobNo : jobNo,
+				},
+				success : function(data) {
+					lcategory = "<option value='0'>대분류를 선택해주세요</option>"; 
+					$("#lNo option").remove(); 
+					$.each(data , function (key, value) {
+						lcategory += "<option value=" + value.lNo + ">" + value.lName + "</option>";
+		                }); 
+		                $("#lNo").append(lcategory);
+	              
+				},
+				error : function(jqXHR, textStatus, errorThrown) {
+					alert("ERROR : " + textStatus + " : " + errorThrown);
+				}
 
+			});
+		   }                        
 </script>
 
 

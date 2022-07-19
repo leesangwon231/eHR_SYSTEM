@@ -14,7 +14,7 @@
 	                        <div class="row" >
 		                        <div class="col-lg-1">
 								</div>
-								<form role="form" method="post" name="frm">
+								<form role="form" method="post" name="frm" action="/lcategory/delete">
 			                        <div class="col-lg-10">
 			                        	<div class="row p-5">
 				                    		<div class="col-1">
@@ -45,7 +45,7 @@
 				                        		<label for="exampleInputEmail1">대분류 명</label>
 				                        	</div>
 		                        			<div class="col-8">
-				                       			<input type="text" id = "lName" name="lName" class = "form-select" value="${lVo.lName}">
+				                       			<input type="text" id = "lName" name="lName" class = "form-select" value="${lVo.lName}" readonly="readonly">
 				                       		</div>
 			                        	</div>
 			                       	</div>

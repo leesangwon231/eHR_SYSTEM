@@ -40,9 +40,34 @@ function modify(){
 		document.frm.jobNo.focus();
 		return;	
 	}
-	if(document.frm.lName.value == ""){
-		alert("대분류 명을 입력해 주세요");
-		document.frm.lName.focus();
+	if(document.frm.lNo.value == ""){
+		alert("대분류 명을 선택해 주세요");
+		document.frm.lNo.focus();
+		return;	
+	}
+	if(document.frm.sName.value == ""){
+		alert("소분류 명을 선택해 주세요");
+		document.frm.sName.focus();
+		return;	
+	}
+	if(document.frm.sYear.value == ""){
+		alert("연을 입력해 주세요");
+		document.frm.sYear.focus();
+		return;	
+	}
+	if(document.frm.sQuarter.value == ""){
+		alert("분기를 입력해 주세요");
+		document.frm.sQuarter.focus();
+		return;	
+	}
+	if(document.frm.sMonth.value == ""){
+		alert("월을 입력해 주세요");
+		document.frm.sMonth.focus();
+		return;	
+	}
+	if(document.frm.sDay.value == ""){
+		alert("일을 입력해 주세요");
+		document.frm.sDay.focus();
 		return;	
 	}
 	if(confirm("수정 하시겠습니까?")){

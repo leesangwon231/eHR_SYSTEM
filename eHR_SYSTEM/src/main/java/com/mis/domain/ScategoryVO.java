@@ -13,6 +13,8 @@ public class ScategoryVO {
 	private int sDay;
 	private int sUnit;
 	private int lNo;
+	private int jgNo;
+	private int jobNo;
 	public int getsNo() {
 		return sNo;
 	}
@@ -79,13 +81,26 @@ public class ScategoryVO {
 	public void setlNo(int lNo) {
 		this.lNo = lNo;
 	}
-	
+	public int getJgNo() {
+		return jgNo;
+	}
+	public void setJgNo(int jgNo) {
+		this.jgNo = jgNo;
+	}
+	public int getJobNo() {
+		return jobNo;
+	}
+	public void setJobNo(int jobNo) {
+		this.jobNo = jobNo;
+	}
 	@Override
 	public String toString() {
 		return "ScategoryVO [sNo=" + sNo + ", jobName=" + jobName + ", jgName=" + jgName + ", lName=" + lName
 				+ ", sName=" + sName + ", sYear=" + sYear + ", sQuarter=" + sQuarter + ", sMonth=" + sMonth + ", sDay="
-				+ sDay + ", sUnit=" + sUnit + ", lNo=" + lNo + "]";
+				+ sDay + ", sUnit=" + sUnit + ", lNo=" + lNo + ", jgNo=" + jgNo + ", jobNo=" + jobNo + "]";
 	}
+	
+	
 	
 	
 	

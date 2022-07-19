@@ -15,24 +15,24 @@
 			FROM TBL_SCATEGORY S LEFT OUTER JOIN TBL_LCATEGORY L ON S.L_NO = L.L_NO LEFT 
 			OUTER JOIN TBL_JOBGROUP JG ON JG.JG_NO = J.JG_NO LEFT OUTER JOIN TBL_JOB 
 			J ON J.JOB_NO = L.JOB_NO ORDER BY S_NO DESC -->
-		<!-- FROM TBL_SCATEGORY S, TBL_LCATEGORY L WHERE S.L_NO = L.L_NO AND S_NO 
-			= #{sNo} -->
+		<!-- FROM TBL_SCATEGORY S, TBL_LCATEGORY L WHERE S.L_NO = L.L_NO AND  -->
 			
 		SELECT S.S_NO, S.S_NAME, S.S_YEAR, S.S_QUARTER, S.S_MONTH, S.S_DAY,
-				 L.L_NAME,J.JOB_NAME, G.JG_NAME
+				 L.L_NAME,J.JOB_NAME, G.JG_NAME, L.L_NO, J.JOB_NO, G.JG_NO
 		FROM TBL_SCATEGORY S, TBL_LCATEGORY L, TBL_JOB J, TBL_JOBGROUP G 
-		WHERE S.L_NO = L.L_NO AND L.JOB_NO = J.JOB_NO AND J.JG_NO = G.JG_NO				
+		WHERE S.L_NO = L.L_NO AND L.JOB_NO = J.JOB_NO AND J.JG_NO = G.JG_NO	AND S_NO 
+		= #{sNo}			
 		
 	</select>
 
 	<update id="update">
 		UPDATE TBL_SCATEGORY SET
-		S_NAME = #{sName}
+		S_NAME = #{sName},
 		S_YEAR =
-		#{sYear}
-		S_QUARTER = #{sQuarter}
-		S_MONTH = #{sMonth}
-		S_DAY = #{sDay}
+		#{sYear},
+		S_QUARTER = #{sQuarter},
+		S_MONTH = #{sMonth},
+		S_DAY = #{sDay},
 		L_NO
 		= #{lNo}
 		WHERE S_NO = #{sNo}
@@ -64,6 +64,8 @@
 		SELECT L_NO, L_NAME, JOB_NO FROM TBL_LCATEGORY WHERE JOB_NO =
 		#{jobNo}
 	</select>
+	
+	
 
 
 

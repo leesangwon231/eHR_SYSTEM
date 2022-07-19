@@ -47,7 +47,7 @@ public class LcategoryController {
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public void listAll(Model model) throws Exception {
 		model.addAttribute("list", service.list());
-		logger.info("list get......");
+	
 	}
 	
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
@@ -74,10 +74,10 @@ public class LcategoryController {
 	}
 	
 	@RequestMapping(value="/modify" , method = RequestMethod.GET)
-	public void modifyGET(@RequestParam("lNo") int lNo , Model model) throws Exception{
-		System.out.println(service.read(lNo));
+	public void modifyGET(@RequestParam("sNo") int sNo , Model model) throws Exception{
+		System.out.println(service.read(sNo));
 		model.addAttribute("jobGroup", service.selectJobGroup());
-		model.addAttribute("lVo", service.read(lNo));
+		model.addAttribute("sVo", service.read(sNo));
 	}
 	
 	@RequestMapping(value="/modify" , method = RequestMethod.POST)

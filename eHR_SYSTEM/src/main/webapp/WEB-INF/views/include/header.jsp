@@ -36,7 +36,7 @@
 		<!-- Navbar UserName -->
 		<form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
 			<div class="input-group">
-				<span style="color: #f8f9fa;">${login.memberName}</span>
+				<span style="color: #f8f9fa;">${login.memName}</span>
 			</div>
 		</form>
 		
@@ -47,14 +47,14 @@
 					<i class="fas fa-user fa-fw"></i>
 				</a>
 				<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-					<c:if test="${null eq login.memberNo}">
+					<c:if test="${null eq login.memNo}">
 						<li><a class="dropdown-item" href="/join/memberRegister">회원가입</a></li>
 						<li><a class="dropdown-item" href="/member/login">로그인</a></li>
 					</c:if>
-					<c:if test="${null ne login.memberNo}">
-						<li><a class="dropdown-item" href="/member/readMyPage?memberNo=${login.memberNo}">내 정보</a></li>
+					<c:if test="${null ne login.memNo}">
+						<li><a class="dropdown-item" href="/member/readMyPage?memberNo=${login.memNo}">내 정보</a></li>
 						<li><a class="dropdown-item" href="#">쪽지함</a></li>
-						<li><a class="dropdown-item" href="/member/logout">로그아웃</a></li>
+						<li><a class="dropdown-item" href="/user/logout">로그아웃</a></li>
 					</c:if>
 				</ul>
 			</li>
@@ -66,7 +66,7 @@
 			<nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
 				<div class="sb-sidenav-menu">
 					<div class="nav">
-						<c:if test="${login.memberNo == 12345678}">
+						<c:if test="${login.memNo == 12345678}">
 							<div class="sb-sidenav-menu-heading">관리자 전용 MENU</div>
 							<a class="nav-link" href="/member/list">
 								<div class="sb-nav-link-icon">

@@ -28,14 +28,29 @@ public class LoginController {
 	public void LOGINPOST(Model model , LoginDTO dto, HttpSession session ) throws Exception {
 		
 		MemberVO vo = service.login(dto);
-		
+
 		if(vo==null) {
 			return;
 		}
+		model.addAttribute("loginVO",vo);
 		
-		model.addAttribute("login",vo);
 	}
 	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(HttpSession session) throws Exception {
+
+		Object MemberVO = session.getAttribute("login");
+
+		if (MemberVO != null) {
+
+			session.removeAttribute("login");
+			session.invalidate();
+
+		}
+
+		return "redirect:/";
+
+	}
 	
 
 	

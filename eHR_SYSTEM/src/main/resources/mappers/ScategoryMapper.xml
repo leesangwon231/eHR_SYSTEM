@@ -4,13 +4,13 @@
 <mapper namespace="com.mis.mapper.ScategoryMapper">
 
 	<insert id="create">
-		INSERT INTO TBL_SCATEGOTY (S_NO, S_NAME, S_YEAR,
+		INSERT INTO TBL_SCATEGORY (S_NO, S_NAME, S_YEAR,
 		S_QUARTER, S_MONTH, S_DAY, L_NO)
-		VALUES (SEQ_S_SEQ.NEXTVAL, #{sName},
+		VALUES (S_SEQ.NEXTVAL, #{sName},
 		#{sYear}, #{sQuarter}, #{sMonth}, #{sDay}, #{lNo})
 	</insert>
 
-	<select id="read">
+	<select id="read" resultType="com.mis.domain.ScategoryVO">
 		<!-- SELECT S.S_NO, S.S_NAME, S.S_YEAR, S.S_QUARTER, S.S_MONTH, S.S_DAY 
 			FROM TBL_SCATEGORY S LEFT OUTER JOIN TBL_LCATEGORY L ON S.L_NO = L.L_NO LEFT 
 			OUTER JOIN TBL_JOBGROUP JG ON JG.JG_NO = J.JG_NO LEFT OUTER JOIN TBL_JOB 
@@ -19,9 +19,9 @@
 			= #{sNo} -->
 			
 		SELECT S.S_NO, S.S_NAME, S.S_YEAR, S.S_QUARTER, S.S_MONTH, S.S_DAY,
-				S.L_NO, L.L_NAME, L.JOB_NO, J.JOB_NAME, J.JG_NO, G.JG_NAME
+				 L.L_NAME,J.JOB_NAME, G.JG_NAME
 		FROM TBL_SCATEGORY S, TBL_LCATEGORY L, TBL_JOB J, TBL_JOBGROUP G 
-		WHERE S.L_NO = L.L_NO AND L.JOB_NO = J.JOB_NO AND J.JG_NO = G.JG_NO		
+		WHERE S.L_NO = L.L_NO AND L.JOB_NO = J.JOB_NO AND J.JG_NO = G.JG_NO				
 		
 	</select>
 

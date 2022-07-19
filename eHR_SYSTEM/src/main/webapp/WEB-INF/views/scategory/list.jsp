@@ -38,8 +38,8 @@
 	               <tbody>
 	                  <c:forEach items="${list}" var="scategoryVO" varStatus="status">
 	                     <tr>
-	                        <td><a href='/scategory/read?sNo=${scategoryVO.sNo}'></a>${scategoryVO.sNo}</td>
-	                        <td>${scategoryVO.sName}</td>
+	                        <td>${scategoryVO.sNo}</td>
+	                        <td><a href='/scategory/read?sNo=${scategoryVO.sNo}'>${scategoryVO.sName}</a></td>
 	                        <td>${scategoryVO.lName}</td>
 	                        <td>${scategoryVO.jobName}</td>
 	                        <td>${scategoryVO.jgName}</td>

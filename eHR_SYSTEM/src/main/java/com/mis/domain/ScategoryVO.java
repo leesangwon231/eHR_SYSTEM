@@ -5,6 +5,7 @@ public class ScategoryVO {
 	private int sNo;
 	private String jobName;
 	private String jgName;
+	private String lName;
 	private String sName;
 	private int sYear;
 	private int sQuarter;
@@ -12,7 +13,6 @@ public class ScategoryVO {
 	private int sDay;
 	private int sUnit;
 	private int lNo;
-	
 	public int getsNo() {
 		return sNo;
 	}
@@ -30,6 +30,12 @@ public class ScategoryVO {
 	}
 	public void setJgName(String jgName) {
 		this.jgName = jgName;
+	}
+	public String getlName() {
+		return lName;
+	}
+	public void setlName(String lName) {
+		this.lName = lName;
 	}
 	public String getsName() {
 		return sName;
@@ -76,10 +82,11 @@ public class ScategoryVO {
 	
 	@Override
 	public String toString() {
-		return "ScategoryVO [sNo=" + sNo + ", jobName=" + jobName + ", jgName=" + jgName + ", sName=" + sName
-				+ ", sYear=" + sYear + ", sQuarter=" + sQuarter + ", sMonth=" + sMonth + ", sDay=" + sDay + ", sUnit="
-				+ sUnit + ", lNo=" + lNo + "]";
+		return "ScategoryVO [sNo=" + sNo + ", jobName=" + jobName + ", jgName=" + jgName + ", lName=" + lName
+				+ ", sName=" + sName + ", sYear=" + sYear + ", sQuarter=" + sQuarter + ", sMonth=" + sMonth + ", sDay="
+				+ sDay + ", sUnit=" + sUnit + ", lNo=" + lNo + "]";
 	}
+	
 	
 	
 	

@@ -14,7 +14,7 @@
 	                        <div class="row" >
 		                        <div class="col-lg-1">
 								</div>
-								<form role="form" method="post" name="frm">
+								<form role="form" method="post" name="frm" action="delete">
 			                        <div class="col-lg-10">
 			                        	<div class="row p-5">
 				                    		<div class="col-1">
@@ -96,9 +96,9 @@
 	                  	</div>
                         <div class="mt-4">
                        	 	<div class="offset-9">
-                       	 		<input type="button" class="btn btn-primary" id = "btn_delete"  name ="btn_delete" value="삭제">
-		                       	<input type="button" class="btn btn-primary" id = "btn_modify" onclick="location.href='./modify?sNo=${scategoryVO.sNo}'"name ="btn_update" value="수정">
-		                    	<input type="button" class="btn btn-primary" onclick="location.href='/scategory/list'" value="취소">
+                       	 		<input type="button" class="btn btn-outline-danger" id = "btn_delete"  name ="btn_delete" value="삭제">
+		                       	<input type="button" class="btn btn-outline-primary" id = "btn_modify" onclick="location.href='./modify?sNo=${scategoryVO.sNo}'"name ="btn_update" value="수정">
+		                    	<input type="button" class="btn btn-outline-dark" onclick="location.href='/scategory/list'" value="취소">
 		                	</div>
                         </div>      
                		</div>
@@ -133,10 +133,10 @@
 <script>
 	$(document).ready(function() {
 		var formObj = $("form[role='form']");
+		console.log(formObj);
 		$("#btn_delete").on("click", function() {
 			remove();
 			formObj.attr("action", "/scategory/delete");
-			
 			
 		});
 		

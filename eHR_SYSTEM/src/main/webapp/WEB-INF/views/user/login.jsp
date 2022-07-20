@@ -73,6 +73,7 @@
     </body>
 </html>
 <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
+
 <script>
 	$(document).ready(function() {
 		var formObj = $("form[role='form']");
@@ -81,4 +82,10 @@
 			check();
 		});
 	});
+</script>
+<script>
+var msg = "${msg}";
+if (msg != "") {
+	alert(msg);
+}
 </script>

@@ -10,6 +10,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
+import com.mis.domain.MemberVO;
+
 public class LoginInterceptor extends HandlerInterceptorAdapter {
 
 	private static final String LOGIN = "login";
@@ -25,11 +27,33 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 		Object loginVO = modelMap.get("loginVO");
 		if (loginVO != null) {
 			logger.info("new login success");
-			session.setAttribute(LOGIN, loginVO);
 
 			Object dest = session.getAttribute("dest");
-			response.sendRedirect(dest != null ? (String) dest : "/journal/list");
+			session.setAttribute("login", loginVO);
+			MemberVO user = (MemberVO) session.getAttribute("login");
+			System.out.println(user);
+			int auth = user.getMemPosition();
+		
+			if (auth == 0)// Á÷¿ø
+			{
+				logger.info("adminmain...........");
 
+				response.sendRedirect("/journal/list");
+
+			} 
+		
+			else if(auth == 1) // ÆÀÀå
+			{
+			
+				
+				response.sendRedirect(dest != null ? (String) dest : "/journal/list");
+				
+			}
+			else {
+				response.sendRedirect(dest != null ? (String) dest : "/journal/list");
+			}
+			
+			
 		}
 
 	}

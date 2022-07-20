@@ -35,7 +35,7 @@
 									<label for="exampleInputEmail1">직종 번호</label>
 								</div>
 								<div class="col-8">
-									<input type="text" id="jobNo" name="jobNo" class="form-select"
+									<input type="text" id="jobNo" name="jobNo" class="form-control"
 										readonly="readonly" placeholder="번호는 자동으로 생성됩니다." value="1">
 								</div>
 							</div>
@@ -45,7 +45,7 @@
 								</div>
 								<div class="col-8">
 									<input type="text" id="jobName" name="jobName"
-										class="form-select">
+										class="form-control">
 								</div>
 							</div>
 						</div>

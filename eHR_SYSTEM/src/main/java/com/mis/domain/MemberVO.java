@@ -12,7 +12,7 @@ public class MemberVO {
 	private String memAddr1;
 	private String memAddr2;
 	private Date memHiredate;
-	private int memPos;
+	private int memPosition;
 	private int memRes;
 	private int jgNo;
 	private String jgName;
@@ -89,12 +89,12 @@ public class MemberVO {
 		this.memHiredate = memHiredate;
 	}
 
-	public int getMemPos() {
-		return memPos;
+	public int getMemPosition() {
+		return memPosition;
 	}
 
-	public void setMemPos(int memPos) {
-		this.memPos = memPos;
+	public void setMemPosition(int memPosition) {
+		this.memPosition = memPosition;
 	}
 
 	public int getMemRes() {
@@ -189,8 +189,8 @@ public class MemberVO {
 	public String toString() {
 		return "MemberVO [memNo=" + memNo + ", memName=" + memName + ", memPw=" + memPw + ", memEmail=" + memEmail
 				+ ", memZipcode=" + memZipcode + ", memAddr1=" + memAddr1 + ", memAddr2=" + memAddr2 + ", memHiredate="
-				+ memHiredate + ", memPos=" + memPos + ", memRes=" + memRes + ", jgNo=" + jgNo + ", jgName=" + jgName
-				+ ", deptNo=" + deptNo + ", deptName=" + deptName + ", jobNo=" + jobNo + ", jobName=" + jobName
+				+ memHiredate + ", memPosition=" + memPosition + ", memRes=" + memRes + ", jgNo=" + jgNo + ", jgName="
+				+ jgName + ", deptNo=" + deptNo + ", deptName=" + deptName + ", jobNo=" + jobNo + ", jobName=" + jobName
 				+ ", lNo=" + lNo + ", lName=" + lName + ", sNo=" + sNo + ", sName=" + sName + "]";
 	}
 

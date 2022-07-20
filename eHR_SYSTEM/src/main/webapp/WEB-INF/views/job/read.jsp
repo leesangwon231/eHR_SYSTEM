@@ -21,7 +21,7 @@
 				                        		<label for="exampleInputEmail1">직군</label>
 				                        	</div>
 		                        			<div class="col-9">
-		                        				<input type="text" id = "jgName" name="jgName" class = "form-select" readonly="readonly" value="${jobVo.jgName}">
+		                        				<input type="text" id = "jgName" name="jgName" class = "form-control" readonly="readonly" value="${jobVo.jgName}">
 				                        	</div>
 			                        	</div>
 			                        	<div class="row p-5">
@@ -29,7 +29,7 @@
 				                        		<label for="exampleInputEmail1"> 직종 번호</label>
 				                        	</div>
 		                        			<div class="col-8">
-				                        		<input type="text" id = "jobNo" name="jobNo" class = "form-select" readonly="readonly" value="${jobVo.jobNo}">
+				                        		<input type="text" id = "jobNo" name="jobNo" class = "form-control" readonly="readonly" value="${jobVo.jobNo}">
 				                        	</div>
 			                        	</div>
 			                        	<div class="row p-5">
@@ -37,7 +37,7 @@
 				                        		<label for="exampleInputEmail1">직종 명</label>
 				                        	</div>
 		                        			<div class="col-8">
-				                       			<input type="text" id = "jobName" name="jobName" class = "form-select" value="${jobVo.jobName}">
+				                       			<input type="text" id = "jobName" name="jobName" class = "form-control" value="${jobVo.jobName}">
 				                       		</div>
 			                        	</div>
 			                       	</div>

@@ -21,8 +21,8 @@ public class JobgroupDAOImpl implements JobgroupDAO {
 	
 	
 	@Override
-	public void create(JobgroupVO vo) throws Exception {
-		session.insert(namespace + ".create", vo);
+	public void create(String jgName) throws Exception {
+		session.insert(namespace + ".create", jgName);
 		
 	}
 

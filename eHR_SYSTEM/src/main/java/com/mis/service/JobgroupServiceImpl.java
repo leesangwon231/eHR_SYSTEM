@@ -16,9 +16,9 @@ public class JobgroupServiceImpl implements JobgroupService {
 	private JobgroupDAO dao;
 
 	@Override
-	public void register(JobgroupVO vo) throws Exception {
-		dao.create(vo);
+	public void create(String jgName) throws Exception {
 		
+			dao.create(jgName);
 	}
 
 	@Override

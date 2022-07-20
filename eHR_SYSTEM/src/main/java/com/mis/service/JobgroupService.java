@@ -6,7 +6,7 @@ import com.mis.domain.JobgroupVO;
 
 public interface JobgroupService {
 	
-	public void register(JobgroupVO vo) throws Exception;
+	public void create(String jgName) throws Exception;
 	
 	public JobgroupVO read(int jgNo) throws Exception;
 	

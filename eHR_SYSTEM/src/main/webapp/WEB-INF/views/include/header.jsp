@@ -66,21 +66,8 @@
 			<nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
 				<div class="sb-sidenav-menu">
 					<div class="nav">
-						<c:if test="${login.memNo == 12345678}">
-							<div class="sb-sidenav-menu-heading">관리자 전용 MENU</div>
-							<a class="nav-link" href="/member/list">
-								<div class="sb-nav-link-icon">
-									<i class="bi bi-person-lines-fill"></i>
-								</div> 회원 관리
-							</a>
-							<a class="nav-link" href="/join/list">
-								<div class="sb-nav-link-icon">
-									<i class="bi bi-person-plus-fill"></i>
-								</div> 가입 관리
-							</a>
-						</c:if>
-						
-						<div class="sb-sidenav-menu-heading">업무보고</div>
+						<c:if test="${login.memPosition == 1}">
+							<div class="sb-sidenav-menu-heading">업무보고</div>
                             <a class="nav-link" href="/journal/list">
                                 <div class="sb-nav-link-icon"><i class="fas fa-file-contract"></i></div>업무일지
                             </a>
@@ -98,15 +85,15 @@
                                 	직군
                             </a>
                             <a class="nav-link" href="/job/list">
-                                <div class="sb-nav-link-icon"><i class="fas fa-battery-half"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-battery-full"></i></div>
                                 	직종
                             </a>
                              <a class="nav-link" href="/lcategory/list">
-                                <div class="sb-nav-link-icon"><i class="fas fa-battery-quarter"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-battery-full"></i></i></div>
                                		 대분류
                             </a>
                              <a class="nav-link" href="/scategory/list">
-                                <div class="sb-nav-link-icon"><i class="fas fa-battery-empty"></i></div>
+                                <div class="sb-nav-link-icon"><i class="fas fa-battery-full"></i></i></div>
                                		 소분류
                             </a>
 						<div class="sb-sidenav-menu-heading">사원정보</div>
@@ -114,6 +101,10 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-user-friends"></i></div>
                                 	사원
                             </a>
+						</c:if>
+						<c:if test="${login.memPosition == 0}">
+							
+						</c:if>
 					</div>
 				</div>
 			</nav>

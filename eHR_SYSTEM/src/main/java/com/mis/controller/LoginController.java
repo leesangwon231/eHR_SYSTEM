@@ -31,7 +31,7 @@ public class LoginController {
 		MemberVO vo = service.login(dto);
 		if(vo == null) {
 			
-				rttr.addFlashAttribute("msg", "·Î±×ÀÎ Á¤º¸°¡ ÀÏÄ¡ ÇÏÁö ¾Ê½À´Ï´Ù.");
+				rttr.addFlashAttribute("msg", "ë¡œê·¸ì¸ ì •ë³´ê°€ ì¼ì¹˜ í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 				return "redirect:/user/login";	
 			
 		}

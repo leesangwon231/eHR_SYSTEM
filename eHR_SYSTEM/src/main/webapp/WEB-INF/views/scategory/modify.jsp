@@ -25,7 +25,7 @@
 			                                    	<option value="0">직군을 선택해 주세요</option>
 			                                        <c:forEach items="${jobGroup}" var="jobGroupVO">
 														<option value="${jobGroupVO.jgNo}"
-														<c:if test ="${jobGroupVO.jgNo == lVo.jgNo}">selected="selected"</c:if>>${jobGroupVO.jgName}</option>
+														<c:if test ="${jobGroupVO.jgNo == sVo.jgNo}">selected="selected"</c:if>>${jobGroupVO.jgName}</option>
 													</c:forEach>
 												</select>
 				                        	</div>
@@ -107,7 +107,7 @@
                         <div class="mt-4">
                        	 	<div class="offset-9">
 		                       	<input type="button" class="btn btn-primary" id = "btn_submit" name ="btn_submit" value="수정">
-		                    	<input type="button" class="btn btn-primary" onclick="location.href='./read?lNo=${lVo.lNo}'" value="취소">
+		                    	<input type="button" class="btn btn-primary" onclick="location.href='./read?sNo=${sVo.sNo}'" value="취소">
 		                	</div>
                         </div>      
                		</div>
@@ -145,10 +145,7 @@
 		var jgNo = "<c:out value ='${sVo.jgNo}'/>"
 		var jobNo = "<c:out value ='${sVo.jobNo}'/>"
 		var lNo = "<c:out value ='${sVo.lNo}'/>"
-		console.log(jgNo);
 		console.log(jobNo);
-		console.log(lNo);
-		
 		$("#btn_submit").on("click", function() {
 			modify();
 		});
@@ -160,33 +157,68 @@
             return false;
         }
  
-	   	$.ajax({
-			type : 'GET',
-			url : "/lcategory/jobList",
-			data : {
-				jgNo : jgNo,
-			},
-			success : function(data) {
-				job = "<option value='0'>직종을 선택해주세요</option>"; 
-				$("#jobNo option").remove(); 
-				$.each(data , function (key, value) {
-					test = (jobNo == value.jobNo);
-					console.log(test);
-					if(test){
-						job += "<option value=" + value.jobNo + " selected='selected'>" + value.jobName + "</option>";
-					}else{
-						job += "<option value=" + value.jobNo + ">" + value.jobName + "</option>";
+			   	$.ajax({
+					type : 'GET',
+					url : "/scategory/jobList",
+					data : {
+						jgNo : jgNo,
+					},
+					success : function(data) {
+						job = "<option value='0'>직종을 선택해주세요</option>"; 
+						$("#jobNo option").remove(); 
+						$.each(data , function (key, value) {
+							test = (jobNo == value.jobNo);
+							if(test){
+								job += "<option value=" + value.jobNo + " selected='selected'>" + value.jobName + "</option>";
+							}else{
+								job += "<option value=" + value.jobNo + ">" + value.jobName + "</option>";
+							}
+						}); 
+			                $("#jobNo").append(job);
+					},
+					error : function(jqXHR, textStatus, errorThrown) {
+						alert("ERROR : " + textStatus + " : " + errorThrown);
 					}
-				}); 
-	                $("#jobNo").append(job);
-			},
-			error : function(jqXHR, textStatus, errorThrown) {
-				alert("ERROR : " + textStatus + " : " + errorThrown);
-			}
+		
+				});
+			
+				if(jobNo === "0"){
+		            $("#lNo option").remove();
+		            lcategory = "<option value='0'>대분류를 선택해주세요</option>";
+		            $("#lNo").append(lcategory);
+		            return false;
+		        }
+		 
+			   	$.ajax({
+					type : 'GET',
+					url : "/scategory/lcList",
+					data : {
+						jobNo : jobNo,
+					},
+					success : function(data) {
+						lcategory = "<option value='0'>대분류를 선택해주세요</option>"; 
+						$("#lNo option").remove(); 
+						$.each(data , function (key, value) {
+							test = (lNo == value.lNo);
+							if(test){
+								lcategory += "<option value=" + value.lNo + " selected='selected'>" + value.lName + "</option>";
+							}else{
+								lcategory += "<option value=" + value.lNo + ">" + value.lName + "</option>";
+							}
+			                }); 
+			                $("#lNo").append(lcategory);
+		              
+					},
+					error : function(jqXHR, textStatus, errorThrown) {
+						alert("ERROR : " + textStatus + " : " + errorThrown);
+					}
 
-		});
+				});  	
+			   	
+			});
 	
-	});
+	
+		
 </script>
 
 

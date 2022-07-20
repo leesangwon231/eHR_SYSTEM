@@ -64,6 +64,7 @@ public class ScategoryController {
 			entity = new ResponseEntity<List<LcategoryVO>>(HttpStatus.BAD_REQUEST);
 		}
 		
+
 		return entity;
 		
 		
@@ -100,7 +101,6 @@ public class ScategoryController {
 	
 	@RequestMapping(value="/modify" , method = RequestMethod.GET)
 	public void modifyGET(@RequestParam("sNo") int sNo , Model model) throws Exception{
-		System.out.println(service.read(sNo));
 		model.addAttribute("jobGroup", service.selectJobGroup());
 		model.addAttribute("sVo", service.read(sNo));
 	}

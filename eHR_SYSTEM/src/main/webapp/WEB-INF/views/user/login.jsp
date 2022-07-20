@@ -2,7 +2,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<script type="text/javascript" src="/resources/js/lcategory.js"></script>
+
+
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -10,6 +11,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
+        <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
+        <script type="text/javascript" src="/resources/js/lcategory.js"></script>
+		<script type="text/javascript" src="/resources/js/login.js"></script>
         <title>Login - SB Admin</title>
         <link href="../resources/css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
@@ -74,7 +78,7 @@
 		var formObj = $("form[role='form']");
 		
 		$("#btn_submit").on("click", function() {
-			formObj.submit();
+			check();
 		});
 	});
 </script>

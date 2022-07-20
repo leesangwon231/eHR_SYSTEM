@@ -82,18 +82,18 @@
 						
 						<div class="sb-sidenav-menu-heading">업무보고</div>
                             <a class="nav-link" href="/journal/list">
-                                <div class="sb-nav-link-icon"><i class="fas fa-file-contract"></i></div>업무일지 목록
+                                <div class="sb-nav-link-icon"><i class="fas fa-file-contract"></i></div>업무일지
                             </a>
-                            <a class="nav-link" href="/#">
-                                <div class="sb-nav-link-icon"><i class="fas fa-check"></i></div>업무승인
+                            <a class="nav-link" href="approval/list">
+                                <div class="sb-nav-link-icon"><i class="fas fa-check"></i></div>업무평가
                             </a>
 						<div class="sb-sidenav-menu-heading">부서</div>
                             <a class="nav-link collapsed" href="/dept/list" >
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                	부서 목록
+                                	부서
                             </a>
 						<div class="sb-sidenav-menu-heading">업무분류</div>
-                            <a class="nav-link" href="charts.html">
+                            <a class="nav-link" href="/jobgroup/list">
                                 <div class="sb-nav-link-icon"><i class="fas fa-battery-full"></i></div>
                                 	직군
                             </a>
@@ -110,9 +110,9 @@
                                		 소분류
                             </a>
 						<div class="sb-sidenav-menu-heading">사원정보</div>
-                            <a class="nav-link" href="charts.html">
+                            <a class="nav-link" href="/member/list">
                                 <div class="sb-nav-link-icon"><i class="fas fa-user-friends"></i></div>
-                                	사원 목록
+                                	사원
                             </a>
 					</div>
 				</div>

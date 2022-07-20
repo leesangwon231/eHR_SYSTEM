@@ -34,7 +34,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 			System.out.println(user);
 			int auth = user.getMemPosition();
 		
-			if (auth == 0)// Á÷¿ø
+			if (auth == 0)// ì‚¬ìš©ì
 			{
 				logger.info("adminmain...........");
 
@@ -42,7 +42,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 
 			} 
 		
-			else if(auth == 1) // ÆÀÀå
+			else if(auth == 1) // íŒ€ì¥
 			{
 			
 				

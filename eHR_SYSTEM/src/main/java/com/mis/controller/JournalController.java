@@ -1,6 +1,10 @@
 package com.mis.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +16,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mis.domain.Criteria;
 import com.mis.domain.JournalVO;
+import com.mis.domain.MemberVO;
+import com.mis.domain.ScategoryVO;
 import com.mis.service.JournalService;
 
 @Controller
@@ -27,9 +33,16 @@ public class JournalController {
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
-	public void registerGet() throws Exception {
+	public void registerGet( Model model, HttpSession session) throws Exception {
 		
-
+		
+		MemberVO vo = new MemberVO();
+		vo = (MemberVO) session.getAttribute("login");
+		
+		List<ScategoryVO> sVo =  service.selectSlist(vo.getlNo()); 
+		
+		model.addAttribute("sList", sVo);
+		
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)

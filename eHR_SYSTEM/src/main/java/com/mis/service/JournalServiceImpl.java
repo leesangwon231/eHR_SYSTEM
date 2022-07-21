@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.mis.domain.JournalVO;
+import com.mis.domain.ScategoryVO;
 import com.mis.persistence.JournalDAO;
 
 @Service
@@ -40,6 +41,11 @@ public class JournalServiceImpl implements JournalService {
 	@Override
 	public List<JournalVO> listAll() throws Exception {
 		return dao.listAll();
+	}
+
+	@Override
+	public List<ScategoryVO> selectSlist(int lNo) throws Exception {
+		return dao.selectSlist(lNo);
 	}
 
 }

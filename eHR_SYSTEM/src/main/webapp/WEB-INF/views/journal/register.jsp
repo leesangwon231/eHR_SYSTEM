@@ -29,7 +29,7 @@
 			                    			<label for="exampleInputEmail1">근무 일자</label>
 			                    		</div>
 			                    		<div class="col-3">
-			                    			<input type="text" id = "jnWdate" name="jnWdate" class = "form-select" readonly="readonly">
+			                    			<input type="text" id = "jnWdate" name="jnWdate" class = "form-select" readonly="readonly" value="1">
 			                    		</div>
   									</div>
   									<div class="row pt-5">
@@ -49,10 +49,20 @@
 			                    			<label for="exampleInputEmail1"></label>
 			                    		</div>
 			                    		<div class="col-3">
-			                    		
+			                    			
 			                    		</div>
   									</div>
-				          </div>	
+  									<div class="row pt-5">
+  										<c:forEach items="${sList}" var="sVo" varStatus="status">
+		                     				<tr>
+						                        <td>번호 => ${sVo.sNo}</td>
+						                        <td>할일 => ${sVo.sName}</td>
+						                        
+						                     </tr>
+	                 					 </c:forEach>
+  									</div>
+  									
+				         		 </div>	
 	                        <div class="mt-4">
 	                       	 	<div class="offset-9">
 			                       	<input type="button" class="btn btn-primary" id = "btn_submit" name ="btn_submit" value="등록">

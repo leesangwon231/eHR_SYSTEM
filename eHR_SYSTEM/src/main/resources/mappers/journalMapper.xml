@@ -97,6 +97,8 @@
     ]]>
       <include refid="search"></include>
    </select> -->
-   
+   <select id="selectSlist" resultType="com.mis.domain.ScategoryVO">
+		SELECT S_NO , S_NAME FROM TBL_SCATEGORY WHERE L_NO = #{lNo}
+	</select>
   
 </mapper>

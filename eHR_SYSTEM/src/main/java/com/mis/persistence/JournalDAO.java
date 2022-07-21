@@ -3,6 +3,7 @@ package com.mis.persistence;
 import java.util.List;
 
 import com.mis.domain.JournalVO;
+import com.mis.domain.ScategoryVO;
 
 public interface JournalDAO {
 
@@ -15,5 +16,7 @@ public interface JournalDAO {
 	public void delete(Integer jnNo) throws Exception;
 
 	public List<JournalVO> listAll() throws Exception;
+	
+	public List<ScategoryVO> selectSlist(int lNo) throws Exception;
 
 }

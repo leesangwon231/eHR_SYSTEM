@@ -28,6 +28,7 @@ public class JournalController {
 
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public void registerGet() throws Exception {
+		
 
 	}
 

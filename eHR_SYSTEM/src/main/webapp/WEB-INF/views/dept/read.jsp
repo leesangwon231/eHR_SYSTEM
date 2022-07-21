@@ -10,7 +10,7 @@
 	   <div class="container-fluid px-4">
 	      <h1 class="mt-4" style='text-align: left; margin-bottom: 30px;'>부서 상세보기</h1>
 				<div class="container-fluid px-5">
-	                    <div class="pt-5">
+	                    <div class="pt-5"> 
 	                        <div class="row" >
 		                        <div class="col-lg-1">
 								</div>

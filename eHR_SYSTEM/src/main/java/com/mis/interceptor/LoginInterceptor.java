@@ -32,9 +32,9 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 			session.setAttribute("login", loginVO);
 			MemberVO user = (MemberVO) session.getAttribute("login");
 			System.out.println(user);
-			int auth = user.getMemPosition();
+			String auth = user.getMemPosition();
 		
-			if (auth == 0)// 사용자
+			if (auth == "0")// 사용자
 			{
 				logger.info("adminmain...........");
 
@@ -42,7 +42,7 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 
 			} 
 		
-			else if(auth == 1) // 팀장
+			else if(auth == "1") // 팀장
 			{
 			
 				

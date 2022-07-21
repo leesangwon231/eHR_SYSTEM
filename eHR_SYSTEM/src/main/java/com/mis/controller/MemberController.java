@@ -38,7 +38,7 @@ public class MemberController {
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String registerPost(MemberVO vo, RedirectAttributes rttr) throws Exception {
 		System.out.println(vo);
-		
+
 		
 		service.register(vo);
 		rttr.addFlashAttribute("msg", "REGISTER");

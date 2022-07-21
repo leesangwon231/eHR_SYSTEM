@@ -12,8 +12,8 @@ public class MemberVO {
 	private String memAddr1;
 	private String memAddr2;
 	private Date memHiredate;
-	private int memPosition;
-	private int memRes;
+	private String memPosition;
+	private String memRes;
 	private int jgNo;
 	private String jgName;
 	private int deptNo;
@@ -72,16 +72,16 @@ public class MemberVO {
 	public void setMemHiredate(Date memHiredate) {
 		this.memHiredate = memHiredate;
 	}
-	public int getMemPosition() {
+	public String getMemPosition() {
 		return memPosition;
 	}
-	public void setMemPosition(int memPosition) {
+	public void setMemPosition(String memPosition) {
 		this.memPosition = memPosition;
 	}
-	public int getMemRes() {
+	public String getMemRes() {
 		return memRes;
 	}
-	public void setMemRes(int memRes) {
+	public void setMemRes(String memRes) {
 		this.memRes = memRes;
 	}
 	public int getJgNo() {
@@ -152,6 +152,7 @@ public class MemberVO {
 				+ jgName + ", deptNo=" + deptNo + ", deptName=" + deptName + ", jobNo=" + jobNo + ", jobName=" + jobName
 				+ ", lNo=" + lNo + ", lName=" + lName + ", sNo=" + sNo + ", sName=" + sName + "]";
 	}
+	
 	
 	
 	

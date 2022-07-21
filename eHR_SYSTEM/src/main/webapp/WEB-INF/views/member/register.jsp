@@ -15,14 +15,6 @@
 		                        <div class="col-lg-1">
 								</div>
 								<form role="form" method="post" name="frm" action="register">
-								<input type="hidden" id= "jgName" name="jgName" value="1">
-								<input type="hidden" id= "deptName" name="deptName" value="1">
-								<input type="hidden" id= "jobNo" name="jobNo" value="1">
-								<input type="hidden" id= "jobName" name="jobName" value="1">
-								<input type="hidden" id= "lNo" name="lNo" value="1">
-								<input type="hidden" id= "lName" name="lName" value="1">
-								<input type="hidden" id= "sNo" name="sNo" value="1">
-								<input type="hidden" id= "sName" name="sName" value="1">
 			                        <div class="col-lg-10">
 			                        	<div class="row p-4">
 				                        	<div class="col-2">
@@ -141,7 +133,11 @@
 				                        		<label for="exampleInputEmail1">직위</label>
 				                        	</div>
 		                        			<div class="col-7">
-				                       			<input type="number" id = "memPosition" name="memPosition" class = "form-control">
+		                        				<select name="memPosition" id="memPosition" class = "form-select">
+	                                             	<option value="0">부장</option>
+	                                             	<option value="1">사원</option>
+	                                             	<option value="2">대리</option>
+	                                             </select>
 				                       		</div>
 			                        	</div>
 			                        	
@@ -150,7 +146,11 @@
 				                        		<label for="exampleInputEmail1">직책</label>
 				                        	</div>
 		                        			<div class="col-7">
-				                       			<input type="number" id = "memRes" name="memRes" class = "form-control">
+		                        				<select name="memRes" id="memRes" class = "form-select">
+	                                             	<option value="0">부장</option>
+	                                             	<option value="1">사원</option>
+	                                             	<option value="2">대리</option>
+	                                             </select>
 				                       		</div>
 			                        	</div>        	 		
 			                        </div>

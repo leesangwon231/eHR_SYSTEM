@@ -23,7 +23,7 @@
 	<select id="list" resultType="com.mis.domain.DeptVO">
 		select * 
 		from tbl_dept
-		order by dept_name 
+		order by dept_no 
 	</select>
 	
 	<!-- <select id="listCriteria" resultType="com.mis.domain.BoardVO">

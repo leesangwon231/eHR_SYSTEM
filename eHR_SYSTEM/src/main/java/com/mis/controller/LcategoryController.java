@@ -74,10 +74,9 @@ public class LcategoryController {
 	}
 	
 	@RequestMapping(value="/modify" , method = RequestMethod.GET)
-	public void modifyGET(@RequestParam("sNo") int sNo , Model model) throws Exception{
-		System.out.println(service.read(sNo));
+	public void modifyGET(@RequestParam("lNo") int lNo , Model model) throws Exception{
 		model.addAttribute("jobGroup", service.selectJobGroup());
-		model.addAttribute("sVo", service.read(sNo));
+		model.addAttribute("lVo", service.read(lNo));
 	}
 	
 	@RequestMapping(value="/modify" , method = RequestMethod.POST)

@@ -53,7 +53,6 @@
 					</c:if>
 					<c:if test="${null ne login.memNo}">
 						<li><a class="dropdown-item" href="/member/readMyPage?memberNo=${login.memNo}">내 정보</a></li>
-						<li><a class="dropdown-item" href="#">쪽지함</a></li>
 						<li><a class="dropdown-item" href="/user/logout">로그아웃</a></li>
 					</c:if>
 				</ul>
@@ -103,7 +102,10 @@
                             </a>
 						</c:if>
 						<c:if test="${login.memPosition == 0}">
-							
+							<div class="sb-sidenav-menu-heading">업무보고</div>
+                            <a class="nav-link" href="/journal/list">
+                                <div class="sb-nav-link-icon"><i class="fas fa-file-contract"></i></div>업무일지
+                            </a>
 						</c:if>
 					</div>
 				</div>

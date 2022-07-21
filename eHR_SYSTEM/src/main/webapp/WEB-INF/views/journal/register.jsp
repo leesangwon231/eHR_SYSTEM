@@ -17,13 +17,13 @@
 			                    			<label for="exampleInputEmail1">사원번호</label>
 			                    		</div>
 			                    		<div class="col-3">
-			                    			<input type="text" id = "memNo" name="memNo" class = "form-select" readonly="readonly">
+			                    			<input type="text" id = "memNo" name="memNo" class = "form-select" readonly="readonly" value="${login.memNo}">
 			                    		</div>
 			                    		<div class="col-1 text-center">
 			                    			<label for="exampleInputEmail1">사원명</label>
 			                    		</div>
 			                    		<div class="col-3"> 
-			                    			<input type="text" id = "memName" name="memName" class = "form-select" readonly="readonly">
+			                    			<input type="text" id = "memName" name="memName" class = "form-select" readonly="readonly" value="${login.memName}">
 			                    		</div>
 			                    		<div class="col-1 text-center">
 			                    			<label for="exampleInputEmail1">근무 일자</label>
@@ -37,13 +37,13 @@
 			                    			<label for="exampleInputEmail1">직군</label>
 			                    		</div>
 			                    		<div class="col-3">
-			                    			<input type="text" id = "jgName" name="jgName" class = "form-select" readonly="readonly">
+			                    			<input type="text" id = "jgName" name="jgName" class = "form-select" readonly="readonly" value="${login.jgName}">
 			                    		</div>
 			                    		<div class="col-1 text-center">
 			                    			<label for="exampleInputEmail1">직종</label>
 			                    		</div>
 			                    		<div class="col-3">
-			                    			<input type="text" id = "jobName" name="jobName" class = "form-select" readonly="readonly" value= >
+			                    			<input type="text" id = "jobName" name="jobName" class = "form-select" readonly="readonly" value="${login.jobName}">
 			                    		</div>
 			                    		<div class="col-1 text-center">
 			                    			<label for="exampleInputEmail1"></label>

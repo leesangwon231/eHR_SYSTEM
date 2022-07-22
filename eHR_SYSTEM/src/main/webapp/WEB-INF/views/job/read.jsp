@@ -48,7 +48,7 @@
 	                  	</div>
                         <div class="mt-4">
                        	 	<div class="offset-9">
-                       	 		<input type="button" class="btn btn-outline-danger" id = "btn_delete"  name ="btn_delete" value="삭제">
+                       	 		<!-- <input type="button" class="btn btn-outline-danger" id = "btn_delete"  name ="btn_delete" value="삭제"> -->
 		                       	<input type="button" class="btn btn-outline-primary" id = "btn_modify" onclick="location.href='./modify?jobNo=${jobVo.jobNo}'"name ="btn_update" value="수정">
 		                    	<input type="button" class="btn btn-outline-dark" onclick="location.href='./list'" value="취소">
 		                	</div>

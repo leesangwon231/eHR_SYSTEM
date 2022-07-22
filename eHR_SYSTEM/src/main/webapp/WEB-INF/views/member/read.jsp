@@ -15,6 +15,7 @@
 		                        <div class="col-lg-1">
 								</div>
 								<form role="form" method="post" name="frm" action="delete">
+								
 			                         <div class="col-lg-10">
 			                        	<div class="row p-4">
 				                        	<div class="col-2">
@@ -102,7 +103,12 @@
 				                        		<label for="exampleInputEmail1">직위</label>
 				                        	</div>
 		                        			<div class="col-7">
-				                       			<input type="text" id = "memPosition" name="memPosition" class = "form-control" readonly="readonly" value="${memberVO.memPosition}">
+				                       			<c:if test="${0 eq memberVO.memPosition}">
+													<input type="text" class="form-control" value="사용자" readonly="readonly">
+												</c:if>
+												<c:if test="${1 eq memberVO.memPosition}">
+													<input type="text" class="form-control" value="부장" readonly="readonly">
+												</c:if>
 				                       		</div>
 			                        	</div>
 			                        	
@@ -111,7 +117,12 @@
 				                        		<label for="exampleInputEmail1">직책</label>
 				                        	</div>
 		                        			<div class="col-7">
-				                       			<input type="text" id = "memRes" name="memRes" class = "form-control" readonly="readonly" value="${memberVO.memRes}">
+				                       			<c:if test="${0 eq memberVO.memRes}">
+													<input type="text" class="form-control" value="사용자" readonly="readonly">
+												</c:if>
+												<c:if test="${1 eq memberVO.memRes}">
+													<input type="text" class="form-control" value="부장" readonly="readonly">
+												</c:if>
 				                       		</div>
 			                        	</div>        	 		
 			                        </div>

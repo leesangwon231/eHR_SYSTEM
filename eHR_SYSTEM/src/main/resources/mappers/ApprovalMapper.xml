@@ -13,10 +13,10 @@
 	</select>
 	
 	<select id="readJournal" resultType="com.mis.domain.JournalVO">
-		SELECT * FROM TBL_JOURNAL WHERE JN_NO = #{jnNo};
+		SELECT * FROM TBL_JOURNAL WHERE JN_NO = #{jnNo}
   	</select>
   	
   	<select id="readJournalDetail" resultType="com.mis.domain.JndetailVO">
-		SELECT * FROM TBL_JNDETAIL WHERE JN_NO = #{jnNo};
+		SELECT * FROM TBL_JNDETAIL WHERE JN_NO = #{jnNo}
   	</select>
 </mapper>

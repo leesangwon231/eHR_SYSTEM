@@ -100,5 +100,18 @@
    <select id="selectSlist" resultType="com.mis.domain.ScategoryVO">
 		SELECT S_NO , S_NAME FROM TBL_SCATEGORY WHERE L_NO = #{lNo}
 	</select>
-  
+  	
+  	<select id="selectAllListDTO" resultType="com.mis.dto.JournalDTO">
+  		SELECT e.MEM_NO , e.MEM_NAME , e.MEM_EMAIL, e.MEM_ZIPCODE, e.MEM_ADDR1, e.MEM_ADDR2, e.MEM_HIREDATE, e.MEM_POSITION, e.MEM_RES, e.DEPT_NO, f.JG_NO , f.JG_NAME, f.L_NO, f.L_NAME, f.JOB_NO, f.JOB_NAME, f.JG_NO 
+		FROM TBL_MEMBER e
+		INNER JOIN
+		(SELECT c.JG_NO , c.JG_NAME, d.L_NO, d.L_NAME, d.JOB_NO, d.JOB_NAME
+		FROM TBL_JOBGROUP c 
+		INNER JOIN 
+		(SELECT a.L_NO, a.L_NAME, b.JOB_NO, b.JOB_NAME, b.JG_NO FROM TBL_LCATEGORY a INNER JOIN TBL_JOB b ON a.JOB_NO = b.JOB_NO) d 
+		ON c.JG_NO = d.JG_NO) f
+		ON e.L_NO = f.L_NO
+		WHERE e.MEM_NO = #{memNo}
+		
+  	</select>
 </mapper>

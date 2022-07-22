@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.mis.domain.JournalVO;
 import com.mis.domain.ScategoryVO;
+import com.mis.dto.JournalDTO;
 
 @Repository
 public class JournalDAOImpl implements JournalDAO{
@@ -49,6 +50,11 @@ public class JournalDAOImpl implements JournalDAO{
 	@Override
 	public List<ScategoryVO> selectSlist(int lNo) throws Exception {
 		return session.selectList(namespace+".selectSlist",lNo);
+	}
+
+	@Override
+	public JournalDTO selectAllListDTO(int memNo) throws Exception {
+		return session.selectOne(namespace+".selectAllListDTO" , memNo);
 	}
 
 }

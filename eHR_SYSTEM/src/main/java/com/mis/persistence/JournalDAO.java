@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.mis.domain.JournalVO;
 import com.mis.domain.ScategoryVO;
+import com.mis.dto.JournalDTO;
 
 public interface JournalDAO {
 
@@ -18,5 +19,7 @@ public interface JournalDAO {
 	public List<JournalVO> listAll() throws Exception;
 	
 	public List<ScategoryVO> selectSlist(int lNo) throws Exception;
+	
+	public JournalDTO selectAllListDTO(int memNo) throws Exception;
 
 }

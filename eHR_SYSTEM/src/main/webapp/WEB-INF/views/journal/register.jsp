@@ -17,13 +17,13 @@
 			                    			<label for="exampleInputEmail1">사원번호</label>
 			                    		</div>
 			                    		<div class="col-3">
-			                    			<input type="text" id = "memNo" name="memNo" class = "form-select" readonly="readonly" value="${login.memNo}">
+			                    			<input type="text" id = "memNo" name="memNo" class = "form-select" readonly="readonly" value="${jDto.memNo}">
 			                    		</div>
 			                    		<div class="col-1 text-center">
 			                    			<label for="exampleInputEmail1">사원명</label>
 			                    		</div>
 			                    		<div class="col-3"> 
-			                    			<input type="text" id = "memName" name="memName" class = "form-select" readonly="readonly" value="${login.memName}">
+			                    			<input type="text" id = "memName" name="memName" class = "form-select" readonly="readonly" value="${jDto.memName}">
 			                    		</div>
 			                    		<div class="col-1 text-center">
 			                    			<label for="exampleInputEmail1">근무 일자</label>
@@ -37,13 +37,13 @@
 			                    			<label for="exampleInputEmail1">직군</label>
 			                    		</div>
 			                    		<div class="col-3">
-			                    			<input type="text" id = "jgName" name="jgName" class = "form-select" readonly="readonly" value="${login.jgName}">
+			                    			<input type="text" id = "jgName" name="jgName" class = "form-select" readonly="readonly" value="${jDto.jgName}">
 			                    		</div>
 			                    		<div class="col-1 text-center">
 			                    			<label for="exampleInputEmail1">직종</label>
 			                    		</div>
 			                    		<div class="col-3">
-			                    			<input type="text" id = "jobName" name="jobName" class = "form-select" readonly="readonly" value="${login.jobName}">
+			                    			<input type="text" id = "jobName" name="jobName" class = "form-select" readonly="readonly" value="${jDto.jobName}">
 			                    		</div>
 			                    		<div class="col-1 text-center">
 			                    			<label for="exampleInputEmail1"></label>
@@ -54,8 +54,9 @@
   									</div>
   									<div class="row pt-5">
   										<c:forEach items="${sList}" var="sVo" varStatus="status">
+		                     				<input type = "hidden" name = "sNo" id ="sNo" value= "${sVo.sNo}">
 		                     				<tr>
-						                        <td>번호 => ${sVo.sNo}</td>
+						                        
 						                        <td>할일 => ${sVo.sName}</td>
 						                        
 						                     </tr>

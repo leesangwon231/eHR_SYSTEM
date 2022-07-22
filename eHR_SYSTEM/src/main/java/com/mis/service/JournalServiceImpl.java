@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.mis.domain.JournalVO;
 import com.mis.domain.ScategoryVO;
+import com.mis.dto.JournalDTO;
 import com.mis.persistence.JournalDAO;
 
 @Service
@@ -46,6 +47,11 @@ public class JournalServiceImpl implements JournalService {
 	@Override
 	public List<ScategoryVO> selectSlist(int lNo) throws Exception {
 		return dao.selectSlist(lNo);
+	}
+
+	@Override
+	public JournalDTO selectAllListDTO(int memNo) throws Exception {
+		return dao.selectAllListDTO(memNo);
 	}
 
 }

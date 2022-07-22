@@ -28,8 +28,8 @@
 	                  <tr>
 	                     <th style="width: 10px">no</th>
 	                     <th>근무일자</th>
-	                     <th>승인여부<th>
-	                     <th>평가점수<th>
+	                     <th>승인여부</th>
+	                     <th>평가점수</th>
 	                  </tr>
 	               </thead>
 	               <tbody>
@@ -37,7 +37,12 @@
 	                     <tr>
 	                        <td>${journalVO.jnNo}</td>
 	                        <td>${journalVO.jnWdate}</td>
-	                        <td>${journalVO.jnApproval}</td>
+	                       <c:if test="${journalVO.jnApproval eq 0}">
+	                        	<td>승인대기</td>
+	                        </c:if>
+	                        <c:if test="${journalVO.jnApproval eq 1}">
+	                        	<td>승인</td>
+	                        </c:if>
 	                        <td>${journalVO.jnSatisfaction}</td>
 	                     </tr>
 	                  </c:forEach>

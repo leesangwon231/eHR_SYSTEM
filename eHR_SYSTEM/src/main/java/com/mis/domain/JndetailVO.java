@@ -14,7 +14,7 @@ public class JndetailVO {
 	private String jnApproval;
 
 	private int memNo; **/
-
+	private int jnNo;
 	private int jndNo;
 	private int jndProgress;
 	private String jndNote;
@@ -25,6 +25,14 @@ public class JndetailVO {
 	private ArrayList<JnfileVO> fileList;
 
 	private ArrayList<JndetailVO> jnLIst;
+
+	public int getJnNo() {
+		return jnNo;
+	}
+
+	public void setJnNo(int jnNo) {
+		this.jnNo = jnNo;
+	}
 
 	public int getJndNo() {
 		return jndNo;
@@ -92,10 +100,10 @@ public class JndetailVO {
 
 	@Override
 	public String toString() {
-		return "JndetailVO [jndNo=" + jndNo + ", jndProgress=" + jndProgress + ", jndNote=" + jndNote + ", jndHistory="
-				+ jndHistory + ", sNo=" + sNo + ", files=" + Arrays.toString(files) + ", fileList=" + fileList
-				+ ", jnLIst=" + jnLIst + "]";
+		return "JndetailVO [jnNo=" + jnNo + ", jndNo=" + jndNo + ", jndProgress=" + jndProgress + ", jndNote=" + jndNote
+				+ ", jndHistory=" + jndHistory + ", sNo=" + sNo + ", files=" + Arrays.toString(files) + ", fileList="
+				+ fileList + ", jnLIst=" + jnLIst + "]";
 	}
-
+	
 	
 }

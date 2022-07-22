@@ -41,8 +41,10 @@ public class ApprovalDAOImpl implements ApprovalDAO{
 	}
 
 	@Override
-	public JndetailVO readJournalDetail(int jnNo) throws Exception {
-		return session.selectOne(namespace+".readJournalDetail",jnNo);
+	public List<JndetailVO> readJournalDetail(int jnNo) throws Exception {
+		return session.selectList(namespace+".readJournalDetail",jnNo);
 	}
 
+	
+	
 }

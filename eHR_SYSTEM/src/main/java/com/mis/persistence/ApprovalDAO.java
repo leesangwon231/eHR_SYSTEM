@@ -16,7 +16,9 @@ public interface ApprovalDAO {
 	
 	public JournalVO readJournal(int jnNo) throws Exception;
 	
-	public JndetailVO readJournalDetail(int jnNo) throws Exception;
+	public List<JndetailVO> readJournalDetail(int jnNo) throws Exception;
+	
+	
 
 
 }

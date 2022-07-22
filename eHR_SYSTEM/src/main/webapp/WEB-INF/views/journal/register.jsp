@@ -64,7 +64,7 @@
 						                     </tr>
 	                 					 </c:forEach>
   									</div> --%>
-  									<div class="row pt-5">
+  									<div class="row pt-5 ">
 								            <table id="datatablesSimple" class="dataTable-table">
 								               <thead>
 								                  <tr>
@@ -86,6 +86,7 @@
 								           		</c:forEach>
 								               </tbody>
 								            </table>
+
 								         </div>
 	                        <div class="mt-4">
 	                       	 	<div class="offset-9" align="right">

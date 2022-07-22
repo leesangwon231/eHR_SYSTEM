@@ -32,7 +32,7 @@ public class ApprovalServiceImpl implements ApprovalService {
 	}
 
 	@Override
-	public JndetailVO readJournalDetail(int jnNo) throws Exception {
+	public List<JndetailVO> readJournalDetail(int jnNo) throws Exception {
 		return dao.readJournalDetail(jnNo);
 	}
 	

@@ -4,7 +4,7 @@
 <mapper namespace="com.mis.mapper.JournalMapper">
 
 	<insert id="jnCreate">
-		INSERT INTO TBL_JOURNAL(JN_NO, JN_WDATE, MEM_NO) VALUES(JN_SEQ.NEXTVAL, TO_CHAR(#{jnWdate}, 'YY-MM-DD'), #{memNo})
+		INSERT INTO TBL_JOURNAL(JN_NO, JN_WDATE, MEM_NO, JN_SATISFACTION, JN_APPROVAL) VALUES(JN_SEQ.NEXTVAL, #{jnWdate}, #{memNo},0,0)
 	</insert>
 	
 	<insert id="jndCreate">
@@ -28,11 +28,12 @@
 	</delete> -->
 
 	<select id="list" resultType="com.mis.domain.JournalVO">
-		SELECT A.JN_NO, A.JN_WDATE, A.JN_APPROVAL, A.JN_SATISFACTION, B.JN_NO
-		FROM TBL_JOURNAL A, tbl_jndetail B
-		WHERE A.JN_NO = B.JN_NO
+		SELECT JN_NO,JN_WDATE,JN_SATISFACTION,JN_APPROVAL FROM TBL_JOURNAL WHERE MEM_NO = #{memNo}
 	</select>
 	
+	<select id="selectJnNo" resultType="int">
+		SELECT JN_NO FROM TBL_JOURNAL WHERE	JN_WDATE = #{jnWdate} AND MEM_NO = #{memNo}
+	</select>
 	<!-- <select id="listCriteria" resultType="com.mis.domain.BoardVO">
 		 <![CDATA[
     select rnum,  bno, title, content, writer, regdate, viewcnt from (
@@ -118,6 +119,6 @@
 		ON c.JG_NO = d.JG_NO) f
 		ON e.L_NO = f.L_NO
 		WHERE e.MEM_NO = #{memNo}
-		
+
   	</select>
 </mapper>

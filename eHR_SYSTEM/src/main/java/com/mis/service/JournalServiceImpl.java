@@ -48,8 +48,8 @@ public class JournalServiceImpl implements JournalService {
 	}
 
 	@Override
-	public List<JournalVO> listAll() throws Exception {
-		return dao.listAll();
+	public List<JournalVO> listAll(int memNo) throws Exception {
+		return dao.listAll(memNo);
 	}
 
 	@Override
@@ -60,6 +60,11 @@ public class JournalServiceImpl implements JournalService {
 	@Override
 	public JournalDTO selectAllListDTO(int memNo) throws Exception {
 		return dao.selectAllListDTO(memNo);
+	}
+
+	@Override
+	public int selectJnNo(JournalVO vo) throws Exception {
+		return dao.selectJnNo(vo);
 	}
 
 

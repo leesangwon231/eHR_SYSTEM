@@ -19,10 +19,12 @@ public interface JournalDAO {
 
 	public void delete(Integer jnNo) throws Exception;
 
-	public List<JournalVO> listAll() throws Exception;
+	public List<JournalVO> listAll(int memNo) throws Exception;
 	
 	public List<ScategoryVO> selectSlist(int lNo) throws Exception;
 	
 	public JournalDTO selectAllListDTO(int memNo) throws Exception;
+	
+	public int selectJnNo(JournalVO vo) throws Exception;
 
 }

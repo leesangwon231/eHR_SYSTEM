@@ -29,18 +29,20 @@ public class JournalController {
 	private JournalService service;
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
-	public void listAll(Model model) throws Exception {
-		model.addAttribute("list", service.listAll());
+	public void listAll(Model model, HttpSession session) throws Exception {
+		MemberVO vo = new MemberVO();
+		vo = (MemberVO) session.getAttribute("login");
+		model.addAttribute("list", service.listAll(vo.getMemNo()));
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public void registerGet( Model model, HttpSession session) throws Exception {
 		
 		
-		MemberVO vo = new MemberVO();
-		vo = (MemberVO) session.getAttribute("login");
+		MemberVO user = new MemberVO();
+		user = (MemberVO) session.getAttribute("login");
 		JournalDTO dto = new JournalDTO();
-		dto = service.selectAllListDTO(vo.getMemNo());
+		dto = service.selectAllListDTO(user.getMemNo());
 		
 		
 		List<ScategoryVO> sVo =  service.selectSlist(dto.getlNo()); 
@@ -53,12 +55,17 @@ public class JournalController {
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String registerPost(@ModelAttribute(value="JournalVO") JournalVO  jvo, @ModelAttribute(value="JndetailVO") JndetailVO  dvo, RedirectAttributes rttr) throws Exception {
 		
-		System.out.println(jvo);
-		System.out.println(dvo);
-		
+
 		service.jnRegister(jvo);
-		service.jndRegister(dvo);
-		rttr.addFlashAttribute("msg", "SUCCESS");
+		
+		int jnNo = service.selectJnNo(jvo);
+		
+		for (int i = 0; i < dvo.getJnLIst().size(); i++) {
+			dvo.getJnLIst().get(i).setJnNo(jnNo);
+			service.jndRegister(dvo.getJnLIst().get(i));
+		}
+		
+		rttr.addFlashAttribute("msg", "REGISTER");
 
 		return "redirect:/journal/list";
 

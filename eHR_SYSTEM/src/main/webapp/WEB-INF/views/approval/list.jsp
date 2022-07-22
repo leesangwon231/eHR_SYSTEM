@@ -5,11 +5,11 @@
 <%@include file="../include/header.jsp"%>
 	<div id="layoutSidenav_content">
    		<div class="container-fluid px-4">
-	      <h1 class="mt-4" style='text-align: left; margin-bottom: 30px;'>업무승인</h1>
+	      <h1 class="mt-4" style='text-align: left; margin-bottom: 30px;'>업무평가</h1>
 	
 	      <div class="card mb-4">
 	         <div class="card-header">
-	            <i class="bi bi-megaphone"></i> 업무일지 승인목록
+	            <i class="bi bi-megaphone"></i> 업무일지 승인 목록
 	         </div>
 	         <div class="card-body">
 	         <c:if test="${empty list}">
@@ -38,7 +38,12 @@
 	                        <td>${journalVO.jnNo}</td>
 	                        <td><a href='/approval/read?jnNo=${journalVO.jnNo}'>${journalVO.jnWdate}</a></td>
 	                        <td>${names[status.index]}</td>
-	                        <td>${journalVO.jnApproval}</td>
+	                        <c:if test="${journalVO.jnApproval eq 0}">
+	                        	<td>승인대기</td>
+	                        </c:if>
+	                        <c:if test="${journalVO.jnApproval eq 1}">
+	                        	<td>승인</td>
+	                        </c:if>
 	                        <td>${journalVO.jnSatisfaction}</td>
 	                     </tr>
 	                  </c:forEach>

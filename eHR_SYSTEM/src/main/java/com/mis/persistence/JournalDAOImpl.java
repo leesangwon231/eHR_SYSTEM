@@ -50,8 +50,8 @@ public class JournalDAOImpl implements JournalDAO{
 	}
 
 	@Override
-	public List<JournalVO> listAll() throws Exception {
-		return session.selectList(namespace + ".list");
+	public List<JournalVO> listAll(int memNo) throws Exception {
+		return session.selectList(namespace + ".list",memNo);
 	}
 
 	@Override
@@ -62,6 +62,11 @@ public class JournalDAOImpl implements JournalDAO{
 	@Override
 	public JournalDTO selectAllListDTO(int memNo) throws Exception {
 		return session.selectOne(namespace+".selectAllListDTO" , memNo);
+	}
+
+	@Override
+	public int selectJnNo(JournalVO vo) throws Exception {
+		return session.selectOne(namespace+".selectJnNo",vo);
 	}
 
 

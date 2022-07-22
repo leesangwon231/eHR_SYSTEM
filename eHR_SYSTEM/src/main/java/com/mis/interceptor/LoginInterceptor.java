@@ -31,7 +31,6 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 			Object dest = session.getAttribute("dest");
 			session.setAttribute("login", loginVO);
 			MemberVO user = (MemberVO) session.getAttribute("login");
-			System.out.println(user);
 			String auth = user.getMemPosition();
 		
 			if (auth == "0")// 사용자

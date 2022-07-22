@@ -19,7 +19,7 @@
 			                    			<label for="exampleInputEmail1">부서명</label>
 			                    		</div>
 			                    		<div class="col-3">
-			                    			<input type="text" id = "a" name="a" class = "form-select" readonly="readonly" value="a">
+			                    			<input type="text" id = "dept" name="dept" class = "form-select" readonly="readonly" value="${login.deptName}">
 			                    		</div>
 			                    		<div class="col-1 text-center">
 			                    			<label for="exampleInputEmail1">사원번호</label>
@@ -46,13 +46,13 @@
 			                    			<label for="exampleInputEmail1">직군</label>
 			                    		</div>
 			                    		<div class="col-3">
-			                    			<input type="text" id = "jgName" name="jgName" class = "form-select" readonly="readonly" value="1">
+			                    			<input type="text" id = "jgName" name="jgName" class = "form-select" readonly="readonly" value="${dto.jgName}">
 			                    		</div>
 			                    		<div class="col-1 text-center">
 			                    			<label for="exampleInputEmail1">직종</label>
 			                    		</div>
 			                    		<div class="col-3">
-			                    			<input type="text" id = "jobName" name="jobName" class = "form-select" readonly="readonly" value="1">
+			                    			<input type="text" id = "jobName" name="jobName" class = "form-select" readonly="readonly" value="${dto.jobName}">
 			                    		</div>
 			                    		
   									</div>

@@ -4,7 +4,10 @@
 <mapper namespace="com.mis.mapper.loginMapper">
 
 	<select id="login" resultType="com.mis.domain.MemberVO">
-		select * from tbl_member where mem_No = #{memNo} and mem_Pw = #{memPw}
+	SELECT a.MEM_NO, a.MEM_NAME, a.MEM_PW, a.MEM_EMAIL, a.MEM_ZIPCODE, a.MEM_ADDR1, a.MEM_ADDR2, a.MEM_HIREDATE, a.MEM_POSITION, a.MEM_RES, a.L_NO, a.DEPT_NO, b.DEPT_NAME
+	FROM TBL_MEMBER a INNER JOIN TBL_DEPT b 
+	ON a.DEPT_NO = b.DEPT_NO
+	WHERE MEM_NO = #{memNo} and MEM_PW = #{memPw}
 	</select>
 	
 	

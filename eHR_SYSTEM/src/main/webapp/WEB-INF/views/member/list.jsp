@@ -8,13 +8,13 @@
 <div id="layoutSidenav_content">
 	<main>
 	<div class="container-fluid px-4">
-		<h1 class="mt-4" style='text-align: center; margin-bottom: 30px;'>직원</h1>
+		<h1 class="mt-4" style='text-align: center; margin-bottom: 30px;'>사원</h1>
 
 		<div class="card mb-4">
 			<div class="card-header">
-				<i class="bi bi-megaphone"></i> 직원 목록
+				<i class="bi bi-megaphone"></i> 사원 목록
 				<button class="btn btn-outline-dark btn-sm" id="newBtn"
-					style="float: right; padding: 0 auto 0 auto;">직원 등록</button>
+					style="float: right; padding: 0 auto 0 auto;">사원 등록</button>
 			</div>
 			<div class="card-body">
 				<c:if test="${empty list}">

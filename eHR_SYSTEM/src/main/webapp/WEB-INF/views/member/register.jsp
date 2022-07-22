@@ -153,8 +153,8 @@
 			                        	</div>        	 		
 			                        </div>
 			                    <div class="offset-7">
-		                     		<input type="button" class="btn btn-primary" id = "btn_submit" name ="btn_submit" value="등록">
-		                    		<input type="button" class="btn btn-primary" onclick="location.href='/member/list'" value="취소">
+		                     		<input type="button" class="btn btn-outline-primary" id = "btn_submit" name ="btn_submit" value="등록">
+		                    		<input type="button" class="btn btn-outline-dark" onclick="location.href='/member/list'" value="취소">
 		                		</div>
 			               	</form>
 	                   	</div>

@@ -1,6 +1,6 @@
 function register(){
 	if(document.frm.jgName.value == ""){
-		alert("부서명을 입력해 주세요");
+		alert("직군명을 입력해 주세요");
 		document.frm.jgName.focus();
 		return;	
 	}
@@ -15,7 +15,7 @@ function register(){
 
 function modify(){
 	if(document.frm.jgName.value == ""){
-		alert("부서명을 입력해 주세요");
+		alert("직군명을 입력해 주세요");
 		document.frm.jgName.focus();
 		return;	
 	}
@@ -30,7 +30,7 @@ function modify(){
 
 function remove(){
 	
-	if(confirm("삭제 하시겠습니까?")){
+	if(confirm("해당 직군의 하위 데이터까지 모두 삭제됩니다. \n정말 삭제 하시겠습니까?")){
 		document.frm.submit();
 	}
 	else{

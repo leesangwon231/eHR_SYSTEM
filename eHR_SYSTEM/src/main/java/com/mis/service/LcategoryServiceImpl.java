@@ -42,10 +42,6 @@ public class LcategoryServiceImpl implements LcategoryService{
 		dao.update(vo);
 	}
 
-	@Override
-	public void delete(int lNo) throws Exception {
-		dao.delete(lNo);
-	}
 
 	@Override
 	public List<LcategoryVO> list() throws Exception {

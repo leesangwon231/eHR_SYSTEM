@@ -18,7 +18,6 @@ public interface LcategoryDAO {
 	
 	public void update(LcategoryVO vo) throws Exception;
 	
-	public void delete(int lNo) throws Exception;
 	
 	public List<LcategoryVO> list() throws Exception;
 	

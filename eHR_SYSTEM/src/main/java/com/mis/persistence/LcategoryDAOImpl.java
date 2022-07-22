@@ -46,11 +46,7 @@ public class LcategoryDAOImpl implements LcategoryDAO{
 		 SqlSession.update(namespace+".update", vo);
 	}
 
-	@Override
-	public void delete(int lNo) throws Exception {
-		SqlSession.delete(namespace+".delete",lNo);
-		
-	}
+
 
 	@Override
 	public List<LcategoryVO> list() throws Exception {

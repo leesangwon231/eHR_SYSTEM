@@ -88,14 +88,5 @@ public class LcategoryController {
 		return "redirect:/lcategory/list";
 	}
 	
-	@RequestMapping(value="/delete" , method = RequestMethod.POST)
-	public String deletePOST(@RequestParam("lNo") int lNo, Model model, RedirectAttributes rttr) throws Exception{
-		
-		service.delete(lNo);
-		
-		rttr.addFlashAttribute("msg", "REMOVE");
-		
-		return "redirect:/lcategory/list";
-	}
 	
 }

@@ -71,13 +71,13 @@
 				                        		<label for="exampleInputEmail1">연</label>
 				                        	</div>
 		                        			<div class="col-3">
-				                       			<input type="text" id = "sYear" name="sYear" class = "form-select" value= 0>
+				                       			<input type="text" id = "sYear" name="sYear" class = "form-select" >
 				                       		</div>
 				                       		<div class="col-2">
 				                        		<label for="exampleInputEmail1">월</label>
 				                        	</div>
 		                        			<div class="col-3">
-				                       			<input type="text" id = "sMonth" name="sMonth" class = "form-select" value= 0>
+				                       			<input type="text" id = "sMonth" name="sMonth" class = "form-select">
 				                       		</div>
 			                        	</div>
 			                        	<div class="row p-5">
@@ -85,13 +85,13 @@
 				                        		<label for="exampleInputEmail1">분기</label>
 				                        	</div>
 		                        			<div class="col-3">
-				                       			<input type="text" id = "sQuarter" name="sQuarter" class = "form-select" value= 0>
+				                       			<input type="text" id = "sQuarter" name="sQuarter" class = "form-select" >
 				                       		</div>
 				                       		<div class="col-2">
 				                        		<label for="exampleInputEmail1">일</label>
 				                        	</div>
 		                        			<div class="col-3">
-				                       			<input type="text" id = "sDay" name="sDay" class = "form-select" value= 0>
+				                       			<input type="text" id = "sDay" name="sDay" class = "form-select" >
 				                       		</div>
 			                        	</div>
 			                       	</div>

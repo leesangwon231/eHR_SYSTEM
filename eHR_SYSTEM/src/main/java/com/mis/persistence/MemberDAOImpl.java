@@ -8,7 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.mis.domain.DeptVO;
-import com.mis.domain.JobgroupVO;
+import com.mis.domain.LcategoryVO;
 import com.mis.domain.MemberVO;
 
 @Repository
@@ -49,8 +49,8 @@ public class MemberDAOImpl implements MemberDAO  {
 	}
 
 	@Override
-	public List<JobgroupVO> selectJobGroup() throws Exception {
-		return session.selectList(namespace+".selectJobGroup");
+	public List<LcategoryVO> selectLcategory() throws Exception {
+		return session.selectList(namespace+".selectLcategory");
 	}
 
 	@Override

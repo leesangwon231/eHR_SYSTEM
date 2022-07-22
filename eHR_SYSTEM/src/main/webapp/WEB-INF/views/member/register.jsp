@@ -39,7 +39,7 @@
 				                        		<label for="exampleInputEmail1">비밀번호</label>
 				                        	</div>
 		                        			<div class="col-7">
-				                       			<input type="text" id = "memPw" name="memPw" class = "form-control" maxlength="20">
+				                       			<input type="password" id = "memPw" name="memPw" class = "form-control" maxlength="20">
 				                       		</div>
 			                        	</div>
 			                        	
@@ -48,7 +48,7 @@
 				                        		<label for="exampleInputEmail1">비밀번호 확인</label>
 				                        	</div>
 		                        			<div class="col-7">
-				                       			
+				                       			<input type="password" id = "memPwfm" name="memPwfm" class = "form-control" maxlength="20">
 				                       		</div>
 			                        	</div>
 			                        	
@@ -116,13 +116,13 @@
 			                        	
 			                        	<div class="row p-4">
 				                    		<div class="col-2">
-				                        		<label for="exampleInputEmail1">직군</label>
+				                        		<label for="exampleInputEmail1">대분류</label>
 				                        	</div>
 		                        			<div class="col-7">
-				                        		<select name="jgNo" id="jgNo" class = "form-select" >
-			                                    	<option value="0">직군을 선택해 주세요</option>
-			                                        <c:forEach items="${jobGroup}" var="JobgroupVO">
-														<option value=${JobgroupVO.jgNo}>${JobgroupVO.jgName}</option>
+				                        		<select name="lNo" id="lNo" class = "form-select" >
+			                                    	<option value="0">대분류를 선택해 주세요</option>
+			                                        <c:forEach items="${Lcategory}" var="LcategoryVO">
+														<option value=${LcategoryVO.lNo}>${LcategoryVO.lName}</option>
 													</c:forEach>
 												</select>
 				                        	</div>
@@ -134,9 +134,8 @@
 				                        	</div>
 		                        			<div class="col-7">
 		                        				<select name="memPosition" id="memPosition" class = "form-select">
-	                                             	<option value="0">부장</option>
-	                                             	<option value="1">사원</option>
-	                                             	<option value="2">대리</option>
+	                                             	<option value="1">부장</option>
+	                                             	<option value="0">사용자</option>
 	                                             </select>
 				                       		</div>
 			                        	</div>
@@ -147,9 +146,8 @@
 				                        	</div>
 		                        			<div class="col-7">
 		                        				<select name="memRes" id="memRes" class = "form-select">
-	                                             	<option value="0">부장</option>
-	                                             	<option value="1">사원</option>
-	                                             	<option value="2">대리</option>
+	                                             	<option value="1">부장</option>
+	                                             	<option value="0">사용자</option>
 	                                             </select>
 				                       		</div>
 			                        	</div>        	 		

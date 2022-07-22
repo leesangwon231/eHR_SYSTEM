@@ -24,6 +24,7 @@ public class MemberVO {
 	private String lName;
 	private int sNo;
 	private String sName;
+	
 	public int getMemNo() {
 		return memNo;
 	}

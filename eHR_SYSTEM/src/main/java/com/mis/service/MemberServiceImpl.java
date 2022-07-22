@@ -7,7 +7,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Repository;
 
 import com.mis.domain.DeptVO;
-import com.mis.domain.JobgroupVO;
+import com.mis.domain.LcategoryVO;
 import com.mis.domain.MemberVO;
 import com.mis.persistence.MemberDAO;
 
@@ -45,8 +45,8 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public List<JobgroupVO> selectJobGroup() throws Exception {
-		return dao.selectJobGroup();
+	public List<LcategoryVO> selectLcategory() throws Exception {
+		return dao.selectLcategory();
 	}
 
 	@Override

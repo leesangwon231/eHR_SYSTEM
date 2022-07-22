@@ -31,7 +31,7 @@
 	                     <th style="width: 10px">사원번호</th>
 	                     <th>사원명</th>
 	                     <th>부서</th>
-	                     <th>직군</th>
+	                     <th>대분류</th>
 	                     <th>직위</th>
 	                     <th>직책</th>
 	                     <th>입사일자</th>
@@ -43,7 +43,7 @@
 	                     	<td><a href='/member/read?memNo=${MemberVO.memNo}'>${MemberVO.memNo}</a></td>
 	                        <td>${MemberVO.memName}</td>
 	                        <td>${MemberVO.deptName}</td>
-	                        <td>${MemberVO.jgName}</td>
+	                        <td>${MemberVO.lName}</td>
 	                        <td>${MemberVO.memPosition}</td>
 	                        <td>${MemberVO.memRes}</td>
 	                        <td>${MemberVO.memHiredate}</td>

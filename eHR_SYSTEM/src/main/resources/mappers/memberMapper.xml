@@ -3,8 +3,8 @@
 
 <mapper namespace="com.mis.mapper.MemberMapper">
 
-	<select id="selectJobGroup" resultType="com.mis.domain.JobgroupVO">
-		SELECT JG_NO, JG_NAME FROM TBL_JOBGROUP
+	<select id="selectLcategory" resultType="com.mis.domain.LcategoryVO">
+		SELECT L_NO, L_NAME FROM TBL_LCATEGORY
 	</select>
 	
 	<select id="selectDept" resultType="com.mis.domain.DeptVO">
@@ -15,15 +15,15 @@
 		INSERT INTO TBL_MEMBER 
 		VALUES(M_SEQ.NEXTVAL, #{memName}, #{memPw}, #{memEmail}, #{memZipcode},
 			  #{memAddr1}, #{memAddr2}, #{memHiredate}, #{memPosition}, #{memRes},
-			  #{jgNo}, #{deptNo})
+			  #{lNo}, #{deptNo})
 	</insert>
 
 	<select id="read" resultType="com.mis.domain.MemberVO">
 		SELECT M.MEM_NO, M.MEM_NAME, M.MEM_EMAIL, M.MEM_ZIPCODE, 
        	M.MEM_ADDR1, M.MEM_ADDR2, M.MEM_HIREDATE, M.MEM_POSITION, M.MEM_RES,
-       	J.JG_NO, J.JG_NAME, D.DEPT_NO, D.DEPT_NAME
-		FROM TBL_MEMBER M, TBL_JOBGROUP J, TBL_DEPT D
-		WHERE M.JG_NO = J.JG_NO
+       	L.L_NO, L.L_NAME, D.DEPT_NO, D.DEPT_NAME
+		FROM TBL_MEMBER M, TBL_LCATEGORY L, TBL_DEPT D
+		WHERE M.L_NO = L.L_NO
 		AND M.DEPT_NO = D.DEPT_NO
 		AND M.MEM_NO = #{memNo}
 	</select>
@@ -33,7 +33,7 @@
 		SET MEM_NAME = #{memName}, MEM_PW = #{memPW}, MEM_EMAIL = #{memEmail},
 			MEM_ZIPCODE = #{memZipcode}, MEM_ADDR1 = #{memAddr1}, mem_ADDR2 = #{memAddr2},
 			MEM_HIREDATE = #{memHiredate}, MEM_POSITION = #{memPosition}, MEM_RES = #{memRes},
-			JG_NO = #{jgNo}, DEPT_NO = #{deptNo}
+			L_NO = #{lNo}, DEPT_NO = #{deptNo}
 		WHERE MEM_NO = #{memNo}	   
 	</update>
 
@@ -42,9 +42,9 @@
 	</delete>
 
 	<select id="list" resultType="com.mis.domain.MemberVO">
-	SELECT M.MEM_NO, M.MEM_NAME, D.DEPT_NAME, J.JG_NAME ,M.MEM_POSITION, M.MEM_RES, M.MEM_HIREDATE
-	FROM TBL_MEMBER M, TBL_JOBGROUP J, TBL_DEPT D
-	WHERE M.JG_NO = J.JG_NO
+	SELECT M.MEM_NO, M.MEM_NAME, D.DEPT_NAME, L.L_NAME ,M.MEM_POSITION, M.MEM_RES, M.MEM_HIREDATE
+	FROM TBL_MEMBER M, TBL_LCATEGORY L, TBL_DEPT D
+	WHERE M.L_NO = L.L_NO
 	AND M.DEPT_NO = D.DEPT_NO
 	ORDER BY MEM_NO
 	</select>

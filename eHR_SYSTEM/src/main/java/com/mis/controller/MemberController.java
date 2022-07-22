@@ -31,7 +31,7 @@ public class MemberController {
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public void registerGet(Model model) throws Exception {
 
-		model.addAttribute("jobGroup", service.selectJobGroup());
+		model.addAttribute("Lcategory", service.selectLcategory());
 		model.addAttribute("Dept", service.selectDept());
 	}
 
@@ -59,7 +59,7 @@ public class MemberController {
 	@RequestMapping(value = "/modify", method = RequestMethod.GET)
 	public void modifyGET(@RequestParam("memNo") int memNo , Model model) throws Exception {
 		
-		model.addAttribute("JobGroup", service.selectJobGroup());
+		model.addAttribute("Lcategory", service.selectLcategory());
 		model.addAttribute("Dept", service.selectDept());
 		model.addAttribute("MemberVO",service.read(memNo));
 		System.out.println(service.read(memNo));

@@ -11,7 +11,7 @@ function register(){
 		return;   
 	}
 		   
-	/*if(document.frm.memPwfm.value == ""){
+	if(document.frm.memPwfm.value == ""){
 		alert("비밀번호를 확인해주세요.");
 		document.frm.memPwfm.focus();
 		return;   
@@ -22,7 +22,7 @@ function register(){
 		document.frm.memPwfm.value = "";
 		document.frm.memPwfm.focus();
 		return;   
-	}*/
+	}
 		   
 
 	if(document.frm.memEmail.value == ""){
@@ -72,9 +72,9 @@ function register(){
 		return;
 	}
 	
-	if(document.frm.jgNo.value == "0"){
-		alert("직군을 선택해주세요.");
-		document.frm.jgNo.focus();
+	if(document.frm.lNo.value == "0"){
+		alert("대분류를 선택해주세요.");
+		document.frm.lNo.focus();
 		return;
 	}
 	
@@ -176,9 +176,9 @@ function modify(){
 		return;
 	}
 	
-	if(document.frm.jgNo.value == "0"){
+	if(document.frm.lNo.value == "0"){
 		alert("직군을 선택해주세요.");
-		document.frm.jgNo.focus();
+		document.frm.lNo.focus();
 		return;
 	}
 	

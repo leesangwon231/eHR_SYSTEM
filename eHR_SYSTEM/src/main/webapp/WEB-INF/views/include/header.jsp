@@ -70,7 +70,7 @@
                             <a class="nav-link" href="/journal/list">
                                 <div class="sb-nav-link-icon"><i class="fas fa-file-contract"></i></div>업무일지
                             </a>
-                            <a class="nav-link" href="approval/list">
+                            <a class="nav-link" href="/approval/list">
                                 <div class="sb-nav-link-icon"><i class="fas fa-check"></i></div>업무평가
                             </a>
 						<div class="sb-sidenav-menu-heading">부서</div>

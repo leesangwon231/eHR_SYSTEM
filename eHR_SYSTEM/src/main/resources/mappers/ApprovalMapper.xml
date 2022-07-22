@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mis.mapper.ApprovalMapper">
+
+
+	<select id="list" resultType="com.mis.domain.JournalVO">
+		SELECT JN_NO,JN_WDATE,MEM_NO,JN_SATISFACTION,JN_APPROVAL FROM TBL_JOURNAL
+	</select>
+	
+	<select id="selectName" resultType="string">
+		SELECT MEM_NAME FROM TBL_MEMBER WHERE MEM_NO = #{memNo}
+	</select>
+	
+	<select id="readJournal" resultType="com.mis.domain.JournalVO">
+		SELECT * FROM TBL_JOURNAL WHERE JN_NO = #{jnNo};
+  	</select>
+  	
+  	<select id="readJournalDetail" resultType="com.mis.domain.JndetailVO">
+		SELECT * FROM TBL_JNDETAIL WHERE JN_NO = #{jnNo};
+  	</select>
+</mapper>

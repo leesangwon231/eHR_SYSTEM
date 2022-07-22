@@ -30,7 +30,7 @@
 
 	<update id="update">
 		UPDATE TBL_MEMBER 
-		SET MEM_NAME = #{memName}, MEM_PW = #{memPW}, MEM_EMAIL = #{memEmail},
+		SET MEM_NAME = #{memName}, MEM_PW = #{memPw}, MEM_EMAIL = #{memEmail},
 			MEM_ZIPCODE = #{memZipcode}, MEM_ADDR1 = #{memAddr1}, mem_ADDR2 = #{memAddr2},
 			MEM_HIREDATE = #{memHiredate}, MEM_POSITION = #{memPosition}, MEM_RES = #{memRes},
 			L_NO = #{lNo}, DEPT_NO = #{deptNo}

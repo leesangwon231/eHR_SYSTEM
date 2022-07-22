@@ -118,7 +118,7 @@
 		                      	<div class="mt-4">
                        	 	<div class="offset-8">
                        	 		<input type="button" class="btn btn-outline-danger" id = "btn_delete"  name ="btn_delete" value="삭제">
-		                       	<input type="button" class="btn btn-outline-primary" id = "btn_modify" onclick="location.href='./modify?memNo=${memVO.memNo}'"name ="btn_update" value="수정">
+		                       	<input type="button" class="btn btn-outline-primary" id = "btn_modify" onclick="location.href='./modify?memNo=${memberVO.memNo}'"name ="btn_update" value="수정">
 		                    	<input type="button" class="btn btn-outline-dark" onclick="location.href='/member/list'" value="취소">
 		                	</div>
                         </div>      

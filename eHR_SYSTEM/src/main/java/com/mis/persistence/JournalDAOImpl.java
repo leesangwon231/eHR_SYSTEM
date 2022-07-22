@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.mis.domain.JndetailVO;
 import com.mis.domain.JournalVO;
 import com.mis.domain.ScategoryVO;
 import com.mis.dto.JournalDTO;
@@ -20,8 +21,14 @@ public class JournalDAOImpl implements JournalDAO{
 	private static String namespace = "com.mis.mapper.JournalMapper";
 
 	@Override
-	public void create(JournalVO vo) throws Exception {
-		session.insert(namespace + ".create", vo);
+	public void jnCreate(JournalVO vo) throws Exception {
+		session.insert(namespace + ".jnCreate", vo);
+		
+	}
+	
+	@Override
+	public void jndCreate(JndetailVO vo) throws Exception {
+		session.insert(namespace + ".jndCreate", vo);
 		
 	}
 
@@ -56,5 +63,6 @@ public class JournalDAOImpl implements JournalDAO{
 	public JournalDTO selectAllListDTO(int memNo) throws Exception {
 		return session.selectOne(namespace+".selectAllListDTO" , memNo);
 	}
+
 
 }

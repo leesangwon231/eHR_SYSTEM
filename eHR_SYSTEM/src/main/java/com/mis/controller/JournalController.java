@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mis.domain.Criteria;
+import com.mis.domain.JndetailVO;
 import com.mis.domain.JournalVO;
 import com.mis.domain.MemberVO;
 import com.mis.domain.ScategoryVO;
@@ -50,9 +51,13 @@ public class JournalController {
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public String registerPost(JournalVO vo, RedirectAttributes rttr) throws Exception {
-
-		service.register(vo);
+	public String registerPost(@ModelAttribute(value="JournalVO") JournalVO  jvo, @ModelAttribute(value="JndetailVO") JndetailVO  dvo, RedirectAttributes rttr) throws Exception {
+		
+		System.out.println(jvo);
+		System.out.println(dvo);
+		
+		service.jnRegister(jvo);
+		service.jndRegister(dvo);
 		rttr.addFlashAttribute("msg", "SUCCESS");
 
 		return "redirect:/journal/list";

@@ -3,10 +3,16 @@
 
 <mapper namespace="com.mis.mapper.JournalMapper">
 
-	<insert id="create">
-		insert into tbl_journal(jn_no,jn_wdate,jn_satisfaction,jn_approval)
-		values(seq_board.nextval, sysdate, #{jnSatisfaction}, #{jnApproval})
+	<insert id="jnCreate">
+		INSERT INTO TBL_JOURNAL(JN_NO, JN_WDATE, MEM_NO) VALUES(JN_SEQ.NEXTVAL, TO_CHAR(#{jnWdate}, 'YY-MM-DD'), #{memNo})
 	</insert>
+	
+	<insert id="jndCreate">
+		INSERT INTO TBL_JNDETAIL(JND_NO, JND_PROGRESS, JND_NOTE, JN_NO, S_NO) 
+		VALUES(JND_SEQ.NEXTVAL, #{jndProgress}, #{jndNote}, #{jnNo}, #{sNo})
+	</insert>
+	
+	
 
 	<select id="read" resultType="com.mis.domain.JournalVO">
 		select * from tbl_journal where journal_no = #{jnNo}

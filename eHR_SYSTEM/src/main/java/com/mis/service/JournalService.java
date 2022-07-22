@@ -2,13 +2,16 @@ package com.mis.service;
 
 import java.util.List;
 
+import com.mis.domain.JndetailVO;
 import com.mis.domain.JournalVO;
 import com.mis.domain.ScategoryVO;
 import com.mis.dto.JournalDTO;
 
 public interface JournalService {
 	
-	public void register(JournalVO vo) throws Exception;
+	public void jnRegister(JournalVO vo) throws Exception;
+	
+	public void jndRegister(JndetailVO vo) throws Exception;
 
 	public JournalVO read(int jnNo) throws Exception;
 

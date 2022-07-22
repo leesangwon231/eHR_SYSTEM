@@ -1,11 +1,10 @@
 package com.mis.domain;
 
-import java.util.Date;
 
 public class JournalVO {
 
 	private int jnNo;
-	private Date jnWdate;
+	private String jnWdate;
 	private int jnApno;
 	private String jnSatisfaction;
 	private String jnApproval;
@@ -17,10 +16,10 @@ public class JournalVO {
 	public void setJnNo(int jnNo) {
 		this.jnNo = jnNo;
 	}
-	public Date getJnWdate() {
+	public String getJnWdate() {
 		return jnWdate;
 	}
-	public void setJnWdate(Date jnWdate) {
+	public void setJnWdate(String jnWdate) {
 		this.jnWdate = jnWdate;
 	}
 	public int getJnApno() {
@@ -47,13 +46,13 @@ public class JournalVO {
 	public void setMemNo(int memNo) {
 		this.memNo = memNo;
 	}
-	
 	@Override
 	public String toString() {
 		return "JournalVO [jnNo=" + jnNo + ", jnWdate=" + jnWdate + ", jnApno=" + jnApno + ", jnSatisfaction="
 				+ jnSatisfaction + ", jnApproval=" + jnApproval + ", memNo=" + memNo + "]";
 	}
 	
+
 	
 }
 	

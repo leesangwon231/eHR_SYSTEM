@@ -20,5 +20,14 @@
 		SELECT * FROM TBL_JNDETAIL WHERE JN_NO = #{jnNo}
   	</select>
   	
+  	<select id="selectSname" resultType="string">
+		SELECT S_NAME FROM TBL_SCATEGORY WHERE S_NO = #{sNo}
+	</select>
+	
+	<update id="approval">
+	UPDATE TBL_JOURNAL 
+	SET JN_APNO = #{jnApno} , JN_SATISFACTION = #{jnSatisfaction} , JN_APPROVAL = 1
+	WHERE JN_NO = #{jnNo}
+	</update>
   	
 </mapper>

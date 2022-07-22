@@ -45,6 +45,17 @@ public class ApprovalDAOImpl implements ApprovalDAO{
 		return session.selectList(namespace+".readJournalDetail",jnNo);
 	}
 
+	@Override
+	public String selectSname(int sNo) throws Exception {
+		return session.selectOne(namespace+".selectSname",sNo);
+	}
+
+	@Override
+	public void approval(JournalVO vo) throws Exception {
+		 session.update(namespace+".approval", vo);
+		
+	}
+
 	
 	
 }

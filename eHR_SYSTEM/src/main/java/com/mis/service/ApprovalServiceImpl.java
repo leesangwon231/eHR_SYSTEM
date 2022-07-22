@@ -35,6 +35,16 @@ public class ApprovalServiceImpl implements ApprovalService {
 	public List<JndetailVO> readJournalDetail(int jnNo) throws Exception {
 		return dao.readJournalDetail(jnNo);
 	}
+
+	@Override
+	public String selectSname(int sNo) throws Exception {
+		return dao.selectSname(sNo);
+	}
+
+	@Override
+	public void approval(JournalVO vo) throws Exception {
+			dao.approval(vo);
+	}
 	
 	
 }

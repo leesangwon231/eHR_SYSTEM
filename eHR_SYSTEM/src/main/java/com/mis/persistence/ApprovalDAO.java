@@ -18,7 +18,9 @@ public interface ApprovalDAO {
 	
 	public List<JndetailVO> readJournalDetail(int jnNo) throws Exception;
 	
+	public String selectSname(int sNo) throws Exception;
 	
+	public void approval(JournalVO vo) throws Exception;
 
 
 }

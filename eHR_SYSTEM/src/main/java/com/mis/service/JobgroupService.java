@@ -12,7 +12,6 @@ public interface JobgroupService {
 	
 	public void modify(JobgroupVO vo) throws Exception;
 	
-	public void remove(int jgNo) throws Exception;
 	
 	public List<JobgroupVO> listAll() throws Exception;
 	

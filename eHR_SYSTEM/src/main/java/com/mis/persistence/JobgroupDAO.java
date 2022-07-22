@@ -13,8 +13,6 @@ public interface JobgroupDAO {
 
 	public void update(JobgroupVO vo) throws Exception;
 
-	public void delete(Integer jgNo) throws Exception;
-
 	public List<JobgroupVO> listAll() throws Exception;
 
 }

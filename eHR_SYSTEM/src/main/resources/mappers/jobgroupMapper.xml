@@ -16,9 +16,6 @@
 	where jg_no = #{jgNo}
 	</update>
 	
-	<delete id="delete">
-	delete from tbl_jobgroup where jg_no=#{jgNo} 
-	</delete>
 	
 <!--이거 조인 해야 하는겅가용? 몰ㄹ무 무ㅜㅜㅜ  -->
 	<select id="listAll" resultType="com.mis.domain.JobgroupVO">

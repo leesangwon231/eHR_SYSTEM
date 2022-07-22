@@ -58,12 +58,7 @@ public class JobgroupController {
 		model.addAttribute("jgVo",service.read(jgNo));
 	}
 
-	@RequestMapping(value = "/remove", method = RequestMethod.POST)
-	public String remove(@RequestParam("jgNo") int jgNo, RedirectAttributes rttr) throws Exception {
-		service.remove(jgNo);
-		rttr.addFlashAttribute("msg", "SUCCESS");
-		return "redirect:/jobgroup/list";
-	}
+	
 
 	@RequestMapping(value = "/modify", method = RequestMethod.GET)
 	public void modifyGET(int jgNo, Model model) throws Exception {
@@ -81,8 +76,8 @@ public class JobgroupController {
 		return "redirect:/jobgroup/list";
 	}
 
-	// GET¹æ½ÄÀ¸·Î È£Ãâ model¿¡ ´ã¾Æ¼­ DB¿¡¼­ °¡Á®¿È
-	// "/listCri" jsp °æ·Î¸í ÁöÁ¤
+	// GETï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È£ï¿½ï¿½ modelï¿½ï¿½ ï¿½ï¿½Æ¼ï¿½ DBï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	// "/listCri" jsp ï¿½ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½
 	/*
 	 * @RequestMapping(value = "/listCri", method = RequestMethod.GET) public void
 	 * listCriGET(Criteria cri, Model model) throws Exception {

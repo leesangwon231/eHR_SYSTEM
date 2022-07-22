@@ -33,11 +33,8 @@ public class JobgroupServiceImpl implements JobgroupService {
 		
 	}
 
-	@Override
-	public void remove( int jgNo) throws Exception {
-		dao.delete(jgNo);
 		
-	}
+	
 
 	@Override
 	public List<JobgroupVO> listAll() throws Exception {

@@ -40,7 +40,7 @@
 	                  	</div>
                         <div class="mt-4">
                        	 	<div class="offset-9">
-                       	 		<input type="button" class="btn btn-outline-danger" id = "btn_delete"  name ="btn_delete" value="삭제">
+                       	 		
 		                       	<input type="button" class="btn btn-outline-primary" id = "btn_modify" onclick="location.href='./modify?jgNo=${jgVo.jgNo}'"name ="btn_update" value="수정">
 		                    	<input type="button" class="btn btn-outline-dark" onclick="location.href='/jobgroup/list'" value="취소">
 		                	</div>
@@ -69,9 +69,7 @@
 		alert("로그인 정보가 일치하지 않아 수정 불가능합니다.");
 	}
   
-  if (result == 'CANTDELETE') {
-		alert("로그인 정보가 일치하지 않아 삭제 불가능합니다.");
-	}
+
   
   $(document).ready(function() {
 		var formObj = $("form[role='form']");

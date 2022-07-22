@@ -37,11 +37,7 @@ public class JobgroupDAOImpl implements JobgroupDAO {
 		
 	}
 
-	@Override
-	public void delete(Integer jgNo) throws Exception {
-		session.delete(namespace + ".delete",jgNo);
-		
-	}
+	
 
 	@Override
 	public List<JobgroupVO> listAll() throws Exception {

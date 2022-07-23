@@ -17,7 +17,7 @@
 					<div class="col-lg-1"></div>
 					<form role="form" method="post" name="frm" action="delete">
 						<div class="col-lg-10">
-							<div class="row p-5">
+							<div class="row p-4">
 								<div class="col-2">
 									<label for="exampleInputEmail1">직군</label>
 								</div>
@@ -27,7 +27,7 @@
 										value="${scategoryVO.jgName}">
 								</div>
 							</div>
-							<div class="row p-5">
+							<div class="row p-4">
 								<div class="col-2">
 									<label for="exampleInputEmail1">직종</label>
 								</div>
@@ -37,7 +37,7 @@
 										value="${scategoryVO.jobName}">
 								</div>
 							</div>
-							<div class="row p-5">
+							<div class="row p-4">
 								<div class="col-2">
 									<label for="exampleInputEmail1">대분류 </label>
 								</div>
@@ -46,7 +46,7 @@
 										readonly="readonly" value="${scategoryVO.lName}">
 								</div>
 							</div>
-							<div class="row p-5">
+							<div class="row p-4">
 								<div class="col-2">
 									<label for="exampleInputEmail1">소분류 번호</label>
 								</div>
@@ -55,7 +55,7 @@
 										readonly="readonly" value="${scategoryVO.sNo}">
 								</div>
 							</div>
-							<div class="row p-5">
+							<div class="row p-4">
 								<div class="col-2">
 									<label for="exampleInputEmail1">소분류명</label>
 								</div>
@@ -64,30 +64,43 @@
 										readonly="readonly" value="${scategoryVO.sName}">
 								</div>
 							</div>
-							<div class="row p-5">
+							<br>
+							
+							<div class="row p-4">
 								<div class="col-2">
 									<label for="exampleInputEmail1">발생주기</label>
 								</div>
+								
 								<div class="col-1">
 									<label for="exampleInputEmail1">연</label>
 								</div>
-								<div class="col-2">
+								
+								<div class="col-3">
 									<input type="text" id="sYear" name="sYear" class="form-control"
 										readonly="readonly" value="${scategoryVO.sYear}">
 								</div>
+								
 								<div class="col-1">
 									<label for="exampleInputEmail1">월</label>
 								</div>
-								<div class="col-2">
+								
+								<div class="col-3">
 									<input type="text" id="sMonth" name="sMonth"
 										class="form-control" readonly="readonly"
 										value="${scategoryVO.sMonth}">
-								</div>
-								<div class="row p-5">
-									<div class="col-1">
-										<label for="exampleInputEmail1">분기</label>
-									</div>
+								</div> 
+							</div>
+						
+								<div class="row p-4">
 									<div class="col-2">
+									<label for="exampleInputEmail1"></label>
+									</div>
+								
+									<div class="col-1">
+									<label for="exampleInputEmail1">분기</label>
+									</div>
+								
+									<div class="col-3">
 										<input type="text" id="sQuarter" name="sQuarter"
 											class="form-control" readonly="readonly"
 											value="${scategoryVO.sQuarter}">
@@ -96,12 +109,21 @@
 									<div class="col-1">
 										<label for="exampleInputEmail1">일</label>
 									</div>
-									<div class="col-2">
+									
+									<div class="col-3">
 										<input type="text" id="sDay" name="sDay" class="form-control"
 											readonly="readonly" value="${scategoryVO.sDay}">
 									</div>
-								</div>
-							</div>
+								</div>	
+						
+								
+					
+							
+							
+							
+							
+							
+							
 
 							<%-- <div class="row p-5"> 
 				                        	<div class="col-1">

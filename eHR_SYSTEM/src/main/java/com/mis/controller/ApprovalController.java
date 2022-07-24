@@ -52,8 +52,7 @@ public class ApprovalController {
 		
 		ArrayList<String> name = new ArrayList<String>();
 		List<JndetailVO> vo = service.readJournalDetail(jnNo);
-		MemberVO user = new MemberVO();
-		user = (MemberVO) session.getAttribute("login");
+
 		
 		for (int i = 0; i < vo.size(); i++) {
 			name.add(service.selectSname(service.readJournalDetail(jnNo).get(i).getsNo()));
@@ -61,8 +60,8 @@ public class ApprovalController {
 		
 		
 		
-		model.addAttribute("dto",service2.selectAllListDTO(user.getMemNo()));
-		model.addAttribute("names",name);
+		model.addAttribute("dto",service2.selectAllListDTO(service.readJournal(jnNo).getMemNo()));
+		model.addAttribute("sNames",name);
 		model.addAttribute("J", service.readJournal(jnNo));
 		model.addAttribute("JD", service.readJournalDetail(jnNo));
 	

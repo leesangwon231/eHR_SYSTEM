@@ -19,19 +19,19 @@
 			                    			<label for="exampleInputEmail1">부서명</label>
 			                    		</div>
 			                    		<div class="col-3">
-			                    			<input type="text" id = "dept" name="dept" class = "form-select" readonly="readonly" value="${login.deptName}">
+			                    			<input type="text" id = "dept" name="dept" class = "form-select" readonly="readonly" value="${dto.deptName}">
 			                    		</div>
 			                    		<div class="col-1 text-center">
 			                    			<label for="exampleInputEmail1">사원번호</label>
 			                    		</div>
 			                    		<div class="col-3">
-			                    			<input type="text" id = "memNo" name="memNo" class = "form-select" readonly="readonly" value="${login.memNo }">
+			                    			<input type="text" id = "memNo" name="memNo" class = "form-select" readonly="readonly" value="${J.memNo}">
 			                    		</div>
 			                    		<div class="col-1 text-center">
 			                    			<label for="exampleInputEmail1">사원명</label>
 			                    		</div>
 			                    		<div class="col-3">
-			                    			<input type="text" id = "memName" name="memName" class = "form-select" readonly="readonly" value="${login.memName}">
+			                    			<input type="text" id = "memName" name="memName" class = "form-select" readonly="readonly" value="${dto.memName}">
 			                    		</div>
 			                    		
   									</div>
@@ -68,7 +68,7 @@
 								               <tbody>
 								              	<c:forEach items="${JD}" var="jd" varStatus="status">
 								                     <tr>
-								                        <td>${names[status.index]}</td>
+								                        <td>${sNames[status.index]}</td>
 								                        <td>${jd.jndProgress} %</td>
 								                        <td>${jd.jndNote}</td>
 								                       

@@ -8,6 +8,9 @@
 	</insert>
 	
 	<insert id="jndCreate">
+		<selectKey keyProperty="jnNo" resultType="int" order="BEFORE">
+			SELECT SEQ_JND.NEXTVAL FROM DUAL
+		</selectKey>
 		INSERT INTO TBL_JNDETAIL(JND_NO, JND_PROGRESS, JND_NOTE, JN_NO, S_NO) 
 		VALUES(JND_SEQ.NEXTVAL, #{jndProgress}, #{jndNote}, #{jnNo}, #{sNo})
 	</insert>

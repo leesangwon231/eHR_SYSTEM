@@ -4,7 +4,6 @@
 
 <%@include file="../include/header.jsp"%>
 <!-- <script type="text/javascript" src="/resources/js/journal.js"></script> -->
-<script src="https://code.jquery.com/jquery-2.2.1.js"></script>
 <div id="layoutSidenav_content">
    <main>
 	   <div class="container-fluid px-4">
@@ -83,7 +82,7 @@
 								                        <td><input type="text" id="jndNote" name="<c:url value='jnLIst[${status.index}].'/>jndNote" class="form-control"></td>
 								                        <td>
 								                        	<div id='mydropzone' class="dropzone">
-								                        		<input type="file" id="fileUpload" name="fileUpload" style="visibility: hidden;" />
+								                        		<input type="file" id="fileUpload" name="<c:url value='jnLIst[${status.index}].'/>fileUpload" style="visibility: hidden;" />
 																<div class="fileDrop">
 																	<input type="hidden" id="uploadCount">
 																		<div class="dz-message needsclick">
@@ -218,7 +217,8 @@
 
 		$('#mydropzone').click(function(event) {
 
-			document.frm.fileUpload.click();
+			  let fileUpload = document.getElementById("fileUpload");
+			  fileUpload.click();
 
 		});
 
@@ -261,7 +261,7 @@
 					var html = template(fileInfo);
 
 					var str = "";
-
+					
 					$(".uploadedList").append(html);
 
 					uploaded++;
@@ -306,8 +306,10 @@
 					var html = template(fileInfo);
 
 					var str = "";
-
+					
+					
 					$(".uploadedList").append(html);
+					console.log(html);
 
 					uploaded++;
 					$("#uploadCount").attr("value", uploaded);

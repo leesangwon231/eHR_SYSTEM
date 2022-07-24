@@ -7,7 +7,7 @@ import com.mis.domain.JnfileVO;
 
 public interface JndetailDAO {
 
-	public int create(JndetailVO vo) throws Exception;
+	public void create(JndetailVO vo) throws Exception;
 
 	public JndetailVO read(int jndNo) throws Exception;
 

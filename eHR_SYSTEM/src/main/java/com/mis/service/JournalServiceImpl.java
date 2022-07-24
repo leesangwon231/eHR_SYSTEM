@@ -28,7 +28,7 @@ public class JournalServiceImpl implements JournalService {
 	@Override
 	public void jndRegister(JndetailVO vo) throws Exception {
 		int jndNo = dao.jndCreate(vo);
-		
+		System.out.println(jndNo);
 		if (vo.getFiles() != null) {
 
 			// 3-2) 다중 첨부파일 저장

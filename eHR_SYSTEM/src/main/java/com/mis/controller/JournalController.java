@@ -63,9 +63,10 @@ public class JournalController {
 
 		for (int i = 0; i < dvo.getJnLIst().size(); i++) {
 			dvo.getJnLIst().get(i).setJnNo(jnNo);
+			System.out.println(dvo.getJnLIst().get(i));
 			service.jndRegister(dvo.getJnLIst().get(i));
 		}
-
+			
 		rttr.addFlashAttribute("msg", "REGISTER");
 
 		return "redirect:/journal/list";

@@ -31,7 +31,7 @@ import com.mis.service.JndetailService;
 
 			service.register(vo);
 			rttr.addFlashAttribute("msg", "SUCCESS");
-
+				
 			return "redirect:/journal/listAll";
 
 		}
@@ -42,7 +42,7 @@ import com.mis.service.JndetailService;
 
 			model.addAttribute(service.read(jndNo));
 			
-			//2)첨부 파일
+			//2)泥⑤� �뙆�씪
 			model.addAttribute("jnfileVO", service.fileList(jndNo));
 			
 		}
@@ -62,7 +62,7 @@ import com.mis.service.JndetailService;
 		public String modifyPOST(JndetailVO vo, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rttr)
 				throws Exception {
 
-			//1)첨부파일도 재업로드
+			//1)泥⑤��뙆�씪�룄 �옱�뾽濡쒕뱶
 			service.modify(vo);
 			
 			return "redirect:/journal/listAll";
@@ -73,7 +73,7 @@ import com.mis.service.JndetailService;
 		public String removePOST(@RequestParam("jndNo") int jndNo, @ModelAttribute("cri") SearchCriteria cri, RedirectAttributes rttr)
 				throws Exception {
 
-			//1)삭제
+			//1)�궘�젣
 			service.remove(jndNo);
 			
 			return "redirect:/journal/listAll";

@@ -19,9 +19,8 @@ public class JndetailDAOImpl implements JndetailDAO {
 	private static final String namespace = "com.mis.mapper.JndetailMapper";
 
 	@Override
-	public int create(JndetailVO vo) throws Exception {
+	public void create(JndetailVO vo) throws Exception {
 		session.insert(namespace + ".create", vo);
-		return vo.getJndNo();
 	}
 
 	@Override

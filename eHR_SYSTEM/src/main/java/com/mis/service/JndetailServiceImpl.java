@@ -21,15 +21,14 @@ public class JndetailServiceImpl implements JndetailService {
 		
 		vo.setJndHistory(vo.getJndHistory().replace("\\r\\n", "<br>"));
 		
-		int jndNo = dao.create(vo);
 		
 		if (vo.getFiles() != null) {
 
 					for (int i = 0; i < vo.getFiles().length; i++) {
 
 						JnfileVO jnfileNo = new JnfileVO();
-						jnfileNo.setJndNo(jndNo); // 공지사항 테이블 PK (FK)
-						jnfileNo.setJnfileName(vo.getFiles()[i]); // 업로드된 첨부파일명
+						jnfileNo.setJndNo(0); // 怨듭��궗�빆 �뀒�씠釉� PK (FK)
+						jnfileNo.setJnfileName(vo.getFiles()[i]); // �뾽濡쒕뱶�맂 泥⑤��뙆�씪紐�
 
 						dao.insertFile(jnfileNo);
 					}

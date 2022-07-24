@@ -32,9 +32,9 @@ public interface JournalDAO {
 
 	public int selectJnNo(JournalVO vo) throws Exception;
 	
-	public void insertFile(JnfileVO jnfileNo) throws Exception;
+	public void insertFile(JnfileVO fvo) throws Exception;
 
-	public void deleteFile(int jndNo) throws Exception;
+	public void deleteFile(int jnfileNo) throws Exception;
 	
 	public List<JnfileVO> fileList(int jndNo) throws Exception;
 

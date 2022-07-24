@@ -82,13 +82,13 @@ public class JournalDAOImpl implements JournalDAO {
 	}
 
 	@Override
-	public void insertFile(JnfileVO jnfileNo) throws Exception {
-		session.insert(namespace + ".insertFile", jnfileNo);
+	public void insertFile(JnfileVO vo) throws Exception {
+		session.insert(namespace + ".insertFile", vo);
 	}
 
 	@Override
-	public void deleteFile(int jndNo) throws Exception {
-		session.delete(namespace + ".deleteFile", jndNo);
+	public void deleteFile(int jnfileNo) throws Exception {
+		session.delete(namespace + ".deleteFile", jnfileNo);
 	}
 
 	@Override

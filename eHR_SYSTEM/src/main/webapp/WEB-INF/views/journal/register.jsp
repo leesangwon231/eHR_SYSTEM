@@ -115,6 +115,32 @@
 	   		</div>
 		</main>
 <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
+
+<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/resources/upload.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.js"></script>
+	<script id="template" type="text/x-handlebars-template">
+<li class="dropzone-previews mt-3">
+<div class="card mt-1 mb-0 shadow-none border dz-processing dz-image-preview dz-success dz-complete">
+<div class="p-2">
+<div class="row align-items-center">
+ <div class="col-auto">
+    <img data-dz-thumbnail="" class="avatar-sm rounded bg-light" src="{{imgsrc}}">
+ </div>
+ <div class="col pl-0">
+   <a href="/displayFile?fileName={{fullName}}" text-muted font-weight-bold" data-dz-name="">{{fileName}}</a>
+ </div>
+ <div class="col-auto">
+   <a href="{{fullName}}" class="btn btn-default btn-xs pull-right delbtn"><i class="far fa-trash-alt"></i></a>
+ </div>
+</div>
+</div>
+</div>
+</li>
+</script>
+
 <script>
    var result = '${msg}';
 
@@ -345,6 +371,8 @@
 
 		}
 	</script>
+	
+
 
 
 

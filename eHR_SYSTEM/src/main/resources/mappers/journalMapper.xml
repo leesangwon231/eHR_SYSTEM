@@ -14,9 +14,13 @@
 	
 	
 
-	<select id="read" resultType="com.mis.domain.JournalVO">
-		select * from tbl_journal where journal_no = #{jnNo}
-	</select>
+	<select id="readJournal" resultType="com.mis.domain.JournalVO">
+		SELECT * FROM TBL_JOURNAL WHERE JN_NO = #{jnNo}
+  	</select>
+  	
+  	<select id="readJournalDetail" resultType="com.mis.domain.JndetailVO">
+		SELECT * FROM TBL_JNDETAIL WHERE JN_NO = #{jnNo}
+  	</select>
 
 	<!-- <update id="update">
 		update tbl_journal set title=#{title}, content=#{content}, writer=#{writer}
@@ -33,6 +37,10 @@
 	
 	<select id="selectJnNo" resultType="int">
 		SELECT JN_NO FROM TBL_JOURNAL WHERE	JN_WDATE = #{jnWdate} AND MEM_NO = #{memNo}
+	</select>
+	
+	<select id="selectSname" resultType="string">
+		SELECT S_NAME FROM TBL_SCATEGORY WHERE S_NO = #{sNo}
 	</select>
 	<!-- <select id="listCriteria" resultType="com.mis.domain.BoardVO">
 		 <![CDATA[
@@ -109,16 +117,43 @@
 	</select>
   	
   	<select id="selectAllListDTO" resultType="com.mis.dto.JournalDTO">
-  		SELECT e.MEM_NO , e.MEM_NAME , e.MEM_EMAIL, e.MEM_ZIPCODE, e.MEM_ADDR1, e.MEM_ADDR2, e.MEM_HIREDATE, e.MEM_POSITION, e.MEM_RES, e.DEPT_NO, f.JG_NO , f.JG_NAME, f.L_NO, f.L_NAME, f.JOB_NO, f.JOB_NAME, f.JG_NO 
-		FROM TBL_MEMBER e
-		INNER JOIN
-		(SELECT c.JG_NO , c.JG_NAME, d.L_NO, d.L_NAME, d.JOB_NO, d.JOB_NAME
-		FROM TBL_JOBGROUP c 
-		INNER JOIN 
-		(SELECT a.L_NO, a.L_NAME, b.JOB_NO, b.JOB_NAME, b.JG_NO FROM TBL_LCATEGORY a INNER JOIN TBL_JOB b ON a.JOB_NO = b.JOB_NO) d 
-		ON c.JG_NO = d.JG_NO) f
-		ON e.L_NO = f.L_NO
-		WHERE e.MEM_NO = #{memNo}
+  		SELECT g.MEM_NO , g.MEM_NAME , g.MEM_EMAIL, g.MEM_ZIPCODE, g.MEM_ADDR1, g.MEM_ADDR2, g.MEM_HIREDATE, g.MEM_POSITION, g.MEM_RES, g.DEPT_NO, g.JG_NO , g.JG_NAME, g.L_NO, g.L_NAME, g.JOB_NO, g.JOB_NAME, h.DEPT_NAME
+        FROM 
+        (SELECT e.MEM_NO , e.MEM_NAME , e.MEM_EMAIL, e.MEM_ZIPCODE, e.MEM_ADDR1, e.MEM_ADDR2, e.MEM_HIREDATE, e.MEM_POSITION, e.MEM_RES, e.DEPT_NO, f.JG_NO , f.JG_NAME, f.L_NO, f.L_NAME, f.JOB_NO, f.JOB_NAME 
+      FROM TBL_MEMBER e
+      INNER JOIN
+      (SELECT c.JG_NO , c.JG_NAME, d.L_NO, d.L_NAME, d.JOB_NO, d.JOB_NAME
+      FROM TBL_JOBGROUP c 
+      INNER JOIN 
+      (SELECT a.L_NO, a.L_NAME, b.JOB_NO, b.JOB_NAME, b.JG_NO FROM TBL_LCATEGORY a INNER JOIN TBL_JOB b ON a.JOB_NO = b.JOB_NO) d 
+      ON c.JG_NO = d.JG_NO) f
+      ON e.L_NO = f.L_NO) g
+        INNER JOIN
+        TBL_DEPT h
+        ON g.DEPT_NO = h.DEPT_NO
+      WHERE g.MEM_NO = #{memNo}
 
   	</select>
+  	
+  	
+  	<!-- 다중 파일 등록 -->
+	<insert id="insertFile">
+		INSERT INTO TBL_JN_FILE (JNFILE_NO, JNFILE_NAME, JND_NO)
+		VALUES (SEQ_JNFILE.NEXTVAL, #{jnfileName}, #{jndNo})
+	</insert>
+	
+	<!-- 다중 파일 삭제 -->
+	<delete id="deleteFile">
+		DELETE FROM TBL_JNFILE WHERE JND_NO = #{jndNo}
+	</delete>
+	
+	<!-- 파일 목록 -->
+	<select id="fileList" resultType="com.mis.domain.JnfileVO">
+		SELECT JNFILE_NO, 
+			   SUBSTR(JNFILE_NAME,50) AS JNFILE_NAME,
+			   JNFILE_NAME AS JNFILE_LOC,
+			   JND_NO
+		FROM TBL_JN_FILE
+		WHERE JND_NO = #{jndNo}	   
+	</select>
 </mapper>

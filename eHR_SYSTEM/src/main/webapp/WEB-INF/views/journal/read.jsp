@@ -10,56 +10,81 @@
 	   <div class="container-fluid px-4">
 	      <h1 class="mt-4" style='text-align: left; margin-bottom: 30px;'>업무일지 상세보기</h1>
 				<div class="container-fluid px-5">
-	                <form role="form" method="post" name="frm" >    
+	                <form role="form" method="post" name="frm" action="read">    
 	                    <div class="pt-5 px-5">
+	                    		<input type ="hidden" id = "jnNo" name = "jnNo" value="${J.jnNo}">
 			                    	<div class="row ">
+			                    		<div class="col-1 text-center">
+			                    			<label for="exampleInputEmail1">부서명</label>
+			                    		</div>
+			                    		<div class="col-3">
+			                    			<input type="text" id = "dept" name="dept" class = "form-select" readonly="readonly" value="${dto.deptName}">
+			                    		</div>
 			                    		<div class="col-1 text-center">
 			                    			<label for="exampleInputEmail1">사원번호</label>
 			                    		</div>
 			                    		<div class="col-3">
-			                    			<input type="text" id = "memNo" name="memNo" class = "form-select" readonly="readonly">
+			                    			<input type="text" id = "memNo" name="memNo" class = "form-select" readonly="readonly" value="${dto.memNo }">
 			                    		</div>
 			                    		<div class="col-1 text-center">
 			                    			<label for="exampleInputEmail1">사원명</label>
 			                    		</div>
 			                    		<div class="col-3">
-			                    			<input type="text" id = "memName" name="memName" class = "form-select" readonly="readonly">
+			                    			<input type="text" id = "memName" name="memName" class = "form-select" readonly="readonly" value="${dto.memName}">
 			                    		</div>
-			                    		<div class="col-1 text-center">
+			                    		
+  									</div>
+  									<div class="row pt-5">
+  										<div class="col-1 text-center">
 			                    			<label for="exampleInputEmail1">근무 일자</label>
 			                    		</div>
 			                    		<div class="col-3">
-			                    			<input type="text" id = "jnWdate" name="jnWdate" class = "form-select" readonly="readonly">
+			                    			<input type="text" id = "jnWdate" name="jnWdate" class = "form-select" readonly="readonly" value="${J.jnWdate}">
 			                    		</div>
-  									</div>
-  									<div class="row pt-5">
 			                    		<div class="col-1 text-center">
 			                    			<label for="exampleInputEmail1">직군</label>
 			                    		</div>
 			                    		<div class="col-3">
-			                    			<input type="text" id = "jgName" name="jgName" class = "form-select" readonly="readonly">
+			                    			<input type="text" id = "jgName" name="jgName" class = "form-select" readonly="readonly" value="${dto.jgName}">
 			                    		</div>
 			                    		<div class="col-1 text-center">
 			                    			<label for="exampleInputEmail1">직종</label>
 			                    		</div>
 			                    		<div class="col-3">
-			                    			<input type="text" id = "jobName" name="jobName" class = "form-select" readonly="readonly">
+			                    			<input type="text" id = "jobName" name="jobName" class = "form-select" readonly="readonly" value="${dto.jobName}">
 			                    		</div>
-			                    		<div class="col-1 text-center">
-			                    			<label for="exampleInputEmail1">평가점수</label>
-			                    		</div>
-			                    		<div class="col-3">
-			                    			<input type="text" id = "jnApproval" name="jnApproval" class = "form-select" readonly="readonly">
-			                    		</div>
+			                    		
   									</div>
+  									<div class="row pt-5 ">
+								            <table id="datatablesSimple" class="dataTable-table">
+								               <thead>
+								                  <tr>
+								                     <th>업무내용</th>
+								                     <th>진척도</th>
+								                     <th>비고</th>
+								                  </tr>
+								               </thead>
+								               <tbody>
+								              	<c:forEach items="${JD}" var="jd" varStatus="status">
+								                     <tr>
+								                        <td>${names[status.index]}</td>
+								                        <td>${jd.jndProgress} %</td>
+								                        <td>${jd.jndNote}</td>
+								                       
+								                     </tr>
+								           		</c:forEach>
+								               </tbody>
+								            </table>
+								      </div>
+								      
 				          </div>	
 	                        <div class="mt-4">
-	                       	 	<div class="offset-9">
-			                       	<input type="button" class="btn btn-primary" id = "btn_submit" name ="btn_submit" value="등록">
-			                    	<input type="button" class="btn btn-primary" onclick="location.href='/lcategory/list'" value="취소">
+	                       	 	<div class="offset-9" style="position: absolute; right: 6%;">
+			                       	<input type="button" class="btn btn-primary" id = "btn_submit" name ="btn_submit" value="수정">
+			                    	<input type="button" class="btn btn-primary" onclick="location.href='/journal/list'" value="취소">
 			                	</div>
 	                        </div>
-	                  </form>      
+	                  </form>        
                		</div>
            	 	</div>              
 	   		</div>

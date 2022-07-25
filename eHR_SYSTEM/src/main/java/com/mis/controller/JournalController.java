@@ -58,7 +58,7 @@ public class JournalController {
 			time.add(setTime);
 		}
 		
-		time.add("ÃÊ°ú±Ù¹«");
+		time.add("ì´ˆê³¼ê·¼ë¬´");
 		
 		model.addAttribute("jDto", dto);
 		model.addAttribute("time", time);

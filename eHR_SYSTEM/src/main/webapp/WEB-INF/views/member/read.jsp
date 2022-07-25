@@ -91,7 +91,7 @@
 			                        	
 			                        	<div class="row p-4">
 				                    		<div class="col-2">
-				                        		<label for="exampleInputEmail1">대분류</label>
+				                        		<label for="exampleInputEmail1">직렬</label>
 				                        	</div>
 		                        			<div class="col-7">
 				                        		<input type="text" id = "lName" name="lName" class = "form-control" readonly="readonly" value="${memberVO.lName}">	

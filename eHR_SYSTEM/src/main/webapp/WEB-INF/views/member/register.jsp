@@ -116,11 +116,11 @@
 			                        	
 			                        	<div class="row p-4">
 				                    		<div class="col-2">
-				                        		<label for="exampleInputEmail1">대분류</label>
+				                        		<label for="exampleInputEmail1">직렬</label>
 				                        	</div>
 		                        			<div class="col-7">
 				                        		<select name="lNo" id="lNo" class = "form-select" >
-			                                    	<option value="0">대분류를 선택해 주세요</option>
+			                                    	<option value="0">직렬을 선택해 주세요</option>
 			                                        <c:forEach items="${Lcategory}" var="LcategoryVO">
 														<option value=${LcategoryVO.lNo}>${LcategoryVO.lName}</option>
 													</c:forEach>

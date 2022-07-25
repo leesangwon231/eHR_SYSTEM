@@ -33,7 +33,7 @@
 								<th style="width: 10px">사원번호</th>
 								<th>사원명</th>
 								<th>부서</th>
-								<th>대분류</th>
+								<th>직렬</th>
 								<th>직위</th>
 								<th>직책</th>
 								<th>입사일자</th>

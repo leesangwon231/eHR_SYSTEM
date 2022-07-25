@@ -48,7 +48,7 @@
                             <div class="sb-sidenav-menu-heading">Core</div>
                             <a class="nav-link" href="index.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                대분류록
+                                	직렬
                             </a>
                             <div class="sb-sidenav-menu-heading">Interface</div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
@@ -111,7 +111,7 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">대분류 목록</h1>
+                        <h1 class="mt-4">직렬 목록</h1>
 	                    <div class="pt-5">
 	                        <div class="row" >
 		                        <div class="col-lg-1">
@@ -120,8 +120,8 @@
 		                        			<table class="table table-bordered">
 					                             <tr>
 													<td>no</td>
-													<td>대분류 번호</td>
-													<td>대분류 명</td>
+													<td>직렬 번호</td>
+													<td>직렬명</td>
 													<td>직종</td>
 													<td>직군</td>
 											 	</tr>

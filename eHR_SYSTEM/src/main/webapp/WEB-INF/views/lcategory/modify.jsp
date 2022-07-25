@@ -8,7 +8,7 @@
 <div id="layoutSidenav_content">
    <main>
 	   <div class="container-fluid px-4">
-	      <h1 class="mt-4" style='text-align: left; margin-bottom: 30px;'>대분류 수정</h1>
+	      <h1 class="mt-4" style='text-align: left; margin-bottom: 30px;'>직렬 수정</h1>
 				<div class="container-fluid px-5">
 	                    <div class="pt-5">
 	                        <div class="row" >
@@ -42,7 +42,7 @@
 			                        	</div>
 			                        	<div class="row p-5">
 				                        	<div class="col-2">
-				                        		<label for="exampleInputEmail1">대분류 번호</label>
+				                        		<label for="exampleInputEmail1">직렬 번호</label>
 				                        	</div>
 		                        			<div class="col-8">
 				                        		<input type="text" id = "lNo" name="lNo" class = "form-select" readonly="readonly" value="${lVo.lNo}">
@@ -50,7 +50,7 @@
 			                        	</div>
 			                        	<div class="row p-5">
 				                        	<div class="col-2">
-				                        		<label for="exampleInputEmail1">대분류 명</label>
+				                        		<label for="exampleInputEmail1">직렬명</label>
 				                        	</div>
 		                        			<div class="col-8">
 				                       			<input type="text" id = "lName" name="lName" class = "form-select" value="${lVo.lName}">

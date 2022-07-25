@@ -89,11 +89,11 @@
                             </a>
                              <a class="nav-link" href="/lcategory/list">
                                 <div class="sb-nav-link-icon"><i class="fas fa-battery-full"></i></i></div>
-                               		 대분류
+                               		 직렬
                             </a>
                              <a class="nav-link" href="/scategory/list">
                                 <div class="sb-nav-link-icon"><i class="fas fa-battery-full"></i></i></div>
-                               		 소분류
+                               		 직무
                             </a>
 						<div class="sb-sidenav-menu-heading">사원정보</div>
                             <a class="nav-link" href="/member/list">

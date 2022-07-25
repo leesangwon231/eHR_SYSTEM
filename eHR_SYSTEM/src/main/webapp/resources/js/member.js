@@ -73,7 +73,7 @@ function register(){
 	}
 	
 	if(document.frm.lNo.value == "0"){
-		alert("대분류를 선택해주세요.");
+		alert("직렬을 선택해주세요.");
 		document.frm.lNo.focus();
 		return;
 	}
@@ -177,7 +177,7 @@ function modify(){
 	}
 	
 	if(document.frm.lNo.value == "0"){
-		alert("직군을 선택해주세요.");
+		alert("직렬을 선택해주세요.");
 		document.frm.lNo.focus();
 		return;
 	}

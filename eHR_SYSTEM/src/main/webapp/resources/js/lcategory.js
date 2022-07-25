@@ -10,7 +10,7 @@ function register(){
 		return;	
 	}
 	if(document.frm.lName.value == ""){
-		alert("대분류 명을 입력해 주세요");
+		alert("직렬명을 입력해 주세요");
 		document.frm.lName.focus();
 		return;	
 	}
@@ -35,7 +35,7 @@ function modify(){
 		return;	
 	}
 	if(document.frm.lName.value == ""){
-		alert("대분류 명을 입력해 주세요");
+		alert("직렬명을 입력해 주세요");
 		document.frm.lName.focus();
 		return;	
 	}

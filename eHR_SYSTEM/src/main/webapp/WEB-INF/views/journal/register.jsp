@@ -2,7 +2,8 @@
    pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
+<script type="text/javascript" src="/resources/js/journal.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.1.js"></script>
 <%@include file="../include/header.jsp"%>  
 <!-- <script type="text/javascript" src="/resources/js/journal.js"></script> -->
 <div id="layoutSidenav_content">
@@ -84,7 +85,7 @@
 									<td>${time}</td>
 								
 									<td><select id="ssNo${status.index}" class="form-select" onchange="change('${status.index}')">
-									    <option value= 0>직무를 선택해주세요</option>
+									    <option id="ssNo${status.index}" value= "0">직무를 선택해주세요</option>
 										<c:forEach items="${sList}" var="s">
 									    	<option id="ssNo${status.index}" value="${s.sNo}">${s.sName}</option>	
 										</c:forEach>
@@ -92,10 +93,10 @@
 									    <input type="hidden" name="jnLIst[${status.index}].sNo" id="jnLIst[${status.index}].sNo" class="s${status.index}">
 									    </td>
 									    
-									<td><input type="text" id="jndProgress"
+									<td><input type="text" id="jndProgress${status.index}"
 										name="<c:url value='jnLIst[${status.index}].'/>jndProgress"
 										class="form-control"></td>
-									<td><input type="text" id="jndNote"
+									<td><input type="text" id="jndNote${status.index}"
 										name="<c:url value='jnLIst[${status.index}].'/>jndNote"
 										class="form-control"></td>
 									</tr>
@@ -162,50 +163,36 @@
 </div>
 </li>
 </script>
-
 <script>
    var result = '${msg}';
-
    if (result == 'REGISTER') {
       alert("등록되었습니다.");
    }
-
    if (result == 'MODIFY') {
       alert("수정되었습니다.");
    }
-
    if (result == 'REMOVE') {
       alert("삭제되었습니다.");
    }
-
    if (result == 'CANNOT') {
       alert("로그인 정보가 일치하지 않아 수정 불가능합니다.");
    }
-
    if (result == 'CANTDELETE') {
       alert("로그인 정보가 일치하지 않아 삭제 불가능합니다.");
    }
 </script>
-
-
 <script>
    $(document)
          .ready(
                function() {
                   var formObj = $("form[role='form']");
-
                   formObj.submit(function(event) {
                            event.preventDefault();
                            //유효성 검사
-
                           
-
                     
-
                               var that = $(this);
-
                               var str = "";
-
                               $(".uploadedList .delbtn")
                                     .each(
                                           function(index) {
@@ -218,7 +205,7 @@
                                           });
 
                               that.append(str);
-                              console.log(str);
+                             
 
                               that.get(0).submit();
 
@@ -329,7 +316,7 @@
             var str = "";
 
             $(".uploadedList").append(html);
-            console.log(html);
+            
 
             uploaded++;
             $("#uploadCount").attr("value", uploaded);
@@ -404,27 +391,47 @@
       var formObj = $("form[role='form']");
       
       $("#btn_submit").on("click", function() {
-         /* register(); */
+    	  checkJn();
     	  formObj.submit();
       });
    });
 </script>
 
 <script>
-
-
 function change(a){
 			var index = a;
 			var ssNo = ""; 
     		ssNo = $('#ssNo'+index).val();
     		var jlistIndex = 'jnLIst['+index+'].sNo';
-    		console.log(jlistIndex);
-    		console.log(index);
-    		console.log(ssNo);
+    		
     		
     		 $(".s"+index).val(ssNo);  
     	}
 </script>
+<script>
+$("#jnWdate").change(function(){    
+	var jnWdate = $('#jnWdate').val();
+	
+	$.ajax({
+		type : 'GET',
+		url : "/journal/checkDate",
+		data : {
+			jnWdate : jnWdate,
+		},
+		success : function(data) {
+			if(data==1){
+				alert("이미 등록된 날짜 입니다 ");	
+				$('#jnWdate').val("");
+			}
+			
+          
+		},
+		error : function(jqXHR, textStatus, errorThrown) {
+			alert("ERROR : " + textStatus + " : " + errorThrown);
+		}
 
+	});
+});
+</script>
 
 <%@include file="../include/footer.jsp"%>

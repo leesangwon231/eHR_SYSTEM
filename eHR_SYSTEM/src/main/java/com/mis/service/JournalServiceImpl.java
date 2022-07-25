@@ -31,12 +31,12 @@ public class JournalServiceImpl implements JournalService {
 		System.out.println(jndNo);
 		if (vo.getFiles() != null) {
 
-			// 3-2) ´ÙÁß Ã·ºÎÆÄÀÏ ÀúÀå
+			// 3-2) ï¿½ï¿½ï¿½ï¿½ Ã·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			for (int i = 0; i < vo.getFiles().length; i++) {
 
 				JnfileVO fVo = new JnfileVO();
-				fVo.setJndNo(jndNo); // °øÁö»çÇ× Å×ÀÌºí PK (FK)
-				fVo.setJnfileName(vo.getFiles()[i]); // ¾÷·ÎµåµÈ Ã·ºÎÆÄÀÏ¸í
+				fVo.setJndNo(jndNo); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½ PK (FK)
+				fVo.setJnfileName(vo.getFiles()[i]); // ï¿½ï¿½ï¿½Îµï¿½ï¿½ Ã·ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½
 
 				dao.insertFile(fVo);
 
@@ -95,6 +95,11 @@ public class JournalServiceImpl implements JournalService {
 	@Override
 	public List<JnfileVO> fileList(int jndNo) throws Exception {
 		return dao.fileList(jndNo);
+	}
+
+	@Override
+	public int checkDate(String jnWdate) throws Exception {
+		return dao.checkDate(jnWdate);
 	}
 
 }

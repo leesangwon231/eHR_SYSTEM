@@ -96,4 +96,9 @@ public class JournalDAOImpl implements JournalDAO {
 		return session.selectList(namespace + ".fileList", jndNo);
 	}
 
+	@Override
+	public int checkDate(String jnWdate) throws Exception {
+		return session.selectOne(namespace+".checkDate",jnWdate);
+	}
+
 }

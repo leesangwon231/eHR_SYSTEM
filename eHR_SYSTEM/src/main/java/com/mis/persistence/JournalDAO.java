@@ -37,5 +37,7 @@ public interface JournalDAO {
 	public void deleteFile(int jnfileNo) throws Exception;
 	
 	public List<JnfileVO> fileList(int jndNo) throws Exception;
+	
+	public int checkDate(String jnWdate) throws Exception;
 
 }

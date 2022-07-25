@@ -90,4 +90,8 @@
 		FROM TBL_JN_FILE
 		WHERE JND_NO = #{jndNo}	   
 	</select>
+	
+	<select id="checkDate" resultType="int">
+		SELECT COUNT(*) FROM TBL_JOURNAL WHERE JN_WDATE = #{jnWdate} 
+	</select>
 </mapper>

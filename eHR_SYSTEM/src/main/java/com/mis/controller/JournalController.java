@@ -6,16 +6,21 @@ import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mis.domain.Criteria;
 import com.mis.domain.JndetailVO;
+import com.mis.domain.JnfileVO;
+import com.mis.domain.JobVO;
 import com.mis.domain.JournalVO;
 import com.mis.domain.MemberVO;
 import com.mis.domain.ScategoryVO;
@@ -74,7 +79,9 @@ public class JournalController {
 		
 		System.out.println(jvo);
 		System.out.println(dvo);
-		/*service.jnRegister(jvo);
+
+		System.out.println((String[])dvo.getJnLIst().get(1).getFiles());
+		/*		service.jnRegister(jvo);
 		
 		int jnNo = service.selectJnNo(jvo);
 
@@ -82,10 +89,17 @@ public class JournalController {
 			dvo.getJnLIst().get(i).setJnNo(jnNo);
 			service.jndRegister(dvo.getJnLIst().get(i));
 		}
-			
-		rttr.addFlashAttribute("msg", "REGISTER");
+		
+	JnfileVO vo = new JnfileVO();
+		vo.setJnNo(jnNo);
+	    vo.set
+	         dvo.getJnLIst().get(1).getFiles();
+	         service.jndRegister(dvo.getJnLIst().get(i));
+	    
+		
+		rttr.addFlashAttribute("msg", "REGISTER"); 
 
-		return "redirect:/journal/list";*/
+		return "redirect:/journal/list"; */
 	}
 
 	@RequestMapping(value = "/read", method = RequestMethod.GET)
@@ -133,6 +147,22 @@ public class JournalController {
 		rttr.addFlashAttribute("msg", "SUCCESS");
 
 		return "redirect:/journal/list";
+
+	}
+	
+	
+	@ResponseBody
+	@RequestMapping(value = "/checkDate", method = RequestMethod.GET)
+	public ResponseEntity<Integer> checkDate(@RequestParam("jnWdate") String jnWdate, Model model) throws Exception {
+
+		ResponseEntity<Integer> entity = null;
+		try {
+			entity = new ResponseEntity<Integer>(service.checkDate(jnWdate), HttpStatus.OK);
+		} catch (Exception e) {
+			e.printStackTrace();
+			entity = new ResponseEntity<Integer>(HttpStatus.BAD_REQUEST);
+		}
+		return entity;
 
 	}
 }

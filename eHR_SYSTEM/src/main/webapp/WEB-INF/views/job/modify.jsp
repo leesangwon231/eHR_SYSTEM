@@ -132,8 +132,6 @@
 	});
 </script>
 
-
-
 <script>
 	function selectJobGroup(jgNo) {
 	   

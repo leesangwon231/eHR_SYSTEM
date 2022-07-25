@@ -75,6 +75,7 @@
 	}
 </script>
 
+
 <script>
 	$(document).ready(function() {
 		$('#newBtn').on("click", function(evt) {

@@ -67,8 +67,6 @@
    if (result == 'CANNOT') {
 		alert("로그인 정보가 일치하지 않아 수정 불가능합니다.");
 	}
-  
-
 </script>
 
 <script>

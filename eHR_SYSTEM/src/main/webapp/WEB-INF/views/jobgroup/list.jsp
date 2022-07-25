@@ -36,8 +36,8 @@
 	               <tbody>
 	                  <c:forEach items="${list}" var="jobgroupVO" varStatus="status">
 	                     <tr>
-	                        <td>${jobgroupVO.jgNo}</td>
-	                        <td><a href='/jobgroup/read?jgNo=${jobgroupVO.jgNo}'>${jobgroupVO.jgName}</a></td>
+	                        <td><a href='/jobgroup/read?jgNo=${jobgroupVO.jgNo}'>${jobgroupVO.jgNo}</a></td>
+	                        <td>${jobgroupVO.jgName}</td>
 	                        
 	                     </tr>
 	                  </c:forEach>

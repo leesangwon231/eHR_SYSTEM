@@ -17,19 +17,19 @@
 								<form role="form" method="post" name="frm" action="/lcategory/delete">
 			                        <div class="col-lg-10">
 			                        	<div class="row p-5">
-				                    		<div class="col-1">
+				                    		<div class="col-2">
 				                        		<label for="exampleInputEmail1">직군</label>
 				                        	</div>
-		                        			<div class="col-9">
-		                        				<input type="text" id = "jgName" name="jgName" class = "form-select" readonly="readonly" value="${lVo.jgName}">
+		                        			<div class="col-8">
+		                        				<input type="text" id = "jgName" name="jgName" class = "form-control" readonly="readonly" value="${lVo.jgName}">
 				                        	</div>
 			                        	</div>
 			                        	<div class="row p-5">
-				                        	<div class="col-1">
+				                        	<div class="col-2">
 				                        		<label for="exampleInputEmail1">직종</label>
 				                        	</div>
-		                        			<div class="col-9">
-		                        				<input type="text" id = "jobName" name="jobName" class = "form-select" readonly="readonly" value="${lVo.jobName}">
+		                        			<div class="col-8">
+		                        				<input type="text" id = "jobName" name="jobName" class = "form-control" readonly="readonly" value="${lVo.jobName}">
 				                        	</div>
 			                        	</div>
 			                        	<div class="row p-5">
@@ -37,7 +37,7 @@
 				                        		<label for="exampleInputEmail1">직렬 번호</label>
 				                        	</div>
 		                        			<div class="col-8">
-				                        		<input type="text" id = "lNo" name="lNo" class = "form-select" readonly="readonly" value="${lVo.lNo}">
+				                        		<input type="text" id = "lNo" name="lNo" class = "form-control" readonly="readonly" value="${lVo.lNo}">
 				                        	</div>
 			                        	</div>
 			                        	<div class="row p-5">
@@ -45,7 +45,7 @@
 				                        		<label for="exampleInputEmail1">직렬명</label>
 				                        	</div>
 		                        			<div class="col-8">
-				                       			<input type="text" id = "lName" name="lName" class = "form-select" value="${lVo.lName}" readonly="readonly">
+				                       			<input type="text" id = "lName" name="lName" class = "form-control" value="${lVo.lName}" readonly="readonly">
 				                       		</div>
 			                        	</div>
 			                       	</div>

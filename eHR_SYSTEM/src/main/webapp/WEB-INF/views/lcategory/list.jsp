@@ -37,8 +37,8 @@
 	               <tbody>
 	                  <c:forEach items="${list}" var="lVo" varStatus="status">
 	                     <tr>
-	                        <td>${lVo.lNo}</td>
-	                        <td><a href='/lcategory/read?lNo=${lVo.lNo}'>${lVo.lName}</a></td>
+	                        <td><a href='/lcategory/read?lNo=${lVo.lNo}'>${lVo.lNo}</a></td>
+	                        <td>${lVo.lName}</td>
 	                        <td>${lVo.jobName}</td>
 	                        <td>${lVo.jgName}</td>
 	                     </tr>

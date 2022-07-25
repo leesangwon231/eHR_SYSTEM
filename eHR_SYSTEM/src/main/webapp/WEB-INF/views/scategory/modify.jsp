@@ -58,7 +58,7 @@
 									<label for="exampleInputEmail1">직무 번호</label>
 								</div>
 								<div class="col-8">
-									<input type="text" id="sNo" name="sNo" class="form-select"
+									<input type="text" id="sNo" name="sNo" class = "form-control"
 										value="${sVo.sNo}" readonly="readonly">
 								</div>
 							</div>
@@ -67,7 +67,7 @@
 									<label for="exampleInputEmail1">직무명</label>
 								</div>
 								<div class="col-8">
-									<input type="text" id="sName" name="sName" class="form-select"
+									<input type="text" id="sName" name="sName" class = "form-control"
 										value="${sVo.sName}">
 								</div>
 							</div>
@@ -79,7 +79,7 @@
 									<label for="exampleInputEmail1">연</label>
 								</div>
 								<div class="col-3">
-									<input type="text" id="sYear" name="sYear" class="form-select"
+									<input type="text" id="sYear" name="sYear" class = "form-control"
 										value="${sVo.sYear}">
 								</div>
 								<div class="col-1">
@@ -87,7 +87,7 @@
 								</div>
 								<div class="col-3">
 									<input type="text" id="sMonth" name="sMonth"
-										class="form-select" value="${sVo.sMonth}">
+										class = "form-control" value="${sVo.sMonth}">
 								</div>
 							</div>
 
@@ -100,14 +100,14 @@
 								</div>
 								<div class="col-3">
 									<input type="text" id="sQuarter" name="sQuarter"
-										class="form-select" value="${sVo.sQuarter}">
+										class = "form-control" value="${sVo.sQuarter}">
 								</div>
 
 								<div class="col-1">
 									<label for="exampleInputEmail1">일</label>
 								</div>
 								<div class="col-3">
-									<input type="text" id="sDay" name="sDay" class="form-select"
+									<input type="text" id="sDay" name="sDay" class = "form-control"
 										value="${sVo.sDay}">
 								</div>
 							</div>

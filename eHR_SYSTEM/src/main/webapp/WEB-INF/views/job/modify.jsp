@@ -17,15 +17,15 @@
 								<form role="form" method="post" name="frm" action="modify">
 			                        <div class="col-lg-10">
 			                        	<div class="row p-5">
-				                    		<div class="col-1">
+				                    		<div class="col-2">
 				                        		<label for="exampleInputEmail1">직군</label>
 				                        	</div>
-		                        			<div class="col-9">
+		                        			<div class="col-8">
 				                        		<select name="jgNo" id="jgNo" class = "form-select" onchange="selectJobGroup(value);">
 			                                    	<option value="0">직군을 선택해 주세요</option>
 			                                        <c:forEach items="${jobGroup}" var="jobGroupVO">
 														<option value="${jobGroupVO.jgNo}"
-														<c:if test ="${jobGroupVO.jgNo eq jobVo.jgNo}">selected="selected"</c:if>>${jobGroupVO.jgName}</option>
+														<c:if test ="${jobGroupVO.jgNo == jobVo.jgNo}">selected="selected"</c:if>>${jobGroupVO.jgName}</option>
 													</c:forEach>
 												</select>
 				                        	</div>
@@ -40,7 +40,7 @@
 			                        	</div>
 			                        	<div class="row p-5">
 				                        	<div class="col-2">
-				                        		<label for="exampleInputEmail1">직종 명</label>
+				                        		<label for="exampleInputEmail1">직종명</label>
 				                        	</div>
 		                        			<div class="col-8">
 				                       			<input type="text" id = "jobName" name="jobName" class = "form-control" value="${jobVo.jobName}">

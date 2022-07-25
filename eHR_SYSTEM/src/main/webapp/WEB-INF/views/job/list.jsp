@@ -36,8 +36,8 @@
 	               <tbody>
 	                  <c:forEach items="${list}" var="jobVO" varStatus="status">
 	                     <tr>
-	                        <td>${jobVO.jobNo}</td>
-	                        <td><a href='/job/read?jobNo=${jobVO.jobNo}'>${jobVO.jobName}</a></td>
+	                        <td><a href='/job/read?jobNo=${jobVO.jobNo}'>${jobVO.jobNo}</a></td>
+	                        <td>${jobVO.jobName}</td>
 	                        <td>${jobVO.jgName}</td>
 	                     </tr>
 	                  </c:forEach>

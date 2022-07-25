@@ -17,10 +17,10 @@
 								<form role="form" method="post" name="frm">
 			                        <div class="col-lg-10">
 			                        	<div class="row p-5">
-				                    		<div class="col-1">
+				                    		<div class="col-2">
 				                        		<label for="exampleInputEmail1">직군</label>
 				                        	</div>
-		                        			<div class="col-9">
+		                        			<div class="col-8">
 		                        				<input type="text" id = "jgName" name="jgName" class = "form-control" readonly="readonly" value="${jobVo.jgName}">
 				                        	</div>
 			                        	</div>
@@ -34,10 +34,10 @@
 			                        	</div>
 			                        	<div class="row p-5">
 				                        	<div class="col-2">
-				                        		<label for="exampleInputEmail1">직종 명</label>
+				                        		<label for="exampleInputEmail1">직종명</label>
 				                        	</div>
 		                        			<div class="col-8">
-				                       			<input type="text" id = "jobName" name="jobName" class = "form-control" value="${jobVo.jobName}">
+				                       			<input type="text" id = "jobName" name="jobName" class = "form-control" readonly="readonly" value="${jobVo.jobName}">
 				                       		</div>
 			                        	</div>
 			                       	</div>

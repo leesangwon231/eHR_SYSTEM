@@ -23,7 +23,7 @@
 								</div>
 								<div class="col-8">
 									<input type="text" id="jgName" name="jgName"
-										class="form-select" readonly="readonly"
+										class = "form-control" readonly="readonly"
 										value="${scategoryVO.jgName}">
 								</div>
 							</div>
@@ -33,7 +33,7 @@
 								</div>
 								<div class="col-8">
 									<input type="text" id="jobName" name="jobName"
-										class="form-select" readonly="readonly"
+										class = "form-control" readonly="readonly"
 										value="${scategoryVO.jobName}">
 								</div>
 							</div>
@@ -42,7 +42,7 @@
 									<label for="exampleInputEmail1">직렬 </label>
 								</div>
 								<div class="col-8">
-									<input type="text" id="lName" name="lName" class="form-select"
+									<input type="text" id="lName" name="lName" class = "form-control"
 										readonly="readonly" value="${scategoryVO.lName}">
 								</div>
 							</div>
@@ -51,7 +51,7 @@
 									<label for="exampleInputEmail1">직무 번호</label>
 								</div>
 								<div class="col-8">
-									<input type="text" id="sNo" name="sNo" class="form-select"
+									<input type="text" id="sNo" name="sNo" class = "form-control"
 										readonly="readonly" value="${scategoryVO.sNo}">
 								</div>
 							</div>

@@ -69,12 +69,12 @@ public class JournalController {
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public String registerPost(@ModelAttribute(value = "JournalVO") JournalVO jvo,
+	public void registerPost(@ModelAttribute(value = "JournalVO") JournalVO jvo,
 			@ModelAttribute(value = "JndetailVO") JndetailVO dvo, RedirectAttributes rttr) throws Exception {
 		
 		System.out.println(jvo);
 		System.out.println(dvo);
-		service.jnRegister(jvo);
+		/*service.jnRegister(jvo);
 		
 		int jnNo = service.selectJnNo(jvo);
 
@@ -85,7 +85,7 @@ public class JournalController {
 			
 		rttr.addFlashAttribute("msg", "REGISTER");
 
-		return "redirect:/journal/list";
+		return "redirect:/journal/list";*/
 	}
 
 	@RequestMapping(value = "/read", method = RequestMethod.GET)

@@ -102,7 +102,26 @@
 								</c:forEach>
 						</tbody>
 					</table>
+					<div id='mydropzone' class="dropzone">
 
+						<input type="file" id="fileUpload" name="fileUpload"
+							style="visibility: hidden;" />
+
+						<div class="fileDrop">
+							<input type="hidden" id="uploadCount">
+							<div class="dz-message needsclick">
+								<i class="h1 text-muted dripicons-cloud-upload"></i>
+								<h3>Drop files here or click to upload.</h3>
+								<span class="text-muted font-13">첨부파일을 업로드하려면 여기에 첨부파일
+									파일을 끌어 넣거나 클릭해주세요</span>
+							</div>
+						</div>
+					</div>
+					<div>
+						<ul class="dropzone-previews clearfix uploadedList">
+						</ul>
+					</div>
+				
             </div>
             <div class="mt-4">
                <div class="offset-9" align="right">
@@ -175,14 +194,13 @@
                function() {
                   var formObj = $("form[role='form']");
 
-                  formObj
-                        .submit(function(event) {
+                  formObj.submit(function(event) {
                            event.preventDefault();
                            //유효성 검사
 
-                           var val = validate();
+                          
 
-                           if (val) {
+                    
 
                               var that = $(this);
 
@@ -191,7 +209,7 @@
                               $(".uploadedList .delbtn")
                                     .each(
                                           function(index) {
-                                             str += "<input type='hidden' name='files'"
+                                             str += "<input type='hidden' name='jnLIst[1].files'"
                                                    + " value='"
                                                    + $(this)
                                                          .attr(
@@ -204,7 +222,7 @@
 
                               that.get(0).submit();
 
-                           }//if문 종료
+                         
 
                         });
 
@@ -387,7 +405,7 @@
       
       $("#btn_submit").on("click", function() {
          /* register(); */
-         document.frm.submit();
+    	  formObj.submit();
       });
    });
 </script>

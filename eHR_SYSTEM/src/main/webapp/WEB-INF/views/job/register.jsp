@@ -18,10 +18,10 @@
 					<form role="form" method="post" name="frm">
 						<div class="col-lg-10">
 							<div class="row p-5">
-								<div class="col-1">
+								<div class="col-2">
 									<label for="exampleInputEmail1">직군</label>
 								</div>
-								<div class="col-9">
+								<div class="col-8">
 										<select name="jgNo" id="jgNo" class="form-select" onchange="selectJobGroup(value);">
 										<option value="0">직군을 선택해 주세요</option>
 										<c:forEach items="${jobGroup}" var="jobGroupVO">

@@ -12,7 +12,7 @@
 	      <div class="card mb-4">
 	         <div class="card-header">
 	            <i class="bi bi-megaphone"></i> 직군 목록
-	            	<button class="btn btn-outline-dark btn-sm" id="newBtn" style="float: right; padding: 0 auto 0 auto;">새 게시글 작성</button>
+	            	<button class="btn btn-outline-dark btn-sm" id="newBtn" style="float: right; padding: 0 auto 0 auto;">등록</button>
 	         </div>
 	         <div class="card-body">
 	         <c:if test="${empty list}">

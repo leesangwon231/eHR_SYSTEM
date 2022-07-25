@@ -78,13 +78,13 @@ function register(){
 		return;
 	}
 	
-	if(document.frm.memPosition.value == ""){
+	if(document.frm.memPosition.value == "none"){
 		alert("직위를 선택해주세요.");
 		document.frm.memPosition.focus();
 		return;
 	}
 	
-	if(document.frm.memRes.value == ""){
+	if(document.frm.memRes.value == "none"){
 		alert("직책을 선택해주세요.");
 		document.frm.memRes.focus();
 		return;
@@ -182,13 +182,13 @@ function modify(){
 		return;
 	}
 	
-	if(document.frm.memPosition.value == "0"){
+	if(document.frm.memPosition.value == "none"){
 		alert("직위를 선택해주세요.");
 		document.frm.memPosition.focus();
 		return;
 	}
 	
-	if(document.frm.memRes.value == "0"){
+	if(document.frm.memRes.value == "none"){
 		alert("직책을 선택해주세요.");
 		document.frm.memRes.focus();
 		return;

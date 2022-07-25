@@ -134,6 +134,7 @@
 				                        	</div>
 		                        			<div class="col-7">
 		                        				<select name="memPosition" id="memPosition" class = "form-select">
+	                                             	<option value="none" selected>직위를 선택해 주세요</option>
 	                                             	<option value="1">부장</option>
 	                                             	<option value="0">사용자</option>
 	                                             </select>
@@ -146,6 +147,7 @@
 				                        	</div>
 		                        			<div class="col-7">
 		                        				<select name="memRes" id="memRes" class = "form-select">
+	                                             	<option value="none" selected>직책을 선택해 주세요</option>
 	                                             	<option value="1">부장</option>
 	                                             	<option value="0">사용자</option>
 	                                             </select>

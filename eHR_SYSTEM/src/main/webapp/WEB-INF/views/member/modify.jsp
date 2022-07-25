@@ -105,10 +105,11 @@
 				                        		<label for="exampleInputEmail1">부서</label>
 				                        	</div>
 		                        			<div class="col-7">
-				                        		<select name="deptNo" id="deptNo" class = "form-select" value="${MemberVO.deptName}">
+				                        		<select name="deptNo" id="deptNo" class = "form-select">
 			                                    	<option value="0">부서를 선택해 주세요</option>
 			                                        <c:forEach items="${Dept}" var="DeptVO">
-														<option value=${DeptVO.deptNo}>${DeptVO.deptName}</option>
+														<option value="${DeptVO.deptNo}"
+														<c:if test ="${DeptVO.deptNo == MemberVO.deptNo}">selected="selected"</c:if>>${DeptVO.deptName}</option>
 													</c:forEach>
 												</select>
 				                        	</div>
@@ -119,10 +120,11 @@
 				                        		<label for="exampleInputEmail1">직렬</label>
 				                        	</div>
 		                        			<div class="col-7">
-				                        		<select name="lNo" id="lNo" class = "form-select"  value="${MemberVO.lName}" >
+				                        		<select name="lNo" id="lNo" class = "form-select">
 			                                    	<option value="0">직렬을 선택해 주세요</option>
 			                                        <c:forEach items="${Lcategory}" var="LcategoryVO">
-														<option value=${LcategoryVO.lNo}>${LcategoryVO.lName}</option>
+														<option value="${LcategoryVO.lNo}"
+														<c:if test = "${LcategoryVO.lNo == MemberVO.lNo}">selected="selected"</c:if>>${LcategoryVO.lName}</option>
 													</c:forEach>
 												</select>
 				                        	</div>
@@ -133,10 +135,18 @@
 				                        		<label for="exampleInputEmail1">직위</label>
 				                        	</div>
 		                        			<div class="col-7">
-		                        				<select name="memPosition" id="memPosition" class = "form-select" value="${MemberVO.memPosition}">
-	                                             	<option value="1">부장</option>
-	                                             	<option value="0">사용자</option>
-	                                             </select>
+		                        				<select name="memPosition" id="memPosition" class = "form-select">
+	                                            	<option value="${MemberVO.memPosition}" selected>
+	                                            		<c:if test="${0 eq MemberVO.memPosition}">사용자
+	                                            		<option value="none">직위를 선택해 주세요</option>
+	                                            		<option value="1">부장</option>	
+	                                            		</c:if>
+	                                            		
+	                                            		<c:if test="${1 eq MemberVO.memPosition}">부장
+	                                            		<option value="none">직위를 선택해 주세요</option>
+	                                            		<option value="0">사용자</option>
+	                                            		</c:if>
+	                                        	</select>
 				                       		</div>
 			                        	</div>
 			                        	
@@ -145,10 +155,18 @@
 				                        		<label for="exampleInputEmail1">직책</label>
 				                        	</div>
 		                        			<div class="col-7">
-		                        				<select name="memRes" id="memRes" class = "form-select" value="${MemberVO.memRes}">
-	                                             	<option value="1">부장</option>
-	                                             	<option value="0">사용자</option>
-	                                             </select>
+		                        				<select name="memRes" id="memRes" class = "form-select">
+	                                            	<option value="${MemberVO.memRes}" selected>
+	                                            		<c:if test="${0 eq MemberVO.memRes}">사용자
+	                                            		<option value="none">직책을 선택해 주세요</option>
+	                                            		<option value="1">부장</option>	
+	                                            		</c:if>
+	                                            		
+	                                            		<c:if test="${1 eq MemberVO.memPosition}">부장
+	                                            		<option value="none">직책을 선택해 주세요</option>
+	                                            		<option value="0">사용자</option>
+	                                            		</c:if>
+	                                        	</select>
 				                       		</div>
 			                        	</div>        	 		
 			                        </div>

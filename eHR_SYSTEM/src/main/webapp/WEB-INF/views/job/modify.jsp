@@ -21,7 +21,7 @@
 				                        		<label for="exampleInputEmail1">직군</label>
 				                        	</div>
 		                        			<div class="col-8">
-				                        		<select name="jgNo" id="jgNo" class = "form-select" onchange="selectJobGroup(value);">
+				                        		<select name="jgNo" id="jgNo" class = "form-select">
 			                                    	<option value="0">직군을 선택해 주세요</option>
 			                                        <c:forEach items="${jobGroup}" var="jobGroupVO">
 														<option value="${jobGroupVO.jgNo}"
@@ -105,7 +105,7 @@
  
 	   	$.ajax({
 			type : 'GET',
-			url : "/lcategory/jobList",
+			url : "/job/jobList",
 			data : {
 				jgNo : jgNo,
 			},

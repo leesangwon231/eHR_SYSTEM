@@ -15,7 +15,7 @@ function checkJn(){
 				 $(".s"+i).val(ssNo);  
 				 
 			}
-	*/		
+	*/		ㄴ
 		
 			if(isNaN(document.getElementById("jndProgress"+i).value)){
 				alert("진척도를 숫자로 입력해 주세요");

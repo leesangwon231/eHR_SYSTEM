@@ -15,7 +15,7 @@ function checkJn(){
 				 $(".s"+i).val(ssNo);  
 				 
 			}
-	*/		ㄴ
+	*/		
 		
 			if(isNaN(document.getElementById("jndProgress"+i).value)){
 				alert("진척도를 숫자로 입력해 주세요");
@@ -27,6 +27,10 @@ function checkJn(){
 				alert("진척도를 100이하로 작성해 주세요");
 				document.getElementById("jndProgress"+i).focus();
 				return;
+			}
+			
+			if(document.getElementById("jndProgress"+i).value ==""){
+				$("#jndProgress"+i).val(0);
 			}
 			
 		   

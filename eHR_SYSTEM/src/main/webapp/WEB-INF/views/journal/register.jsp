@@ -104,10 +104,10 @@
 																		</div> -->
 												<div class="input-group">
 													<input type="file" class="form-control" id="fileUpload"
-														name="fileUpload" aria-describedby="inputGroupFileAddon04"
-														aria-label="Upload">
+														name="<c:url value='jnLIst[${status.index}].'/>fileUpload" aria-describedby="inputGroupFileAddon04"
+														aria-label="Upload" value="jnLIst[${status.index}].">
 													<button class="btn btn-outline-secondary" type="button"
-														id="inputGroupFileAddon04" onclick="fileUpload.click()">
+														id="inputGroupFileAddon04" onclick="fileUpload.onclick()">
 														<i class="bi bi-plus-lg"></i>
 													</button>
 													<!-- <div class="card">
@@ -118,7 +118,7 @@
 											</div>
 										</div>
 										<div>
-											<ul class="dropzone-previews clearfix uploadedList"></ul>
+											<ul class="dropzone-previews clearfix jnLIst[${status.index}].uploadedList"></ul>
 										</div>
 									</td>
 								</tr>
@@ -193,6 +193,7 @@
 
 
 <script>
+	var index = "";
 	$(document)
 			.ready(
 					function() {
@@ -241,10 +242,12 @@
 
 					});
 
-	$('#mydropzone').click(function(event) {
+	$('.form-control').click(function(event) {
 
-		let fileUpload = document.getElementById("fileUpload");
-		fileUpload.click();
+	
+		var num = $(this).attr("value");
+		index = num;	  
+	
 
 	});
 
@@ -301,9 +304,8 @@
 	//클릭으로 파일 업로드할 때 호출되는 함수
 	$("#fileUpload").on("change", function(event) {
 		event.preventDefault();
-
 		var uploaded = $("#uploadCount").val();
-
+		console.log(index);	
 		if (uploaded >= 3) {
 			alert('첨부파일은 3개 까지 업로드할 수 있습니다.');
 			return;
@@ -333,13 +335,12 @@
 
 				var str = "";
 
-				$(".uploadedList").append(html);
-				console.log(html);
-
+				$('.'+index+'uploadedList').append(html);
+				
 				uploaded++;
-				$("#uploadCount").attr("value", uploaded);
+				$('#'+index+'uploadCount').attr("value", uploaded);
 
-				$(".uploadedList").append(str);
+				$('.'+index+'uploadedList').append(str);
 			}
 		});
 	});

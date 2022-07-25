@@ -10,12 +10,12 @@ function register(){
 		return false;	
 	}
 	if(document.frm.lNo.value == "0"){
-		alert("대분류를 선택해 주세요");
+		alert("직렬를 선택해 주세요");
 		document.frm.lNo.focus();
 		return false;	
 	}
 	if(document.frm.sName.value == ""){
-		alert("소분류 명을 입력해 주세요");
+		alert("직무명을 입력해 주세요");
 		document.frm.jobName.focus();
 		return false;	
 	}
@@ -96,12 +96,12 @@ function modify(){
 		return false;	
 	}
 	if(document.frm.lNo.value == ""){
-		alert("대분류 명을 선택해 주세요");
+		alert("직렬을 선택해 주세요");
 		document.frm.lNo.focus();
 		return false;	
 	}
 	if(document.frm.sName.value == ""){
-		alert("소분류 명을 선택해 주세요");
+		alert("직무영을 입력해 주세요");
 		document.frm.sName.focus();
 		return false;	
 	}

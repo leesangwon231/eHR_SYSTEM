@@ -9,7 +9,7 @@
 <div id="layoutSidenav_content">
 	<main>
 	<div class="container-fluid px-4">
-		<h1 class="mt-4" style='text-align: left; margin-bottom: 30px;'>소분류
+		<h1 class="mt-4" style='text-align: left; margin-bottom: 30px;'>직무
 			상세보기</h1>
 		<div class="container-fluid px-5">
 			<div class="pt-5">
@@ -39,7 +39,7 @@
 							</div>
 							<div class="row p-4">
 								<div class="col-2">
-									<label for="exampleInputEmail1">대분류 </label>
+									<label for="exampleInputEmail1">직렬 </label>
 								</div>
 								<div class="col-8">
 									<input type="text" id="lName" name="lName" class="form-select"
@@ -48,7 +48,7 @@
 							</div>
 							<div class="row p-4">
 								<div class="col-2">
-									<label for="exampleInputEmail1">소분류 번호</label>
+									<label for="exampleInputEmail1">직무 번호</label>
 								</div>
 								<div class="col-8">
 									<input type="text" id="sNo" name="sNo" class="form-select"
@@ -57,7 +57,7 @@
 							</div>
 							<div class="row p-4">
 								<div class="col-2">
-									<label for="exampleInputEmail1">소분류명</label>
+									<label for="exampleInputEmail1">직무명</label>
 								</div>
 								<div class="col-8">
 									<input type="text" id="sName" name="sName" class="form-control"
@@ -258,7 +258,7 @@
 
 		if (jobNo === "0") {
 			$("#lNo option").remove();
-			lcategory = "<option value='0'>대분류를 선택해주세요</option>";
+			lcategory = "<option value='0'>직렬을 선택해주세요</option>";
 			$("#lNo").append(lcategory);
 			return false;
 		}
@@ -270,7 +270,7 @@
 				jobNo : jobNo,
 			},
 			success : function(data) {
-				lcategory = "<option value='0'>대분류를 선택해주세요</option>";
+				lcategory = "<option value='0'>직렬을 선택해주세요</option>";
 				$("#lNo option").remove();
 				$.each(data, function(key, value) {
 					lcategory += "<option value=" + value.lNo + ">"

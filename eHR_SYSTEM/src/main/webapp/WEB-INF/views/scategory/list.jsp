@@ -7,11 +7,11 @@
 <div id="layoutSidenav_content">
    <main>
 	   <div class="container-fluid px-4">
-	      <h1 class="mt-4" style='text-align: center; margin-bottom: 30px;'>소분류</h1>
+	      <h1 class="mt-4" style='text-align: center; margin-bottom: 30px;'>직무</h1>
 	
 	      <div class="card mb-4">
 	         <div class="card-header">
-	            <i class="bi bi-megaphone"></i> 소분류 목록
+	            <i class="bi bi-megaphone"></i> 직무 목록
 	            	<button class="btn btn-outline-dark btn-sm" id="newBtn" style="float: right; padding: 0 auto 0 auto;">등록</button>
 	         </div>
 	         <div class="card-body">
@@ -28,9 +28,9 @@
 	            <table id="datatablesSimple">
 	               <thead>
 	                  <tr>
-	                     <th style="width: 10px">소분류번호</th>
-	                     <th>소분류명</th>
-	                     <th>대분류명</th>
+	                     <th style="width: 10px">직무번호</th>
+	                     <th>직무명</th>
+	                     <th>직렬명</th>
 	                     <th>직종</th>
 	                     <th>직군</th>
 	                  </tr>

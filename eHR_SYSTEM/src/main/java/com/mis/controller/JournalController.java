@@ -45,8 +45,23 @@ public class JournalController {
 		dto = service.selectAllListDTO(user.getMemNo());
 
 		List<ScategoryVO> sVo = service.selectSlist(dto.getlNo());
-
+		
+		ArrayList<String> time = new ArrayList<String>();
+		
+		String setTime="";
+		
+		for (int i = 9; i < 18; i++) {
+			setTime = "0"+i+":00 ~ "+ (i+1)+":00";
+			if(i>=10) {
+				 setTime = i+":00 ~ "+ (i+1)+":00";
+			}
+			time.add(setTime);
+		}
+		
+		time.add("초과근무");
+		
 		model.addAttribute("jDto", dto);
+		model.addAttribute("time", time);
 		model.addAttribute("sList", sVo);
 		
 		
@@ -56,21 +71,21 @@ public class JournalController {
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String registerPost(@ModelAttribute(value = "JournalVO") JournalVO jvo,
 			@ModelAttribute(value = "JndetailVO") JndetailVO dvo, RedirectAttributes rttr) throws Exception {
-
+		
+		System.out.println(jvo);
+		System.out.println(dvo);
 		service.jnRegister(jvo);
-
+		
 		int jnNo = service.selectJnNo(jvo);
 
 		for (int i = 0; i < dvo.getJnLIst().size(); i++) {
 			dvo.getJnLIst().get(i).setJnNo(jnNo);
-			System.out.println(dvo.getJnLIst().get(i));
 			service.jndRegister(dvo.getJnLIst().get(i));
 		}
 			
 		rttr.addFlashAttribute("msg", "REGISTER");
 
 		return "redirect:/journal/list";
-
 	}
 
 	@RequestMapping(value = "/read", method = RequestMethod.GET)

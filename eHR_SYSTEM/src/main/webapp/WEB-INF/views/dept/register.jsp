@@ -21,7 +21,8 @@
 				                        		<label for="exampleInputEmail1">부서 번호</label>
 				                        	</div>
 		                        			<div class="col-8">
-				                        		<input type="text" id = "deptNo" name="deptNo" class = "form-control" readonly="readonly" value= 1>
+				                        		<input type="text" id = "deptNo" name="deptNo" class = "form-control" readonly="readonly" 
+				                        		placeholder = "부서 번호는 자동으로 부여됩니다" >
 				                 			</div>
 			                        	</div>
 			                        	<div class="row p-5">

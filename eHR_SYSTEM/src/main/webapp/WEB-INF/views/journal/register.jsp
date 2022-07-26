@@ -85,7 +85,7 @@
 									<td>${time}</td>
 								
 									<td><select id="ssNo${status.index}" class="form-select" onchange="change('${status.index}')">
-									    <option id="ssNo${status.index}" value= "0">직무를 선택해주세요</option>
+									    <option id="ssNo${status.index}" value= "">직무를 선택해주세요</option>
 										<c:forEach items="${sList}" var="s">
 									    	<option id="ssNo${status.index}" value="${s.sNo}">${s.sName}</option>	
 										</c:forEach>
@@ -391,8 +391,12 @@
       var formObj = $("form[role='form']");
       
       $("#btn_submit").on("click", function() {
-    	  checkJn();
-    	  formObj.submit();
+    	  if(checkJn()){
+    		  formObj.submit();
+    		  
+    	  }
+    	
+    	  
       });
    });
 </script>

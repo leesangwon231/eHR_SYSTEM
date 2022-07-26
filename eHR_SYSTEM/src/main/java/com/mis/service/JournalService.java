@@ -8,7 +8,7 @@ import com.mis.domain.JournalVO;
 import com.mis.domain.ScategoryVO;
 import com.mis.dto.JournalDTO;
 
-public interface JournalService {
+public interface JournalService {    
 
 	public void jnRegister(JournalVO vo) throws Exception;
 

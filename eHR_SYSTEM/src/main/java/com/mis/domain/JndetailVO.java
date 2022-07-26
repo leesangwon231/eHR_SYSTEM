@@ -13,7 +13,7 @@ public class JndetailVO {
 	private String jnSatisfaction;
 	private String jnApproval;
 
-	private int memNo; **/
+	private int memNo; **/ 
 	private int jnNo;
 	private int jndNo;
 	private int jndProgress;

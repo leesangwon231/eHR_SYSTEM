@@ -53,6 +53,8 @@ public class JournalController {
 		
 		ArrayList<String> time = new ArrayList<String>();
 		
+		
+		
 		String setTime="";
 		
 		for (int i = 9; i < 18; i++) {
@@ -74,32 +76,28 @@ public class JournalController {
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public void registerPost(@ModelAttribute(value = "JournalVO") JournalVO jvo,
+	public String registerPost(@ModelAttribute(value = "JournalVO") JournalVO jvo,
 			@ModelAttribute(value = "JndetailVO") JndetailVO dvo, RedirectAttributes rttr) throws Exception {
 		
 		System.out.println(jvo);
 		System.out.println(dvo);
 
 		System.out.println((String[])dvo.getJnLIst().get(1).getFiles());
-		/*		service.jnRegister(jvo);
+		service.jnRegister(jvo);
 		
 		int jnNo = service.selectJnNo(jvo);
+		
 
+		
+		
 		for (int i = 0; i < dvo.getJnLIst().size(); i++) {
 			dvo.getJnLIst().get(i).setJnNo(jnNo);
 			service.jndRegister(dvo.getJnLIst().get(i));
 		}
-		
-	JnfileVO vo = new JnfileVO();
-		vo.setJnNo(jnNo);
-	    vo.set
-	         dvo.getJnLIst().get(1).getFiles();
-	         service.jndRegister(dvo.getJnLIst().get(i));
-	    
-		
+
 		rttr.addFlashAttribute("msg", "REGISTER"); 
 
-		return "redirect:/journal/list"; */
+		return "redirect:/journal/list"; 
 	}
 
 	@RequestMapping(value = "/read", method = RequestMethod.GET)

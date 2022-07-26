@@ -27,19 +27,18 @@ public class JournalServiceImpl implements JournalService {
 
 	@Override
 	public void jndRegister(JndetailVO vo) throws Exception {
-		int jndNo = dao.jndCreate(vo);
-		System.out.println(jndNo);
-		if (vo.getFiles() != null) {
+		dao.jndCreate(vo);
+		if (vo.getFiles() != null) {  
 
 			// 3-2) ���� ÷������ ����
 			for (int i = 0; i < vo.getFiles().length; i++) {
 
 				JnfileVO fVo = new JnfileVO();
-				fVo.setJndNo(jndNo); // �������� ���̺� PK (FK)
+				fVo.setJnNo(vo.getJnNo()); // �������� ���̺� PK (FK)
 				fVo.setJnfileName(vo.getFiles()[i]); // ���ε�� ÷�����ϸ�
 
 				dao.insertFile(fVo);
-
+				
 			}
 
 		}

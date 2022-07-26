@@ -29,5 +29,33 @@
 	SET JN_APNO = #{jnApno} , JN_SATISFACTION = #{jnSatisfaction} , JN_APPROVAL = 1
 	WHERE JN_NO = #{jnNo}
 	</update>
+	
+	<select id="selectAllListDTO" resultType="com.mis.dto.JournalDTO">
+  		SELECT g.MEM_NO , g.MEM_NAME , g.MEM_EMAIL, g.MEM_ZIPCODE, g.MEM_ADDR1, g.MEM_ADDR2, g.MEM_HIREDATE, g.MEM_POSITION, g.MEM_RES, g.DEPT_NO, g.JG_NO , g.JG_NAME, g.L_NO, g.L_NAME, g.JOB_NO, g.JOB_NAME, h.DEPT_NAME
+        FROM 
+        (SELECT e.MEM_NO , e.MEM_NAME , e.MEM_EMAIL, e.MEM_ZIPCODE, e.MEM_ADDR1, e.MEM_ADDR2, e.MEM_HIREDATE, e.MEM_POSITION, e.MEM_RES, e.DEPT_NO, f.JG_NO , f.JG_NAME, f.L_NO, f.L_NAME, f.JOB_NO, f.JOB_NAME 
+      FROM TBL_MEMBER e
+      INNER JOIN
+      (SELECT c.JG_NO , c.JG_NAME, d.L_NO, d.L_NAME, d.JOB_NO, d.JOB_NAME
+      FROM TBL_JOBGROUP c 
+      INNER JOIN 
+      (SELECT a.L_NO, a.L_NAME, b.JOB_NO, b.JOB_NAME, b.JG_NO FROM TBL_LCATEGORY a INNER JOIN TBL_JOB b ON a.JOB_NO = b.JOB_NO) d 
+      ON c.JG_NO = d.JG_NO) f
+      ON e.L_NO = f.L_NO) g
+        INNER JOIN
+        TBL_DEPT h
+        ON g.DEPT_NO = h.DEPT_NO
+      WHERE g.MEM_NO = #{memNo}
+	</select>
+	
+	<!-- 파일 목록 -->
+	<select id="fileList" resultType="com.mis.domain.JnfileVO">
+		SELECT JNFILE_NO, 
+			   SUBSTR(JNFILE_NAME,50) AS JNFILE_NAME,
+			   JNFILE_NAME AS JNFILE_LOC,
+			   JN_NO
+		FROM TBL_JNFILE
+		WHERE JN_NO = #{jnNo}	   
+	</select>
   	
 </mapper>

@@ -35,8 +35,8 @@
 	               <tbody>
 	                  <c:forEach items="${list}" var="journalVO" varStatus="status">
 	                     <tr>
-	                        <td>${journalVO.jnNo}</td>
-	                        <td><a href='/journal/read?jnNo=${journalVO.jnNo}'>${journalVO.jnWdate}</a></td>
+	                        <td><a href='/journal/read?jnNo=${journalVO.jnNo}'>${journalVO.jnNo}</a></td>
+	                        <td>${journalVO.jnWdate}</td>
 	                       <c:if test="${journalVO.jnApproval eq 0}">
 	                        	<td>승인대기</td>
 	                        </c:if>

@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.mis.domain.JndetailVO;
+import com.mis.domain.JnfileVO;
 import com.mis.domain.JournalVO;
 import com.mis.dto.JournalDTO;
 
@@ -54,6 +55,16 @@ public class ApprovalDAOImpl implements ApprovalDAO{
 	public void approval(JournalVO vo) throws Exception {
 		 session.update(namespace+".approval", vo);
 		
+	}
+
+	@Override
+	public JournalDTO selectAllListDTO(int memNo) throws Exception {
+		return session.selectOne(namespace + ".selectAllListDTO", memNo);
+	}
+
+	@Override
+	public List<JnfileVO> fileList(int jndNo) throws Exception {
+		return session.selectList(namespace + ".fileList", jndNo);
 	}
 
 	

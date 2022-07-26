@@ -7,7 +7,9 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.mis.domain.JndetailVO;
+import com.mis.domain.JnfileVO;
 import com.mis.domain.JournalVO;
+import com.mis.dto.JournalDTO;
 import com.mis.persistence.ApprovalDAO;
 
 @Service
@@ -44,6 +46,16 @@ public class ApprovalServiceImpl implements ApprovalService {
 	@Override
 	public void approval(JournalVO vo) throws Exception {
 			dao.approval(vo);
+	}
+
+	@Override
+	public JournalDTO selectAllListDTO(int memNo) throws Exception {
+		return dao.selectAllListDTO(memNo);
+	}
+
+	@Override
+	public List<JnfileVO> fileList(int jndNo) throws Exception {
+		return dao.fileList(jndNo);
 	}
 	
 	

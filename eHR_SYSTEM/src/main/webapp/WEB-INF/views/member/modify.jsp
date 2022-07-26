@@ -162,7 +162,7 @@
 	                                            		<option value="1">부장</option>	
 	                                            		</c:if>
 	                                            		
-	                                            		<c:if test="${1 eq MemberVO.memPosition}">부장
+	                                            		<c:if test="${1 eq MemberVO.memRes}">부장
 	                                            		<option value="none">직책을 선택해 주세요</option>
 	                                            		<option value="0">사용자</option>
 	                                            		</c:if>

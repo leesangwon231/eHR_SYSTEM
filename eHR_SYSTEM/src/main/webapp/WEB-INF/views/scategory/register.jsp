@@ -16,6 +16,7 @@
 				<div class="row">
 					<div class="col-lg-1"></div>
 					<form role="form" method="post" name="frm">
+					<input type="hidden" id="sNo" name="sNo" value="1">
 						<div class="col-lg-10">
 							<div class="row p-4">
 								<div class="col-2">
@@ -58,8 +59,8 @@
 									<label for="exampleInputEmail1">직무 번호</label>
 								</div>
 								<div class="col-8">
-									<input type="text" id="sNo" name="sNo" class="form-select"
-										readonly="readonly" value=1>
+									<input type="text" id="sNo" name="sNo" class="form-control"
+										readonly="readonly" placeholder = "직무 번호는 자동으로 부여됩니다">
 								</div>
 							</div>
 							<div class="row p-4">
@@ -67,7 +68,7 @@
 									<label for="exampleInputEmail1">직무 명</label>
 								</div>
 								<div class="col-8">
-									<input type="text" id="sName" name="sName" class="form-select">
+									<input type="text" id="sName" name="sName" class="form-control">
 								</div>
 							</div>
 							<br>

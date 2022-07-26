@@ -15,6 +15,7 @@
 		                        <div class="col-lg-1">
 								</div>
 								<form role="form" method="post" name="frm" >
+								<input type="hidden" id="lNo" name="lNo" value="1">
 			                        <div class="col-lg-10">
 			                        	<div class="row p-5">
 				                    		<div class="col-2">
@@ -44,7 +45,7 @@
 				                        		<label for="exampleInputEmail1">직렬 번호</label>
 				                        	</div>
 		                        			<div class="col-8">
-				                        		<input type="text" id = "lNo" name="lNo" class = "form-select" readonly="readonly" value= 1>
+				                        		<input type="text" id = "lNo" name="lNo" class = "form-control" readonly="readonly" placeholder = "직렬 번호는 자동으로 부여됩니다" >
 				                        	</div>
 			                        	</div>
 			                        	<div class="row p-5">
@@ -52,7 +53,7 @@
 				                        		<label for="exampleInputEmail1">직렬명</label>
 				                        	</div>
 		                        			<div class="col-8">
-				                       			<input type="text" id = "lName" name="lName" class = "form-select">
+				                       			<input type="text" id = "lName" name="lName" class = "form-control">
 				                       		</div>
 			                        	</div>
 			                       	</div>

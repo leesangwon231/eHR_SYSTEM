@@ -16,6 +16,7 @@
 				<div class="row">
 					<div class="col-lg-1"></div>
 					<form role="form" method="post" name="frm">
+					<input type="hidden" id="jobNo" name="jobNo" value="1">
 						<div class="col-lg-10">
 							<div class="row p-5">
 								<div class="col-2">
@@ -36,7 +37,7 @@
 								</div>
 								<div class="col-8">
 									<input type="text" id="jobNo" name="jobNo" class="form-control"
-										readonly="readonly" placeholder="번호는 자동으로 생성됩니다." value="1">
+										readonly="readonly" placeholder="직종번호는 자동으로 생성됩니다." >
 								</div>
 							</div>
 							<div class="row p-5">

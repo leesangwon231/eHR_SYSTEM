@@ -15,13 +15,14 @@
 		                        <div class="col-lg-1">
 								</div>
 								<form role="form" method="post" name="frm" action="register">
+								<input type="hidden" id="memNo" name="memNo" value="1">
 			                        <div class="col-lg-10">
 			                        	<div class="row p-4">
 				                        	<div class="col-2">
 				                        		<label for="exampleInputEmail1">사원 번호</label>
 				                        	</div>
 		                        			<div class="col-7">
-				                        		<input type="text" id = "memNo" name="memNo" class = "form-control" readonly="readonly" value= "1">
+				                        		<input type="text" id = "memNo" name="memNo" class = "form-control" readonly="readonly" placeholder = "사원 번호는 자동으로 부여됩니다" >
 				                 			</div>
 			                        	</div>
 			                        	

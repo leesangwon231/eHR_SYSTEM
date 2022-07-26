@@ -133,6 +133,7 @@ public class JournalController {
 		model.addAttribute("names", name);
 		model.addAttribute("J", service.readJournal(jnNo));
 		model.addAttribute("JD", service.readJournalDetail(jnNo));
+		model.addAttribute("jnfileVO", service.fileList(jnNo));
 	}
 
 	@RequestMapping(value = "/modify", method = RequestMethod.GET)

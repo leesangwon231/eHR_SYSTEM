@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fmt2" uri="http://java.sun.com/jstl/fmt_rt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <%@include file="../include/header.jsp"%>
 <script type="text/javascript" src="/resources/js/lcategory.js"></script>
@@ -80,6 +82,82 @@
 								      </div>
 								      
 				          </div>	
+				          
+				          <c:if test="${!empty jnfileVO}">
+										<div class="form-group">
+											<label for="exampleInputEmail1" class="col-form-label">첨부파일</label>
+										</div>
+
+										<ul class="dropzone-previews">
+
+											<c:forEach items="${jnfileVO}" var="jnfileVO"
+												varStatus="status">
+												<c:set var="jnfileName"
+													value="${jnfileVO.jnfileName}" />
+												<c:set var="jnfileNo"
+													value="${fn:toLowerCase(jnfileName)}" />
+
+												<li class="dropzone-previews mt-3">
+													<div
+														class="card mt-1 mb-0 shadow-none border dz-processing dz-image-preview dz-success dz-complete">
+														<div class="p-2">
+															<div class="row align-items-center">
+																<c:forTokens var="token" items="${jnfileNo}"
+																	delims="." varStatus="status">
+																	<c:if test="${status.last}">
+																		<c:choose>
+																			<c:when test="${token eq 'hwp'}">
+																				<img data-dz-thumbnail=""
+																					class="avatar-sm rounded bg-light"
+																					src="/resources/dist/img/hwp.png"
+																					alt="${jnfileName}" />
+																			</c:when>
+																			<c:when test="${token eq 'xls' || token eq 'xlsx' }">
+																				<img data-dz-thumbnail=""
+																					class="avatar-sm rounded bg-light"
+																					src="/resources/dist/img/excelIcon.png" />
+																			</c:when>
+																			<c:when
+																				test="${token eq 'jpg' || token eq 'gif' || token eq 'png' || token eq 'bmp' }">
+																				<img data-dz-thumbnail=""
+																					class="avatar-sm rounded bg-light"
+																					src="/displayFile?fileName=${jnfileVO.fileLocation}">
+																			</c:when>
+																			<c:when test="${token eq 'pdf'}">
+																				<img data-dz-thumbnail=""
+																					class="avatar-sm rounded bg-light"
+																					src="/resources/dist/img/pdf.png"
+																					alt="${jnfileName}" />
+																			</c:when>
+																			<c:when test="${token eq 'ppt' }">
+																				<img data-dz-thumbnail=""
+																					class="avatar-sm rounded bg-light"
+																					src="/resources/dist/img/ppt.png"
+																					alt="${jnfileName}" />
+																			</c:when>
+																			<c:otherwise>
+																				<img data-dz-thumbnail=""
+																					class="avatar-sm rounded bg-light"
+																					src="/resources/dist/img/file.svg"
+																					alt="${jnfileName}" />
+																			</c:otherwise>
+																		</c:choose>
+																	</c:if>
+																</c:forTokens>
+																<div class="col pl-0">
+																	<a href="/displayFile?fileName=${jnfileVO.fileLocation}" text-muted font-weight-bold data-dz-name="">
+																		${jnfileVO.noticeFileName}</a>
+																</div>
+															</div>
+														</div>
+													</div>
+												</li>
+											</c:forEach>
+										</ul>
+									</c:if>
+									<c:if test="${empty jnfileVO}">
+									</c:if>
+									<br> <br>
 	                        <div class="mt-4">
 	                       	 	<div class="offset-9" style="position: absolute; right: 6%;">
 			                       	<input type="button" class="btn btn-primary" id = "btn_submit" name ="btn_submit" value="수정">
@@ -124,6 +202,14 @@
 			register();
 		});
 	});
+	
+	function checkImageType(fileName) {
+
+		var pattern = /jpg|gif|png|jpeg/i;
+
+		return jnfileName.match(pattern);
+
+	}
 </script>
 
 

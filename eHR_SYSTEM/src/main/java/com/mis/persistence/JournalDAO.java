@@ -20,7 +20,7 @@ public interface JournalDAO {
 
 	public String selectSname(int sNo) throws Exception;
 
-	public void update(JournalVO vo) throws Exception;
+	public void jndUpdate(JndetailVO vo) throws Exception;
 
 	public void delete(Integer jnNo) throws Exception;
 
@@ -31,13 +31,13 @@ public interface JournalDAO {
 	public JournalDTO selectAllListDTO(int memNo) throws Exception;
 
 	public int selectJnNo(JournalVO vo) throws Exception;
-	
+
 	public void insertFile(JnfileVO fvo) throws Exception;
 
-	public void deleteFile(int jnfileNo) throws Exception;
-	
-	public List<JnfileVO> fileList(int jndNo) throws Exception;
-	
+	public void deleteFile(int jnNo) throws Exception;
+
+	public List<JnfileVO> fileList(int jnNo) throws Exception;
+
 	public int checkDate(String jnWdate) throws Exception;
 
 }

@@ -17,10 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.mis.domain.Criteria;
 import com.mis.domain.JndetailVO;
-import com.mis.domain.JnfileVO;
-import com.mis.domain.JobVO;
 import com.mis.domain.JournalVO;
 import com.mis.domain.MemberVO;
 import com.mis.domain.ScategoryVO;
@@ -50,54 +47,47 @@ public class JournalController {
 		dto = service.selectAllListDTO(user.getMemNo());
 
 		List<ScategoryVO> sVo = service.selectSlist(dto.getlNo());
-		
+
 		ArrayList<String> time = new ArrayList<String>();
-		
-		
-		
-		String setTime="";
-		
+
+		String setTime = "";
+
 		for (int i = 9; i < 18; i++) {
-			setTime = "0"+i+":00 ~ "+ (i+1)+":00";
-			if(i>=10) {
-				 setTime = i+":00 ~ "+ (i+1)+":00";
+			setTime = "0" + i + ":00 ~ " + (i + 1) + ":00";
+			if (i >= 10) {
+				setTime = i + ":00 ~ " + (i + 1) + ":00";
 			}
 			time.add(setTime);
 		}
-		
+
 		time.add("초과근무");
-		
+
 		model.addAttribute("jDto", dto);
 		model.addAttribute("time", time);
 		model.addAttribute("sList", sVo);
-		
-		
 
 	}
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String registerPost(@ModelAttribute(value = "JournalVO") JournalVO jvo,
 			@ModelAttribute(value = "JndetailVO") JndetailVO dvo, RedirectAttributes rttr) throws Exception {
-		
+
 		System.out.println(jvo);
 		System.out.println(dvo);
 
-		System.out.println((String[])dvo.getJnLIst().get(1).getFiles());
+		System.out.println((String[]) dvo.getJnLIst().get(1).getFiles());
 		service.jnRegister(jvo);
-		
-		int jnNo = service.selectJnNo(jvo);
-		
 
-		
-		
+		int jnNo = service.selectJnNo(jvo);
+
 		for (int i = 0; i < dvo.getJnLIst().size(); i++) {
 			dvo.getJnLIst().get(i).setJnNo(jnNo);
 			service.jndRegister(dvo.getJnLIst().get(i));
 		}
 
-		rttr.addFlashAttribute("msg", "REGISTER"); 
+		rttr.addFlashAttribute("msg", "REGISTER");
 
-		return "redirect:/journal/list"; 
+		return "redirect:/journal/list";
 	}
 
 	@RequestMapping(value = "/read", method = RequestMethod.GET)
@@ -107,6 +97,11 @@ public class JournalController {
 		List<JndetailVO> vo = service.readJournalDetail(jnNo);
 		MemberVO user = new MemberVO();
 		user = (MemberVO) session.getAttribute("login");
+		JournalDTO dto = new JournalDTO();
+
+		dto = service.selectAllListDTO(user.getMemNo());
+
+		List<ScategoryVO> sVo = service.selectSlist(dto.getlNo());
 
 		for (int i = 0; i < vo.size(); i++) {
 			name.add(service.selectSname(service.readJournalDetail(jnNo).get(i).getsNo()));
@@ -125,8 +120,9 @@ public class JournalController {
 		}
 
 		time.add("초과근무");
-		
+
 		model.addAttribute("time", time);
+		model.addAttribute("sList", sVo);
 		model.addAttribute("dto", service.selectAllListDTO(user.getMemNo()));
 		model.addAttribute("names", name);
 		model.addAttribute("J", service.readJournal(jnNo));
@@ -135,19 +131,57 @@ public class JournalController {
 	}
 
 	@RequestMapping(value = "/modify", method = RequestMethod.GET)
-	public void modifyPageGET(int jnNo, @ModelAttribute("cri") Criteria cri, Model model) throws Exception {
+	public void modifyGET(@RequestParam("jnNo") int jnNo, Model model, HttpSession session) throws Exception {
+
+		//1) 로그인 정보가져오기
+		MemberVO user = new MemberVO();
+		user = (MemberVO) session.getAttribute("login");
+		
+		
+		//2) 시간 정보 가져오기
+		ArrayList<String> time = new ArrayList<String>();
+		String setTime = "";
+
+		for (int i = 9; i < 18; i++) {
+			setTime = "0" + i + ":00 ~ " + (i + 1) + ":00";
+			if (i >= 10) {
+				setTime = i + ":00 ~ " + (i + 1) + ":00";
+			}
+			time.add(setTime);
+		}
+
+		time.add("초과근무");
+		
+		//3) 전체(사원 정보) 소분류 목록
+		JournalDTO dto = new JournalDTO();
+		dto = service.selectAllListDTO(user.getMemNo());
+		List<ScategoryVO> sVo = service.selectSlist(dto.getlNo());
+		
+		//4) 업무일지에 등록한 소분류 정보
+		ArrayList<String> name = new ArrayList<String>();
+		List<JndetailVO> vo = service.readJournalDetail(jnNo);
+
+		for (int i = 0; i < vo.size(); i++) {
+			name.add(service.selectSname(service.readJournalDetail(jnNo).get(i).getsNo()));
+		}
+		
+
+		model.addAttribute("time", time);
+		model.addAttribute("dto", dto);
+		model.addAttribute("sList", sVo);
+		model.addAttribute("names", name);
+		
+		model.addAttribute("J", service.readJournal(jnNo));
+		model.addAttribute("JD", service.readJournalDetail(jnNo));
+		model.addAttribute("jnfileVO", service.fileList(jnNo));
 
 	}
 
 	@RequestMapping(value = "/modify", method = RequestMethod.POST)
-	public String modifyPagePOST(JournalVO vo, @ModelAttribute("cri") Criteria cri, RedirectAttributes rttr)
-			throws Exception {
+	public String modifyPOST(JndetailVO vo, RedirectAttributes rttr) throws Exception {
 
 		service.modify(vo);
-		/*
-		 * rttr.addAttribute("page", cri.getPage()); rttr.addAttribute("perPageNum",
-		 * cri.getPerPageNum());
-		 */
+
 		rttr.addFlashAttribute("msg", "SUCCESS");
 
 		return "redirect:/journal/list";
@@ -164,8 +198,7 @@ public class JournalController {
 		return "redirect:/journal/list";
 
 	}
-	
-	
+
 	@ResponseBody
 	@RequestMapping(value = "/checkDate", method = RequestMethod.GET)
 	public ResponseEntity<Integer> checkDate(@RequestParam("jnWdate") String jnWdate, Model model) throws Exception {

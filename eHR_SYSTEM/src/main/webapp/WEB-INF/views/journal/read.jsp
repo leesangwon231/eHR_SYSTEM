@@ -154,7 +154,7 @@
 									</c:if>
 	                        <div class="mt-4">
 	                       	 	<div class="offset-9" style="position: absolute; right: 6%;">
-			                       	<input type="button" class="btn btn-primary" id = "btn_submit" name ="btn_submit" value="수정">
+			                       	<input type="button" class="btn btn-primary" onclick="location.href='/journal/modify?jnNo=${J.jnNo}'" value="수정">
 			                    	<input type="button" class="btn btn-primary" onclick="location.href='/journal/list'" value="취소">
 			                	</div>
 	                        </div>
@@ -189,13 +189,11 @@
 </script>
 
 <script>
-	$(document).ready(function() {
-		var formObj = $("form[role='form']");
-		console.log(formObj);
-		$("#btn_submit").on("click", function() {
-			register();
-		});
-	});
+$(".btn-success").on("click", function() {
+	formObj.attr("action", "/notice/modify");
+	formObj.attr("method", "get");
+	formObj.submit();
+});
 	
 	function checkImageType(fileName) {
 

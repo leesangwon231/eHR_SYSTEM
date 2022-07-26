@@ -56,8 +56,25 @@ public class JournalServiceImpl implements JournalService {
 	}
 
 	@Override
-	public void modify(JournalVO vo) throws Exception {
-		dao.update(vo);
+	public void modify(JndetailVO vo) throws Exception {
+		dao.jndUpdate(vo);
+		
+		dao.deleteFile(vo.getJnNo());
+		
+		if (vo.getFiles() != null) {  
+
+			// 3-2) ���� ÷������ ����
+			for (int i = 0; i < vo.getFiles().length; i++) {
+
+				JnfileVO fVo = new JnfileVO();
+				fVo.setJnNo(vo.getJnNo()); // �������� ���̺� PK (FK)
+				fVo.setJnfileName(vo.getFiles()[i]); // ���ε�� ÷�����ϸ�
+
+				dao.insertFile(fVo);
+				
+			}
+
+		}
 
 	}
 

@@ -45,8 +45,8 @@ public class JournalDAOImpl implements JournalDAO {
 	}
 
 	@Override
-	public void update(JournalVO vo) throws Exception {
-		session.update(namespace + ".update", vo);
+	public void jndUpdate(JndetailVO vo) throws Exception {
+		session.update(namespace + ".jndUpdate", vo);
 
 	}
 
@@ -87,18 +87,18 @@ public class JournalDAOImpl implements JournalDAO {
 	}
 
 	@Override
-	public void deleteFile(int jnfileNo) throws Exception {
-		session.delete(namespace + ".deleteFile", jnfileNo);
+	public void deleteFile(int jnNo) throws Exception {
+		session.delete(namespace + ".deleteFile", jnNo);
 	}
 
 	@Override
-	public List<JnfileVO> fileList(int jndNo) throws Exception {
-		return session.selectList(namespace + ".fileList", jndNo);
+	public List<JnfileVO> fileList(int jnNo) throws Exception {
+		return session.selectList(namespace + ".fileList", jnNo);
 	}
 
 	@Override
 	public int checkDate(String jnWdate) throws Exception {
-		return session.selectOne(namespace+".checkDate",jnWdate);
+		return session.selectOne(namespace + ".checkDate", jnWdate);
 	}
 
 }

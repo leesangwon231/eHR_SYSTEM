@@ -19,8 +19,18 @@
   	</select>
   	
   	<select id="readJournalDetail" resultType="com.mis.domain.JndetailVO">
-		SELECT * FROM TBL_JNDETAIL WHERE JN_NO = #{jnNo}
+		SELECT * FROM TBL_JNDETAIL WHERE JN_NO = #{jnNo} ORDER BY JND_NO ASC
   	</select>
+  	
+  	<!-- <update id="jnUpdate">
+		UPDATE TBL_JOURNAL SET JND_PROGRESS = #{jndProgress}, JND_NOTE = #{jndNote}
+		WHERE JN_NO = #{jnNo}
+	</update> -->
+	
+	<update id="jndUpdate">
+		UPDATE TBL_JNDETAIL SET JND_PROGRESS = #{jndProgress}, JND_NOTE = #{jndNote}, S_NO = #{sNo}
+		WHERE JND_NO = #{jndNo}
+	</update>
 
 	<!-- <update id="update">
 		update tbl_journal set title=#{title}, content=#{content}, writer=#{writer}

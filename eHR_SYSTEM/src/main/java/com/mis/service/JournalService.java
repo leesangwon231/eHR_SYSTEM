@@ -20,7 +20,7 @@ public interface JournalService {
 
 	public List<JndetailVO> readJournalDetail(int jnNo) throws Exception;
 
-	public void modify(JournalVO vo) throws Exception;
+	public void modify(JndetailVO vo) throws Exception;
 
 	public void remove(Integer jnNo) throws Exception;
 
@@ -32,7 +32,7 @@ public interface JournalService {
 
 	public int selectJnNo(JournalVO vo) throws Exception;
 	
-	public List<JnfileVO> fileList(int jndNo) throws Exception;
+	public List<JnfileVO> fileList(int jnNo) throws Exception;
 	
 	public int checkDate(String jnWdate) throws Exception;
 	

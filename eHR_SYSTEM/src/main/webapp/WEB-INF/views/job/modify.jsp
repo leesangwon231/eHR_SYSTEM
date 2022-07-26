@@ -98,7 +98,7 @@
 					function() {
 						var formObj = $("form[role='form']");
 						var jgNo = "<c:out value ='${jobVo.jgNo}'/>"
-						var jobNo = "<c:out value ='${jobVo.jobNo}'/>"
+						/* var jobNo = "<c:out value ='${jobVo.jobNo}'/>" */
 					
 				
 						$("#btn_submit").on("click", function() {
@@ -112,7 +112,7 @@
 							return false;
 						}
 
-						$
+						/* $
 								.ajax({
 									type : 'GET',
 									url : "/lcategory/jobList",
@@ -146,7 +146,7 @@
 												+ errorThrown);
 									}
 
-								});
+								}); */
 
 					});
 </script>

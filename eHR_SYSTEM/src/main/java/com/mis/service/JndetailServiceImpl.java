@@ -27,7 +27,7 @@ public class JndetailServiceImpl implements JndetailService {
 					for (int i = 0; i < vo.getFiles().length; i++) {
 
 						JnfileVO jnfileNo = new JnfileVO();
-						jnfileNo.setJndNo(0); // 怨듭��궗�빆 �뀒�씠釉� PK (FK)
+						jnfileNo.setJnNo(0); // 怨듭��궗�빆 �뀒�씠釉� PK (FK)
 						jnfileNo.setJnfileName(vo.getFiles()[i]); // �뾽濡쒕뱶�맂 泥⑤��뙆�씪紐�
 
 						dao.insertFile(jnfileNo);
@@ -55,11 +55,11 @@ public class JndetailServiceImpl implements JndetailService {
 			for (int i = 0; i < vo.getFiles().length; i++) {
 
 				JnfileVO jnfileNo = new JnfileVO();
-				jnfileNo.setJndNo(vo.getJndNo()); 
+				jnfileNo.setJnNo(vo.getJndNo()); 
 				jnfileNo.setJnfileName(vo.getFiles()[i]); 
 				
 				dao.insertFile(jnfileNo);
-			}
+			}//
 			
 		}
 	}	

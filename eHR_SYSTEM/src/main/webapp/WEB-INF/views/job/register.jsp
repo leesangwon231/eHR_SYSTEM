@@ -37,7 +37,7 @@
 								</div>
 								<div class="col-8">
 									<input type="text" id="jobNo" name="jobNo" class="form-control"
-										readonly="readonly" placeholder="직종번호는 자동으로 생성됩니다." >
+										readonly="readonly" placeholder="직종번호는 자동으로 부여됩니다." >
 								</div>
 							</div>
 							<div class="row p-5">

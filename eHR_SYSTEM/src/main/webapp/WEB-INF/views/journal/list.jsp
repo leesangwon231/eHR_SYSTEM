@@ -5,7 +5,7 @@
 <%@include file="../include/header.jsp"%>
 	<div id="layoutSidenav_content">
    		<div class="container-fluid px-4">
-	      <h1 class="mt-4" style='text-align: left; margin-bottom: 30px;'>업무일지</h1>
+	      <h1 class="mt-4" style='text-align: center; margin-bottom: 30px;'>업무일지</h1>
 	
 	      <div class="card mb-4">
 	         <div class="card-header">

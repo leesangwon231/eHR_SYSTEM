@@ -7,7 +7,7 @@
 <div id="layoutSidenav_content">
    <main>
 	   <div class="container-fluid px-4">
-	      <h1 class="mt-4" style='text-align: left; margin-bottom: 30px;'>직종</h1>
+	      <h1 class="mt-4" style='text-align: center; margin-bottom: 30px;'>직종</h1>
 	
 	      <div class="card mb-4">
 	         <div class="card-header">

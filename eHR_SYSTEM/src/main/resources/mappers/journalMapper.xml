@@ -40,7 +40,7 @@
 	</select>
 	
 	<select id="selectSname" resultType="string">
-		SELECT S_NAME FROM TBL_SCATEGORY WHERE S_NO = #{sNo} OR S_NO = 999
+		SELECT S_NAME FROM TBL_SCATEGORY WHERE S_NO = #{sNo}
 	</select>
 	
    <select id="selectSlist" resultType="com.mis.domain.ScategoryVO">
@@ -83,9 +83,9 @@
 		SELECT JNFILE_NO, 
 			   SUBSTR(JNFILE_NAME,50) AS JNFILE_NAME,
 			   JNFILE_NAME AS JNFILE_LOC,
-			   JND_NO
-		FROM TBL_JN_FILE
-		WHERE JND_NO = #{jndNo}	   
+			   JN_NO
+		FROM TBL_JNFILE
+		WHERE JN_NO = #{jnNo}	   
 	</select>
 	
 	<select id="checkDate" resultType="int">

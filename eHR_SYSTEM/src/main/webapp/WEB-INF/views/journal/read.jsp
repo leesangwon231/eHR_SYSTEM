@@ -109,13 +109,11 @@
 																			<c:when test="${token eq 'hwp'}">
 																				<img data-dz-thumbnail=""
 																					class="avatar-sm rounded bg-light"
-																					src="/resources/dist/img/hwp.png"
 																					alt="${jnfileName}" />
 																			</c:when>
 																			<c:when test="${token eq 'xls' || token eq 'xlsx' }">
 																				<img data-dz-thumbnail=""
-																					class="avatar-sm rounded bg-light"
-																					src="/resources/dist/img/excelIcon.png" />
+																					class="avatar-sm rounded bg-light"/>
 																			</c:when>
 																			<c:when
 																				test="${token eq 'jpg' || token eq 'gif' || token eq 'png' || token eq 'bmp' }">
@@ -126,19 +124,16 @@
 																			<c:when test="${token eq 'pdf'}">
 																				<img data-dz-thumbnail=""
 																					class="avatar-sm rounded bg-light"
-																					src="/resources/dist/img/pdf.png"
 																					alt="${jnfileName}" />
 																			</c:when>
 																			<c:when test="${token eq 'ppt' }">
 																				<img data-dz-thumbnail=""
 																					class="avatar-sm rounded bg-light"
-																					src="/resources/dist/img/ppt.png"
 																					alt="${jnfileName}" />
 																			</c:when>
 																			<c:otherwise>
 																				<img data-dz-thumbnail=""
 																					class="avatar-sm rounded bg-light"
-																					src="/resources/dist/img/file.svg"
 																					alt="${jnfileName}" />
 																			</c:otherwise>
 																		</c:choose>
@@ -146,7 +141,7 @@
 																</c:forTokens>
 																<div class="col pl-0">
 																	<a href="/displayFile?fileName=${jnfileVO.fileLocation}" text-muted font-weight-bold data-dz-name="">
-																		${jnfileVO.noticeFileName}</a>
+																		${jnfileVO.jnfileName}</a>
 																</div>
 															</div>
 														</div>
@@ -157,7 +152,6 @@
 									</c:if>
 									<c:if test="${empty jnfileVO}">
 									</c:if>
-									<br> <br>
 	                        <div class="mt-4">
 	                       	 	<div class="offset-9" style="position: absolute; right: 6%;">
 			                       	<input type="button" class="btn btn-primary" id = "btn_submit" name ="btn_submit" value="수정">
@@ -167,8 +161,8 @@
 	                  </form>        
                		</div>
            	 	</div>              
-	   		</div>
-		</main>
+			</main>
+	   	</div>
 <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
 <script>
    var result = '${msg}';

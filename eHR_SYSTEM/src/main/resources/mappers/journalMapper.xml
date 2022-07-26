@@ -43,7 +43,7 @@
 	</select>
 	
 	<select id="selectSname" resultType="string">
-		SELECT S_NAME FROM TBL_SCATEGORY WHERE S_NO = #{sNo}
+		SELECT S_NAME FROM TBL_SCATEGORY WHERE S_NO = #{sNo} OR S_NO = 999
 	</select>
 	
    <select id="selectSlist" resultType="com.mis.domain.ScategoryVO">

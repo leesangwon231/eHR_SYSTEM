@@ -92,7 +92,7 @@
 	<select id="fileList" resultType="com.mis.domain.JnfileVO">
 		SELECT JNFILE_NO, 
 			   SUBSTR(JNFILE_NAME,50) AS JNFILE_NAME,
-			   JNFILE_NAME AS JNFILE_LOC,
+			   JNFILE_NAME AS FILE_LOCATION,
 			   JN_NO
 		FROM TBL_JNFILE
 		WHERE JN_NO = #{jnNo}	   

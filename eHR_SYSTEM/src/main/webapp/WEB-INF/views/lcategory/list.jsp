@@ -39,8 +39,8 @@
 	                     <tr>
 	                        <td><a href='/lcategory/read?lNo=${lVo.lNo}'>${lVo.lNo}</a></td>
 	                        <td>${lVo.lName}</td>
-	                        <td>${lVo.jobName}</td>
 	                        <td>${lVo.jgName}</td>
+	                        <td>${lVo.jobName}</td>
 	                     </tr>
 	                  </c:forEach>
 	               </tbody>

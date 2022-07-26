@@ -59,18 +59,20 @@
 								            <table id="datatablesSimple" class="dataTable-table">
 								               <thead>
 								                  <tr>
-								                     <th>업무내용</th>
-								                     <th>진척도</th>
-								                     <th>비고</th>
+								                    <th>시간</th>
+													<th>직무</th>
+													<th>진척도(%)</th>
+													<th>비고</th>
 								                  </tr>
 								               </thead>
 								               <tbody>
 								              	<c:forEach items="${JD}" var="jd" varStatus="status">
+								              	
 								                     <tr>
+								                       	<td>${time[status.index]}</td>
 								                        <td>${names[status.index]}</td>
 								                        <td>${jd.jndProgress} %</td>
 								                        <td>${jd.jndNote}</td>
-								                       
 								                     </tr>
 								           		</c:forEach>
 								               </tbody>

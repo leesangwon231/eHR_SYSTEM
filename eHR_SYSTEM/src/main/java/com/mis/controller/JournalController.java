@@ -113,6 +113,22 @@ public class JournalController {
 		for (int i = 0; i < vo.size(); i++) {
 			name.add(service.selectSname(service.readJournalDetail(jnNo).get(i).getsNo()));
 		}
+
+		ArrayList<String> time = new ArrayList<String>();
+
+		String setTime = "";
+
+		for (int i = 9; i < 18; i++) {
+			setTime = "0" + i + ":00 ~ " + (i + 1) + ":00";
+			if (i >= 10) {
+				setTime = i + ":00 ~ " + (i + 1) + ":00";
+			}
+			time.add(setTime);
+		}
+
+		time.add("초과근무");
+		
+		model.addAttribute("time", time);
 		model.addAttribute("dto", service.selectAllListDTO(user.getMemNo()));
 		model.addAttribute("names", name);
 		model.addAttribute("J", service.readJournal(jnNo));

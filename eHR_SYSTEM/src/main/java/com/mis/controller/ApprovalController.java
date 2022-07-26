@@ -43,7 +43,7 @@ public class ApprovalController {
 		
 		model.addAttribute("names",name);
 		model.addAttribute("list", service.listAll());
-	}
+	}//
 	
 	
 	@RequestMapping(value = "/read", method = RequestMethod.GET)

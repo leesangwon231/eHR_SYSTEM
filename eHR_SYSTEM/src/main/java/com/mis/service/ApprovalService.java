@@ -25,4 +25,5 @@ public interface ApprovalService {
 	public JournalDTO selectAllListDTO(int memNo) throws Exception;
 	
 	public List<JnfileVO> fileList(int jndNo) throws Exception;
+
 }

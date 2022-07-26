@@ -355,26 +355,26 @@
 
    });
    //파일링크 처리(길이를 줄여줌)
-   function getOriginalName(noticeFileName) {
+   function getOriginalName(jnfileName) {
 
-      if (checkImageType(noticeFileName)) {
+      if (checkImageType(jnfileName)) {
          return;
       }
 
-      var idx = noticeFileName.indexOf("_") + 1;
-      return noticeFileName.substr(idx);
+      var idx = jnfileName.indexOf("_") + 1;
+      return jnfileName.substr(idx);
 
    }
    //이미지파일 원본 파일 찾기
-   function getImageLink(noticeFileName) {
+   function getImageLink(jnfileName) {
 
-      if (!checkImageType(noticeFileName)) {
+      if (!checkImageType(jnfileName)) {
          return;
       }
       //noticeFileName.substring(0,12)/년/월/일 경로 추출  
       //noticeFileName.substring(14) 파일 이름앞의 's_'제거
-      var front = noticeFileName.substr(0, 12);
-      var end = noticeFileName.substr(14);
+      var front = jnfileName.substr(0, 12);
+      var end = jnfileName.substr(14);
 
       return front + end;
 

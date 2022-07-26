@@ -67,6 +67,4 @@ public class ApprovalDAOImpl implements ApprovalDAO{
 		return session.selectList(namespace + ".fileList", jndNo);
 	}
 
-	
-	
 }

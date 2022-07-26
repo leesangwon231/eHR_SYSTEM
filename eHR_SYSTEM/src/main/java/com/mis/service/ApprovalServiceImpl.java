@@ -57,6 +57,5 @@ public class ApprovalServiceImpl implements ApprovalService {
 	public List<JnfileVO> fileList(int jndNo) throws Exception {
 		return dao.fileList(jndNo);
 	}
-	
-	
+
 }

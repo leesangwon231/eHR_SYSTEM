@@ -72,7 +72,7 @@
 								              	<c:forEach items="${JD}" var="jd" varStatus="status">
 								                     <tr>
 								                     	<td>${time[status.index]}</td>
-								                        <td>${names[status.index]}</td>
+								                        <td>${sNames[status.index]}</td>
 								                        <td>${jd.jndProgress} %</td>
 								                        <td>${jd.jndNote}</td>
 								                       
@@ -97,8 +97,7 @@
 													value="${fn:toLowerCase(jnfileName)}" />
 
 												<li class="dropzone-previews mt-3">
-													<div
-														class="card mt-1 mb-0 shadow-none border dz-processing dz-image-preview dz-success dz-complete">
+													<div class="card mt-1 mb-0 shadow-none border dz-processing dz-image-preview dz-success dz-complete">
 														<div class="p-2">
 															<div class="row align-items-center">
 																<c:forTokens var="token" items="${jnfileNo}"

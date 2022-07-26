@@ -14,7 +14,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mis.domain.JndetailVO;
 import com.mis.domain.JournalVO;
-import com.mis.domain.MemberVO;
 import com.mis.service.ApprovalService;
 
 @Controller
@@ -44,13 +43,11 @@ public class ApprovalController {
 		
 		ArrayList<String> name = new ArrayList<String>();
 		List<JndetailVO> vo = service.readJournalDetail(jnNo);
-		MemberVO user = new MemberVO();
-		user = (MemberVO) session.getAttribute("login");
-
+		
 		for (int i = 0; i < vo.size(); i++) {
 			name.add(service.selectSname(service.readJournalDetail(jnNo).get(i).getsNo()));
 		}
-
+		
 		ArrayList<String> time = new ArrayList<String>();
 
 		String setTime = "";
@@ -66,12 +63,12 @@ public class ApprovalController {
 		time.add("초과근무");
 		
 		model.addAttribute("time", time);
-		model.addAttribute("dto", service.selectAllListDTO(user.getMemNo()));
-		model.addAttribute("names", name);
+		model.addAttribute("dto",service.selectAllListDTO(service.readJournal(jnNo).getMemNo()));
+		model.addAttribute("sNames",name);
 		model.addAttribute("J", service.readJournal(jnNo));
 		model.addAttribute("JD", service.readJournalDetail(jnNo));
 		model.addAttribute("jnfileVO", service.fileList(jnNo));
-	}
+		}
 		
 		@RequestMapping(value = "/read", method = RequestMethod.POST)
 		public String readPost(JournalVO vo, RedirectAttributes rttr) throws Exception {

@@ -36,19 +36,19 @@ function checkJn(){
 		
 		if(document.getElementById("jndProgress"+i).value ==""){
 			$("#jndProgress"+i).val(0);
-			return true;
+			
 		}
 		
 	   
 	 	if(document.getElementById("jndNote"+i).value==""){
 		   $("#jndNote"+i).val("-");
-		   return true;
+		   
 	 	}
 	   	  
 	}
 
 	
-
+		return true;
 }
 
 

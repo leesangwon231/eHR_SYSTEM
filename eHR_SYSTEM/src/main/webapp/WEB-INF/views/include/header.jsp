@@ -52,7 +52,6 @@
 						<li><a class="dropdown-item" href="/member/login">로그인</a></li>
 					</c:if>
 					<c:if test="${null ne login.memNo}">
-						<li><a class="dropdown-item" href="/member/readMyPage?memberNo=${login.memNo}">내 정보</a></li>
 						<li><a class="dropdown-item" href="/user/logout">로그아웃</a></li>
 					</c:if>
 				</ul>

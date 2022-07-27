@@ -36,7 +36,6 @@ public class JobgroupController {
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String registerPOST(JobgroupVO jobGroup, RedirectAttributes rttr) throws Exception {
-		System.out.println(jobGroup);
 
 		service.create(jobGroup.getJgName());
 

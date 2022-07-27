@@ -37,7 +37,6 @@ public class JobController {
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String registerPOST(RedirectAttributes rttr, JobVO vo) throws Exception {
 		
-		System.out.println(vo);
 		service.register(vo);
 		rttr.addFlashAttribute("msg", "REGISTER");
 
@@ -54,7 +53,7 @@ public class JobController {
 
 	@RequestMapping(value = "/modify", method = RequestMethod.GET)
 	public void modifyGET(@RequestParam("jobNo") int jobNo, Model model) throws Exception {
-		System.out.println(service.read(jobNo));
+		
 		model.addAttribute("jobGroup", service.selectJobGroup());
 		model.addAttribute("jobVo", service.read(jobNo));
 	}

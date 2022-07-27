@@ -54,7 +54,6 @@ public class DeptController {
 	
 	@RequestMapping(value = "/modify", method = RequestMethod.GET)
 	public void modifyGET(@RequestParam("deptNo") int deptNo , Model model) throws Exception {
-		System.out.println(service.read(deptNo));
 		model.addAttribute("DeptVO",service.read(deptNo));
 
 	}

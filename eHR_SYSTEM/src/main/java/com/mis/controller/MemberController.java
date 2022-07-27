@@ -37,8 +37,6 @@ public class MemberController {
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String registerPost(MemberVO vo, RedirectAttributes rttr) throws Exception {
-		System.out.println(vo);
-
 		
 		service.register(vo);
 		rttr.addFlashAttribute("msg", "REGISTER");
@@ -62,7 +60,6 @@ public class MemberController {
 		model.addAttribute("Lcategory", service.selectLcategory());
 		model.addAttribute("Dept", service.selectDept());
 		model.addAttribute("MemberVO",service.read(memNo));
-		System.out.println(service.read(memNo));
 	}
 	
 	@RequestMapping(value = "/modify", method = RequestMethod.POST)

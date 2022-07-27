@@ -170,8 +170,6 @@ public class JournalController {
 
 	@RequestMapping(value = "/modify", method = RequestMethod.POST)
 	public String modifyPOST(@ModelAttribute(value = "JournalVO") JournalVO jvo, @ModelAttribute(value = "JndetailVO") JndetailVO dvo, RedirectAttributes rttr) throws Exception {
-
-		System.out.println(dvo);
 		
 		service.modify(dvo,jvo);
 

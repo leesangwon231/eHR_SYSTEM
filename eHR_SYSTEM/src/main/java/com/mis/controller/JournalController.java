@@ -178,11 +178,13 @@ public class JournalController {
 	}
 
 	@RequestMapping(value = "/modify", method = RequestMethod.POST)
-	public String modifyPOST(JndetailVO vo, RedirectAttributes rttr) throws Exception {
+	public String modifyPOST(@ModelAttribute(value = "JndetailVO") JndetailVO vo, RedirectAttributes rttr) throws Exception {
 
+		System.out.println(vo);
 		service.modify(vo);
+		
 
-		rttr.addFlashAttribute("msg", "SUCCESS");
+		rttr.addFlashAttribute("msg", "MODIFY");
 
 		return "redirect:/journal/list";
 

@@ -1,8 +1,5 @@
 package com.mis.domain;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class JournalVO {
 
 	private int jnNo;

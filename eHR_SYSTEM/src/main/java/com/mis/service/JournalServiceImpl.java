@@ -57,6 +57,7 @@ public class JournalServiceImpl implements JournalService {
 
 	@Override
 	public void modify(JndetailVO vo) throws Exception {
+		
 		dao.jndUpdate(vo);
 		
 		dao.deleteFile(vo.getJnNo());
@@ -75,6 +76,7 @@ public class JournalServiceImpl implements JournalService {
 			}
 
 		}
+		
 
 	}
 

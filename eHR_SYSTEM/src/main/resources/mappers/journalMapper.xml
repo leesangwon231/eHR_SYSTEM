@@ -85,7 +85,7 @@
 	
 	<!-- 다중 파일 삭제 -->
 	<delete id="deleteFile">
-		DELETE FROM TBL_JNFILE WHERE JND_NO = #{jndNo}
+		DELETE FROM TBL_JNFILE WHERE JN_NO = #{jnNo}
 	</delete>
 	
 	<!-- 파일 목록 -->

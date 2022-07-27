@@ -63,18 +63,18 @@ public class UploadController {
 
 			HttpHeaders headers = new HttpHeaders();
 
-			// 서버에서 찾아서 파일 담기
+			// �꽌踰꾩뿉�꽌 李얠븘�꽌 �뙆�씪 �떞湲�
 			in = new FileInputStream(uploadPath + fileName);
 
-			if (mType != null) { // 이미지 관련 파일
+			if (mType != null) { // �씠誘몄� 愿��젴 �뙆�씪
 
 				headers.setContentType(mType);
 
-			} else { // 그외의 첨부 파일
+			} else { // 洹몄쇅�쓽 泥⑤� �뙆�씪
 				fileName = fileName.substring(fileName.indexOf("_") + 1);
 				headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
 
-				// html header에 파일 담아서 보내기
+				// html header�뿉 �뙆�씪 �떞�븘�꽌 蹂대궡湲�
 				headers.add("Content-Disposition",
 						"attachment; filename=\"" + new String(fileName.getBytes("UTF-8"), "ISO-8859-1") + "\"");
 			}
@@ -101,17 +101,17 @@ public class UploadController {
 		String formatName = fileName.substring(fileName.lastIndexOf(".") + 1);
 		MediaType mType = MediaUtils.getMediaType(formatName);
 
-		if (mType != null) { // 이미지 파일일 경우 썸네일 이미지 삭제
+		if (mType != null) { // �씠誘몄� �뙆�씪�씪 寃쎌슦 �뜽�꽕�씪 �씠誘몄� �궘�젣
 
-			// fileName.substring(0, 12) -> 년/월/일 경로 추출(폴더구조)
-			// fileName.substring(14) -> 파일 이름앞의 s_ 제거
+			// fileName.substring(0, 12) -> �뀈/�썡/�씪 寃쎈줈 異붿텧(�뤃�뜑援ъ“)
+			// fileName.substring(14) -> �뙆�씪 �씠由꾩븵�쓽 s_ �젣嫄�
 			String front = fileName.substring(0, 12);
 			String end = fileName.substring(14);
 			new File(uploadPath + (front + end).replace('/', File.separatorChar)).delete();
 
 		}
 
-		// 원본 파일 지우기
+		// �썝蹂� �뙆�씪 吏��슦湲�
 		new File(uploadPath + fileName.replace('/', File.separatorChar)).delete();
 
 		return new ResponseEntity<String>("deleted", HttpStatus.OK);

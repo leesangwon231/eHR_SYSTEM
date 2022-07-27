@@ -20,7 +20,7 @@ public interface JournalService {
 
 	public List<JndetailVO> readJournalDetail(int jnNo) throws Exception;
 
-	public void modify(JndetailVO vo) throws Exception;
+	public void modify(JndetailVO dvo,JournalVO jvo) throws Exception;
 
 	public void remove(Integer jnNo) throws Exception;
 

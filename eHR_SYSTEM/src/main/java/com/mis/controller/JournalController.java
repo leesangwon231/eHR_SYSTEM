@@ -120,6 +120,7 @@ public class JournalController {
 		}
 
 		time.add("초과근무");
+		
 
 		model.addAttribute("time", time);
 		model.addAttribute("sList", sVo);
@@ -182,15 +183,7 @@ public class JournalController {
 
 		System.out.println(dvo);
 		
-		/*service.modify(dvo);*/
-		
-		int jnNo = service.selectJnNo(jvo);
-
-		for (int i = 0; i < dvo.getJnLIst().size(); i++) {
-			dvo.getJnLIst().get(i).setJnNo(jnNo);
-			service.modify(dvo.getJnLIst().get(i));
-		}
-		
+		service.modify(dvo,jvo);
 
 		rttr.addFlashAttribute("msg", "MODIFY");
 

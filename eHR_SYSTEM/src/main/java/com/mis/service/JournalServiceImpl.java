@@ -56,26 +56,37 @@ public class JournalServiceImpl implements JournalService {
 	}
 
 	@Override
-	public void modify(JndetailVO vo) throws Exception {
+	public void modify(JndetailVO dvo, JournalVO jvo) throws Exception {
 		
-		dao.jndUpdate(vo);
-		
-		dao.deleteFile(vo.getJnNo());
-		
-		if (vo.getFiles() != null) {  
+		int jnNo = dao.selectJnNo(jvo);
 
-			// 3-2) ���� ÷������ ����
-			for (int i = 0; i < vo.getFiles().length; i++) {
+		for (int i = 0; i < dvo.getJnLIst().size(); i++) {
+			dvo.getJnLIst().get(i).setJnNo(jnNo);
+			dao.jndUpdate(dvo.getJnLIst().get(i));
+			
+			if (dvo.getJnLIst().get(i).getFiles() != null) {  
+				dao.deleteFile(dvo.getJnLIst().get(i).getJnNo());
+				for (int j = 0; j < dvo.getJnLIst().get(i).getFiles().length; j++) {
 
-				JnfileVO fVo = new JnfileVO();
-				fVo.setJnNo(vo.getJnNo()); // �������� ���̺� PK (FK)
-				fVo.setJnfileName(vo.getFiles()[i]); // ���ε�� ÷�����ϸ�
+					JnfileVO fVo = new JnfileVO();	
+					fVo.setJnNo(dvo.getJnLIst().get(i).getJnNo()); // �������� ���̺� PK (FK)
+					fVo.setJnfileName(dvo.getJnLIst().get(i).getFiles()[j]); // ���ε�� ÷�����ϸ�
 
-				dao.insertFile(fVo);
-				
+					dao.insertFile(fVo);
+					System.out.println("-=====");
+					
+				}
 			}
-
 		}
+		
+		
+		
+		
+		
+
+			
+
+		
 		
 
 	}

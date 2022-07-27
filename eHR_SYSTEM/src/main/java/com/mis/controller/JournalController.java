@@ -178,10 +178,18 @@ public class JournalController {
 	}
 
 	@RequestMapping(value = "/modify", method = RequestMethod.POST)
-	public String modifyPOST(@ModelAttribute(value = "JndetailVO") JndetailVO vo, RedirectAttributes rttr) throws Exception {
+	public String modifyPOST(@ModelAttribute(value = "JournalVO") JournalVO jvo, @ModelAttribute(value = "JndetailVO") JndetailVO dvo, RedirectAttributes rttr) throws Exception {
 
-		System.out.println(vo);
-		service.modify(vo);
+		System.out.println(dvo);
+		
+		/*service.modify(dvo);*/
+		
+		int jnNo = service.selectJnNo(jvo);
+
+		for (int i = 0; i < dvo.getJnLIst().size(); i++) {
+			dvo.getJnLIst().get(i).setJnNo(jnNo);
+			service.modify(dvo.getJnLIst().get(i));
+		}
 		
 
 		rttr.addFlashAttribute("msg", "MODIFY");

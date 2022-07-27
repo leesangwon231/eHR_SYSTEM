@@ -71,6 +71,7 @@ public class JournalController {
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String registerPost(@ModelAttribute(value = "JournalVO") JournalVO jvo,
 			@ModelAttribute(value = "JndetailVO") JndetailVO dvo, RedirectAttributes rttr) throws Exception {
+
 		service.jnRegister(jvo);
 		
 		service.jndRegister(dvo, jvo);
@@ -170,7 +171,6 @@ public class JournalController {
 
 	@RequestMapping(value = "/modify", method = RequestMethod.POST)
 	public String modifyPOST(@ModelAttribute(value = "JournalVO") JournalVO jvo, @ModelAttribute(value = "JndetailVO") JndetailVO dvo, RedirectAttributes rttr) throws Exception {
-		
 		service.modify(dvo,jvo);
 
 		rttr.addFlashAttribute("msg", "MODIFY");

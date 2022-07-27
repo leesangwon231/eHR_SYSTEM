@@ -20,9 +20,28 @@ public class JournalServiceImpl implements JournalService {
 	private JournalDAO dao;
 
 	@Override
-	public void jnRegister(JournalVO vo) throws Exception {
-		dao.jnCreate(vo);
+	public void jnRegister(JournalVO jvo) throws Exception {
+		dao.jnCreate(jvo);
+		
+		int jnNo = dao.selectJnNo(jvo);
+		//만약 i 의 files가 널이 아니라면 실행
+		if (jvo.getFiles() != null) {  
+			
+			jvo.setJnNo(jnNo);
+			//파일의 길이 만큼 반복실행
+			for (int j = 0; j < jvo.getFiles().length; j++) {
 
+				JnfileVO fVo = new JnfileVO();	
+				
+				fVo.setJnNo(jvo.getJnNo()); 
+				
+				fVo.setJnfileName(jvo.getFiles()[j]); 
+
+				dao.insertFile(fVo);
+					
+			}
+
+		}
 	}
 
 	@Override
@@ -40,24 +59,6 @@ public class JournalServiceImpl implements JournalService {
 			//해당 i번째 vo로 jnd테이블 생성
 			dao.jndCreate(dvo.getJnLIst().get(i));
 			
-			//만약 i 번쨰 vo의 files가 널이 아니라면 실행
-			if (dvo.getJnLIst().get(i).getFiles() != null) {  
-				
-				//파일의 길이 만큼 반복실행
-				for (int j = 0; j < dvo.getJnLIst().get(i).getFiles().length; j++) {
-
-					JnfileVO fVo = new JnfileVO();	
-					
-					fVo.setJnNo(dvo.getJnLIst().get(i).getJnNo()); 
-					
-					fVo.setJnfileName(dvo.getJnLIst().get(i).getFiles()[j]); 
-
-					dao.insertFile(fVo);
-						
-				}
-
-			}
-		
 		
 		}
 		
@@ -84,7 +85,6 @@ public class JournalServiceImpl implements JournalService {
 		
 		//등록된 jnNo 받아오기
 		int jnNo = dao.selectJnNo(jvo);
-		
 		//jnList의 사이즈 만큼 반복
 		for (int i = 0; i < dvo.getJnLIst().size(); i++) {
 			
@@ -94,37 +94,28 @@ public class JournalServiceImpl implements JournalService {
 			//해당 i번째 vo로 jnd테이블 업데이트
 			dao.jndUpdate(dvo.getJnLIst().get(i));
 			
-			//만약 i 번쨰 vo의 files가 널이 아니라면 실행
-			if (dvo.getJnLIst().get(i).getFiles() != null) {  
-				
-				//해당 i 번재 VO의 jnNo를 파라미터로 디비에 이미있던 JnNo 번호 관련 파일 삭제
-				dao.deleteFile(dvo.getJnLIst().get(i).getJnNo());
-				
-				//파일의 길이 만큼 반복실행
-				for (int j = 0; j < dvo.getJnLIst().get(i).getFiles().length; j++) {
-
-					JnfileVO fVo = new JnfileVO();	
-					
-					fVo.setJnNo(dvo.getJnLIst().get(i).getJnNo()); 
-					
-					fVo.setJnfileName(dvo.getJnLIst().get(i).getFiles()[j]); 
-
-					dao.insertFile(fVo);
-					
-					
-				}
-			}
 		}
 		
-		
-		
-		
-		
-
+		//만약 jvo의 files가 널이 아니라면 실행
+		if (jvo.getFiles() != null) {  
 			
+			//JnNo 관련 파일 삭제
+			dao.deleteFile(jnNo);
+			
+			//파일의 길이 만큼 반복실행
+			for (int j = 0; j < jvo.getFiles().length; j++) {
 
-		
-		
+				JnfileVO fVo = new JnfileVO();	
+				
+				fVo.setJnNo(jnNo); 
+				
+				fVo.setJnfileName(jvo.getFiles()[j]); 
+
+				dao.insertFile(fVo);
+				
+				
+			}
+		}
 
 	}
 

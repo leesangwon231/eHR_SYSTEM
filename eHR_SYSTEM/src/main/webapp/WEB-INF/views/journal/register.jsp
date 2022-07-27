@@ -196,7 +196,7 @@
                               $(".uploadedList .delbtn")
                                     .each(
                                           function(index) {
-                                             str += "<input type='hidden' name='jnLIst[1].files'"
+                                             str += "<input type='hidden' name='files'"
                                                    + " value='"
                                                    + $(this)
                                                          .attr(

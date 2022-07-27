@@ -171,7 +171,7 @@
 			                        	</div>        	 		
 			                        </div>
 			                    <div class="offset-7">
-			                    	<input type="button" class="btn btn-outline-primary" id = "btn_submit" name ="btn_submit" value="수정">
+			                    	<input type="button" class="btn btn-outline-primary" id = "btn_submit" name ="btn_submit" value="저장">
 		                    		<input type="button" class="btn btn-outline-dark" onclick="location.href='./read?memNo=${MemberVO.memNo}'" value="취소">	
 		                		</div>
 			               	</form>

@@ -22,14 +22,14 @@
 							<label for="exampleInputEmail1">부서명</label>
 						</div>
 						<div class="col-3">
-							<input type="text" id="dept" name="dept" class="form-select"
+							<input type="text" id="dept" name="dept" class="form-control"
 								readonly="readonly" value="${dto.deptName}">
 						</div>
 						<div class="col-1 text-center">
 							<label for="exampleInputEmail1">사원번호</label>
 						</div>
 						<div class="col-3">
-							<input type="text" id="memNo" name="memNo" class="form-select"
+							<input type="text" id="memNo" name="memNo" class="form-control"
 								readonly="readonly" value="${dto.memNo }">
 						</div>
 						<div class="col-1 text-center">
@@ -37,7 +37,7 @@
 						</div>
 						<div class="col-3">
 							<input type="text" id="memName" name="memName"
-								class="form-select" readonly="readonly" value="${dto.memName}">
+								class="form-control" readonly="readonly" value="${dto.memName}">
 						</div>
 
 					</div>
@@ -47,13 +47,13 @@
 						</div>
 						<div class="col-3">
 							<input type="text" id="jnWdate" name="jnWdate"
-								class="form-select" readonly="readonly" value="${J.jnWdate}">
+								class="form-control" readonly="readonly" value="${J.jnWdate}">
 						</div>
 						<div class="col-1 text-center">
 							<label for="exampleInputEmail1">직군</label>
 						</div>
 						<div class="col-3">
-							<input type="text" id="jgName" name="jgName" class="form-select"
+							<input type="text" id="jgName" name="jgName" class="form-control"
 								readonly="readonly" value="${dto.jgName}">
 						</div>
 						<div class="col-1 text-center">
@@ -61,7 +61,7 @@
 						</div>
 						<div class="col-3">
 							<input type="text" id="jobName" name="jobName"
-								class="form-select" readonly="readonly" value="${dto.jobName}">
+								class="form-control" readonly="readonly" value="${dto.jobName}">
 						</div>
 
 					</div>

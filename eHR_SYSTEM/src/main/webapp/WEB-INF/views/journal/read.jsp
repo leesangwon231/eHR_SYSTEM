@@ -154,8 +154,8 @@
 									</c:if>
 	                        <div class="mt-4">
 	                       	 	<div class="offset-9" style="position: absolute; right: 6%;">
-			                       	<input type="button" class="btn btn-primary" onclick="location.href='/journal/modify?jnNo=${J.jnNo}'" value="수정">
-			                    	<input type="button" class="btn btn-primary" onclick="location.href='/journal/list'" value="취소">
+			                       	<input type="button" class="btn btn-outline-primary" onclick="location.href='/journal/modify?jnNo=${J.jnNo}'" value="수정">
+			                    	<input type="button" class="btn btn-outline-dark" onclick="location.href='/journal/list'" value="취소">
 			                	</div>
 	                        </div>
 	                  </form>        

@@ -126,9 +126,9 @@
             </div>
             <div class="mt-4">
                <div class="offset-9" align="right">
-                  <input type="button" class="btn btn-primary" id="btn_submit"
+                  <input type="button" class="btn btn-outline-primary" id="btn_submit"
                      name="btn_submit" value="등록"> <input type="button"
-                     class="btn btn-primary" onclick="location.href='/journal/list'"
+                     class="btn btn-outline-dark" onclick="location.href='/journal/list'"
                      value="취소">
                </div>
             </div>

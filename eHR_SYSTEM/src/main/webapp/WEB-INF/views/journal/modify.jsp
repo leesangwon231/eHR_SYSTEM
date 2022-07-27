@@ -138,8 +138,7 @@
 																			<c:choose>
 																				<c:when test="${token eq 'hwp'}">
 																					<img data-dz-thumbnail=""
-																						class="avatar-sm rounded bg-light"
-																						alt="${jnfileName}" />
+																						class="avatar-sm rounded bg-light"/>
 																				</c:when>
 																				<c:when test="${token eq 'xls' || token eq 'xlsx' }">
 																					<img data-dz-thumbnail=""
@@ -147,23 +146,19 @@
 																				</c:when>
 																				<c:when test="${token eq 'jpg' || token eq 'gif' || token eq 'png' || token eq 'bmp' }">
 																				<img data-dz-thumbnail=""
-																					class="avatar-sm rounded bg-light"
-																					src="/displayFile?fileName=${fVo.fileLocation}">
+																					class="avatar-sm rounded bg-light"/>
 																				</c:when>
 																				<c:when test="${token eq 'pdf'}">
 																					<img data-dz-thumbnail=""
-																						class="avatar-sm rounded bg-light"
-																						alt="${jnfileName}" />
+																						class="avatar-sm rounded bg-light"/>
 																				</c:when>
 																				<c:when test="${token eq 'ppt' }">
 																					<img data-dz-thumbnail=""
-																						class="avatar-sm rounded bg-light"
-																						alt="${jnfileName}" />
+																						class="avatar-sm rounded bg-light"/>
 																				</c:when>
 																				<c:otherwise>
 																					<img data-dz-thumbnail=""
-																						class="avatar-sm rounded bg-light"
-																						alt="${jnfileName}" />
+																						class="avatar-sm rounded bg-light"/>
 																				</c:otherwise>
 																			</c:choose>
 																		</c:if>

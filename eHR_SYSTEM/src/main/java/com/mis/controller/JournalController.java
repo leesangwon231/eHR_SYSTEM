@@ -71,20 +71,10 @@ public class JournalController {
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public String registerPost(@ModelAttribute(value = "JournalVO") JournalVO jvo,
 			@ModelAttribute(value = "JndetailVO") JndetailVO dvo, RedirectAttributes rttr) throws Exception {
-
-		System.out.println(jvo);
-		System.out.println(dvo);
-
-		System.out.println((String[]) dvo.getJnLIst().get(1).getFiles());
 		service.jnRegister(jvo);
-
-		int jnNo = service.selectJnNo(jvo);
-
-		for (int i = 0; i < dvo.getJnLIst().size(); i++) {
-			dvo.getJnLIst().get(i).setJnNo(jnNo);
-			service.jndRegister(dvo.getJnLIst().get(i));
-		}
-
+		
+		service.jndRegister(dvo, jvo);
+		
 		rttr.addFlashAttribute("msg", "REGISTER");
 
 		return "redirect:/journal/list";

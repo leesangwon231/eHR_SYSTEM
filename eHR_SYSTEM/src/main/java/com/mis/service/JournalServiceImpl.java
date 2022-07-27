@@ -26,22 +26,46 @@ public class JournalServiceImpl implements JournalService {
 	}
 
 	@Override
-	public void jndRegister(JndetailVO vo) throws Exception {
-		dao.jndCreate(vo);
-		if (vo.getFiles() != null) {  
-
-			// 3-2) ���� ÷������ ����
-			for (int i = 0; i < vo.getFiles().length; i++) {
-
-				JnfileVO fVo = new JnfileVO();
-				fVo.setJnNo(vo.getJnNo()); // �������� ���̺� PK (FK)
-				fVo.setJnfileName(vo.getFiles()[i]); // ���ε�� ÷�����ϸ�
-
-				dao.insertFile(fVo);
+	public void jndRegister(JndetailVO dvo, JournalVO jvo) throws Exception {
+		
+		//등록된 jnNo 받아오기
+		int jnNo = dao.selectJnNo(jvo);
+		
+		//jnList의 사이즈 만큼 반복
+		for (int i = 0; i < dvo.getJnLIst().size(); i++) {
+			
+			//jnList안에 i번째 VO에 jnNo 세팅
+			dvo.getJnLIst().get(i).setJnNo(jnNo);
+			
+			//해당 i번째 vo로 jnd테이블 생성
+			dao.jndCreate(dvo.getJnLIst().get(i));
+			
+			//만약 i 번쨰 vo의 files가 널이 아니라면 실행
+			if (dvo.getJnLIst().get(i).getFiles() != null) {  
 				
-			}
+				//파일의 길이 만큼 반복실행
+				for (int j = 0; j < dvo.getJnLIst().get(i).getFiles().length; j++) {
 
+					JnfileVO fVo = new JnfileVO();	
+					
+					fVo.setJnNo(dvo.getJnLIst().get(i).getJnNo()); 
+					
+					fVo.setJnfileName(dvo.getJnLIst().get(i).getFiles()[j]); 
+
+					dao.insertFile(fVo);
+						
+				}
+
+			}
+		
+		
 		}
+		
+		
+		
+
+		
+
 
 	}
 
@@ -58,22 +82,35 @@ public class JournalServiceImpl implements JournalService {
 	@Override
 	public void modify(JndetailVO dvo, JournalVO jvo) throws Exception {
 		
+		//등록된 jnNo 받아오기
 		int jnNo = dao.selectJnNo(jvo);
-
+		
+		//jnList의 사이즈 만큼 반복
 		for (int i = 0; i < dvo.getJnLIst().size(); i++) {
+			
+			//jnList안에 i번째 VO에 jnNo 세팅
 			dvo.getJnLIst().get(i).setJnNo(jnNo);
+			
+			//해당 i번째 vo로 jnd테이블 업데이트
 			dao.jndUpdate(dvo.getJnLIst().get(i));
 			
+			//만약 i 번쨰 vo의 files가 널이 아니라면 실행
 			if (dvo.getJnLIst().get(i).getFiles() != null) {  
+				
+				//해당 i 번재 VO의 jnNo를 파라미터로 디비에 이미있던 JnNo 번호 관련 파일 삭제
 				dao.deleteFile(dvo.getJnLIst().get(i).getJnNo());
+				
+				//파일의 길이 만큼 반복실행
 				for (int j = 0; j < dvo.getJnLIst().get(i).getFiles().length; j++) {
 
 					JnfileVO fVo = new JnfileVO();	
-					fVo.setJnNo(dvo.getJnLIst().get(i).getJnNo()); // �������� ���̺� PK (FK)
-					fVo.setJnfileName(dvo.getJnLIst().get(i).getFiles()[j]); // ���ε�� ÷�����ϸ�
+					
+					fVo.setJnNo(dvo.getJnLIst().get(i).getJnNo()); 
+					
+					fVo.setJnfileName(dvo.getJnLIst().get(i).getFiles()[j]); 
 
 					dao.insertFile(fVo);
-					System.out.println("-=====");
+					
 					
 				}
 			}

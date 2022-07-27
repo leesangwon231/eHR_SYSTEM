@@ -12,7 +12,7 @@ public interface JournalService {
 
 	public void jnRegister(JournalVO vo) throws Exception;
 
-	public void jndRegister(JndetailVO vo) throws Exception;
+	public void jndRegister(JndetailVO dvo,JournalVO jvo) throws Exception;
 
 	public JournalVO readJournal(int jnNo) throws Exception;
 	

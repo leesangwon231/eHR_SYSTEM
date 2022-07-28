@@ -9,7 +9,7 @@
 	
 	      <div class="card mb-4">
 	         <div class="card-header">
-	            <i class="bi bi-megaphone"></i> 업무일지 승인 목록
+	            <i class="bi bi-megaphone"></i> 업무평가 목록
 	         </div>
 	         <div class="card-body">
 	         <c:if test="${empty list}">
@@ -35,8 +35,8 @@
 	               <tbody>
 	               	  <c:forEach var="journalVO" items="${list}" varStatus="status">
 	                     <tr>
-	                        <td><a href='/approval/read?jnNo=${journalVO.jnNo}'>${journalVO.jnNo}</a></td>
-	                        <td>${journalVO.jnWdate}</td>
+	                        <td>${journalVO.jnNo}</td>
+	                        <td><a href='/approval/read?jnNo=${journalVO.jnNo}'>${journalVO.jnWdate}</a></td>
 	                        <td>${names[status.index]}</td>
 	                        <c:if test="${journalVO.jnApproval eq 0}">
 	                        	<td>승인대기</td>

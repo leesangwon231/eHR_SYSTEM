@@ -96,11 +96,13 @@ public class JournalServiceImpl implements JournalService {
 			
 		}
 		
+		dao.deleteFile(jnNo);
+		
 		//만약 jvo의 files가 널이 아니라면 실행
 		if (jvo.getFiles() != null) {  
-			
+			/*
 			//JnNo 관련 파일 삭제
-			dao.deleteFile(jnNo);
+			dao.deleteFile(jnNo);*/
 			
 			//파일의 길이 만큼 반복실행
 			for (int j = 0; j < jvo.getFiles().length; j++) {

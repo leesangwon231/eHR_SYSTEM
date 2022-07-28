@@ -35,7 +35,7 @@
 	               <tbody>
 	                  <c:forEach items="${list}" var="journalVO" varStatus="status">
 	                     <tr>
-	                        <td>${journalVO.jnNo}</td>
+	                        <td><input type="hidden" value="${journalVO.jnNo}">${status.count}</td>
 	                        <td><a href='/journal/read?jnNo=${journalVO.jnNo}'>${journalVO.jnWdate}</a></td>
 	                       <c:if test="${journalVO.jnApproval eq 0}">
 	                        	<td>승인대기</td>

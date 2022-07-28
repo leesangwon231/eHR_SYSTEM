@@ -77,6 +77,11 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 	부서
                             </a> -->
+						<div class="sb-sidenav-menu-heading">사원정보</div>
+                            <a class="nav-link" href="/member/list">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user-friends"></i></div>
+                                	사원
+                            </a>
 						<div class="sb-sidenav-menu-heading">기초데이터</div>
 							<a class="nav-link collapsed" href="/dept/list" >
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
@@ -97,11 +102,6 @@
                              <a class="nav-link" href="/scategory/list">
                                 <div class="sb-nav-link-icon"><i class="fas fa-battery-full"></i></i></div>
                                		 직무
-                            </a>
-						<div class="sb-sidenav-menu-heading">사원정보</div>
-                            <a class="nav-link" href="/member/list">
-                                <div class="sb-nav-link-icon"><i class="fas fa-user-friends"></i></div>
-                                	사원
                             </a>
 						</c:if>
 						<c:if test="${login.memPosition == 0}">

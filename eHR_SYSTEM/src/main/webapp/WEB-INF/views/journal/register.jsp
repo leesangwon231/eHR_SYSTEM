@@ -430,7 +430,7 @@ function change(a){
 $("#jnWdate").change(function(){    
 	var jnWdate = $('#jnWdate').val();
 	
-	$.ajax({
+	 $.ajax({
 		type : 'GET',
 		url : "/journal/checkDate",
 		data : {

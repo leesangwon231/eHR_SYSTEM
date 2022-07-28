@@ -26,7 +26,7 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-5">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Login</h3></div>
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">업무일지등록시스템</h3></div>
                                     <div class="card-body">
                                         <form role="form" method="post" name="frm" action="/user/loginPost" >
                                             <div class="form-floating mb-3">
@@ -58,12 +58,12 @@
                 <footer class="py-4 bg-light mt-auto">
                     <div class="container-fluid px-4">
                         <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2021</div>
+                            <!-- <div class="text-muted">Copyright &copy; Your Website 2021</div>
                             <div>
                                 <a href="#">Privacy Policy</a>
                                 &middot;
                                 <a href="#">Terms &amp; Conditions</a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </footer>

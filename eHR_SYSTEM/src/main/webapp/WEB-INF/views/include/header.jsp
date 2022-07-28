@@ -72,12 +72,16 @@
                             <a class="nav-link" href="/approval/list">
                                 <div class="sb-nav-link-icon"><i class="fas fa-check"></i></div>업무평가
                             </a>
-						<div class="sb-sidenav-menu-heading">부서</div>
+						<!-- <div class="sb-sidenav-menu-heading">부서</div>
                             <a class="nav-link collapsed" href="/dept/list" >
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 	부서
+                            </a> -->
+						<div class="sb-sidenav-menu-heading">기초데이터</div>
+							<a class="nav-link collapsed" href="/dept/list" >
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                	부서
                             </a>
-						<div class="sb-sidenav-menu-heading">업무분류</div>
                             <a class="nav-link" href="/jobgroup/list">
                                 <div class="sb-nav-link-icon"><i class="fas fa-battery-full"></i></div>
                                 	직군

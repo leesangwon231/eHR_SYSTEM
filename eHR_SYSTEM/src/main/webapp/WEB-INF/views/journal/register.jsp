@@ -370,7 +370,7 @@
    //이미지파일 원본 파일 찾기
    function getImageLink(jnfileName) {
 
-      if (!checkImageType(jnfileName)) {
+       if (!checkImageType(jnfileName)) {
          return;
       }
       //noticeFileName.substring(0,12)/년/월/일 경로 추출  

@@ -48,7 +48,8 @@
 									<label for="exampleInputEmail1">직렬 </label>
 								</div>
 								<div class="col-8">
-									<select name="lNo" id="lNo" class="form-select">
+									<select name="lNo" id="lNo" class="form-select"
+									>
 										<option value="0">직렬을 선택해 주세요</option>
 									</select>
 								</div>
@@ -268,7 +269,7 @@
 			$("#jobNo option").remove();
 			job = "<option value='0'>직종을 선택해주세요</option>";
 			$("#jobNo").append(job);
-			return false;
+			 selectLcategory(0);
 		}
 
 		$.ajax({
@@ -299,9 +300,9 @@
 		var jobNo = jobNo;
 
 		if (jobNo === "0") {
-			$("#lcategory option").remove();
+			$("#lNo option").remove();
 			lcategory = "<option value='0'>직렬을 선택해주세요</option>";
-			$("#lcategory").append(lcategory);
+			$("#lNo").append(lcategory);
 			return false;
 		}
 

@@ -97,7 +97,7 @@ function modify(){
 		document.frm.jobNo.focus();
 		return false;	
 	}
-	if(document.frm.lNo.value == ""){
+	if(document.frm.lNo.value == "0"){
 		alert("직렬을 선택해 주세요");
 		document.frm.lNo.focus();
 		return false;	

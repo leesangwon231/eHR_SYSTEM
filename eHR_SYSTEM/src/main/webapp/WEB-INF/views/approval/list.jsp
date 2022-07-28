@@ -25,7 +25,7 @@
 	            <table id="datatablesSimple">
 	               <thead>
 	                  <tr>
-	                     <th style="width: 10px">no</th>
+	                     <th style="width: 10px">NO</th>
 	                     <th>근무일자</th>
 	                     <th>작성자</th>
 	                     <th>승인여부</th>

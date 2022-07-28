@@ -19,11 +19,25 @@ function register(){
 		document.frm.jobName.focus();
 		return false;	
 	}
-	if(document.frm.sYear.value == ""){
-		alert("연을 입력해 주세요");
-		document.frm.sYear.focus();
-		return false;	
+	if(document.getElementById("sYear").value ==""){
+		$("#sYear").val(0);
+		
 	}
+	if(document.getElementById("sQuarter").value ==""){
+		$("#sQuarter").val(0);
+		
+	}
+	if(document.getElementById("sMonth").value ==""){
+		$("#sMonth").val(0);
+		
+	}
+	if(document.getElementById("sDay").value ==""){
+		$("#sDay").val(0);
+		
+	}
+	
+	
+	
 	for(var i=0; i<document.frm.sYear.value.length; i++) {
 		ch = document.frm.sYear.value.charAt(i)
 		if(!(ch >= '0' && ch <='9')) {
@@ -33,11 +47,7 @@ function register(){
 			return false;
 		}
 	}
-	if(document.frm.sMonth.value == ""){
-		alert("월을 입력해 주세요");
-		document.frm.sMonth.focus();
-		return false;	
-	}
+	
 	for(var i=0; i<document.frm.sMonth.value.length; i++) {
 		ch = document.frm.sMonth.value.charAt(i)
 		if(!(ch >= '0' && ch <='9')) {
@@ -47,11 +57,7 @@ function register(){
 			return false;
 		}
 	}
-	if(document.frm.sQuarter.value == ""){
-		alert("분기를 입력해 주세요");
-		document.frm.sQuarter.focus();
-		return false;	
-	}
+	
 	for(var i=0; i<document.frm.sQuarter.value.length; i++) {
 		ch = document.frm.sQuarter.value.charAt(i)
 		if(!(ch >= '0' && ch <='9')) {
@@ -61,11 +67,7 @@ function register(){
 			return false;
 		}
 	}
-	if(document.frm.sDay.value == ""){
-		alert("일을 입력해 주세요");
-		document.frm.sDay.focus();
-		return false;	
-	}
+	
 	for(var i=0; i<document.frm.sDay.value.length; i++) {
 		ch = document.frm.sDay.value.charAt(i)
 		if(!(ch >= '0' && ch <='9')) {
@@ -105,11 +107,25 @@ function modify(){
 		document.frm.sName.focus();
 		return false;	
 	}
-	if(document.frm.sYear.value == ""){
-		alert("연을 입력해 주세요");
-		document.frm.sYear.focus();
-		return false;	
+	if(document.getElementById("sYear").value ==""){
+		$("#sYear").val(0);
+		
 	}
+	if(document.getElementById("sQuarter").value ==""){
+		$("#sQuarter").val(0);
+		
+	}
+	if(document.getElementById("sMonth").value ==""){
+		$("#sMonth").val(0);
+		
+	}
+	if(document.getElementById("sDay").value ==""){
+		$("#sDay").val(0);
+		
+	}
+	
+	
+	
 	for(var i=0; i<document.frm.sYear.value.length; i++) {
 		ch = document.frm.sYear.value.charAt(i)
 		if(!(ch >= '0' && ch <='9')) {
@@ -119,11 +135,7 @@ function modify(){
 			return false;
 		}
 	}
-	if(document.frm.sMonth.value == ""){
-		alert("월을 입력해 주세요");
-		document.frm.sMonth.focus();
-		return false;	
-	}
+	
 	for(var i=0; i<document.frm.sMonth.value.length; i++) {
 		ch = document.frm.sMonth.value.charAt(i)
 		if(!(ch >= '0' && ch <='9')) {
@@ -133,11 +145,7 @@ function modify(){
 			return false;
 		}
 	}
-	if(document.frm.sQuarter.value == ""){
-		alert("분기를 입력해 주세요");
-		document.frm.sQuarter.focus();
-		return false;	
-	}
+	
 	for(var i=0; i<document.frm.sQuarter.value.length; i++) {
 		ch = document.frm.sQuarter.value.charAt(i)
 		if(!(ch >= '0' && ch <='9')) {
@@ -147,11 +155,7 @@ function modify(){
 			return false;
 		}
 	}
-	if(document.frm.sDay.value == ""){
-		alert("일을 입력해 주세요");
-		document.frm.sDay.focus();
-		return false;	
-	}
+	
 	for(var i=0; i<document.frm.sDay.value.length; i++) {
 		ch = document.frm.sDay.value.charAt(i)
 		if(!(ch >= '0' && ch <='9')) {

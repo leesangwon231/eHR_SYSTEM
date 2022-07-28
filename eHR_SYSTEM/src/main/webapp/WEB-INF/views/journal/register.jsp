@@ -92,13 +92,15 @@
 									    </select>
 									    <input type="hidden" name="jnLIst[${status.index}].sNo" id="jnLIst[${status.index}].sNo" class="s${status.index}">
 									    </td>
-									    
-									<td><input type="text" id="jndProgress${status.index}"
+										<td><input type="text" id="jndProgress${status.index}"
 										name="<c:url value='jnLIst[${status.index}].'/>jndProgress"
 										class="form-control"></td>
 									<td><input type="text" id="jndNote${status.index}"
 										name="<c:url value='jnLIst[${status.index}].'/>jndNote"
 										class="form-control"></td>
+									
+
+									
 									</tr>
 								</c:forEach>
 						</tbody>
@@ -408,8 +410,20 @@ function change(a){
     		ssNo = $('#ssNo'+index).val();
     		var jlistIndex = 'jnLIst['+index+'].sNo';
     		
+    		if(ssNo == 999){
+    			
+    			document.getElementById('jndProgress'+index).readOnly = true;
+    			document.getElementById('jndNote'+index).readOnly = true;
+    			 $(".s"+index).val(ssNo);
+
+    		}
+    		else{
+    			 $(".s"+index).val(ssNo);  
+    		}
     		
-    		 $(".s"+index).val(ssNo);  
+    		
+    		 
+    		 
     	}
 </script>
 <script>
@@ -423,7 +437,7 @@ $("#jnWdate").change(function(){
 			jnWdate : jnWdate,
 		},
 		success : function(data) {
-			countif(data==1){
+			if(data==1){
 				alert("이미 등록된 날짜 입니다 ");	
 				$('#jnWdate').val("");
 			}

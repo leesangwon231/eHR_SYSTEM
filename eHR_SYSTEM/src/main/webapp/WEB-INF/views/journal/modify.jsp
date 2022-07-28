@@ -81,7 +81,7 @@
 
 									<tr>
 										<td>${time[status.index]}</td>
-										<td><select id="ssNo${status.index}" class="form-select" onchange="change('${status.index}')">
+										<td><select id="ssNo${status.index}" class="form-select sNos" onchange="change('${status.index}')">
 												<option id="ssNo${status.index}" value="">직무를 선택해주세요</option>
 												
 												<c:forEach items="${sList}" var="s">
@@ -90,8 +90,24 @@
 												
 										</select> 
 										<input type="hidden" name="jnLIst[${status.index}].sNo" id="jnLIst[${status.index}].sNo" class="s${status.index}" value="${jd.sNo}"></td>
-										<td><input type="text" id="jndProgress${status.index}" value="${jd.jndProgress}" name="<c:url value='jnLIst[${status.index}].'/>jndProgress" class="form-control"></td>
-										<td><input type="text" id="jndNote${status.index}" value="${jd.jndNote}" name="<c:url value='jnLIst[${status.index}].'/>jndNote" class="form-control"></td>
+										
+										<c:if test="${jd.sNo eq '999'}">   
+										<td><input type="text" id="jndProgress${status.index}"
+										name="<c:url value='jnLIst[${status.index}].'/>jndProgress"
+										class="form-control" readonly="readonly"></td>
+									<td><input type="text" id="jndNote${status.index}"
+										name="<c:url value='jnLIst[${status.index}].'/>jndNote"
+										class="form-control" readonly="readonly"></td>
+									</c:if>
+									
+									<c:if test="${jd.sNo ne '999' }">   
+										<td><input type="text" id="jndProgress${status.index}"
+										name="<c:url value='jnLIst[${status.index}].'/>jndProgress"
+										class="form-control"></td>
+									<td><input type="text" id="jndNote${status.index}"
+										name="<c:url value='jnLIst[${status.index}].'/>jndNote"
+										class="form-control"></td>
+									</c:if>
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -274,6 +290,7 @@
                                  self.location = "list&page=${cri.page}&perPageNum=${cri.perPageNum}"
                                        + "&searchType=${cri.searchType}&listType=${cri.listType}&keyword=${cri.keyword}";
                               });
+                  
 
                });
 
@@ -443,7 +460,18 @@ function change(a){
     		var jlistIndex = 'jnLIst['+index+'].sNo';
     		
     		
-    		 $(".s"+index).val(ssNo);  
+			if(ssNo == 999){
+    			
+    			document.getElementById('jndProgress'+index).readOnly = true;
+    			document.getElementById('jndNote'+index).readOnly = true;
+    			 $(".s"+index).val(ssNo);
+
+    		}
+    		else{
+    			document.getElementById('jndProgress'+index).readOnly = false;
+    			document.getElementById('jndNote'+index).readOnly = false;
+    			 $(".s"+index).val(ssNo);  
+    		}
     	}
 </script>
 

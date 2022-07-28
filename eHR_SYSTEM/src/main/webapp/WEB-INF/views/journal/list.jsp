@@ -26,7 +26,7 @@
 	            <table id="datatablesSimple">
 	               <thead>
 	                  <tr>
-	                     <th style="width: 10px">no</th>
+	                     <th style="width: 10px">NO</th>
 	                     <th>근무일자</th>
 	                     <th>승인여부</th>
 	                     <th>평가점수</th>
@@ -35,8 +35,8 @@
 	               <tbody>
 	                  <c:forEach items="${list}" var="journalVO" varStatus="status">
 	                     <tr>
-	                        <td><a href='/journal/read?jnNo=${journalVO.jnNo}'>${journalVO.jnNo}</a></td>
-	                        <td>${journalVO.jnWdate}</td>
+	                        <td>${journalVO.jnNo}</td>
+	                        <td><a href='/journal/read?jnNo=${journalVO.jnNo}'>${journalVO.jnWdate}</a></td>
 	                       <c:if test="${journalVO.jnApproval eq 0}">
 	                        	<td>승인대기</td>
 	                        </c:if>

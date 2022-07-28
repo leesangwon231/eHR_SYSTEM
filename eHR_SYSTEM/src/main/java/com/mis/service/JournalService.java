@@ -34,6 +34,6 @@ public interface JournalService {
 	
 	public List<JnfileVO> fileList(int jnNo) throws Exception;
 	
-	public int checkDate(String jnWdate) throws Exception;
+	public int checkDate(JournalVO vo) throws Exception;
 	
 }

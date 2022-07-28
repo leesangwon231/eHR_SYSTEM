@@ -192,11 +192,15 @@ public class JournalController {
 
 	@ResponseBody
 	@RequestMapping(value = "/checkDate", method = RequestMethod.GET)
-	public ResponseEntity<Integer> checkDate(@RequestParam("jnWdate") String jnWdate, Model model) throws Exception {
-
+	public ResponseEntity<Integer> checkDate(@RequestParam("jnWdate") String jnWdate, @RequestParam("memNo") int memNo, Model model) throws Exception {
+		
+		JournalVO jVo = new JournalVO();
+		jVo.setJnWdate(jnWdate);
+		jVo.setMemNo(memNo);
+		
 		ResponseEntity<Integer> entity = null;
 		try {
-			entity = new ResponseEntity<Integer>(service.checkDate(jnWdate), HttpStatus.OK);
+			entity = new ResponseEntity<Integer>(service.checkDate(jVo), HttpStatus.OK);
 		} catch (Exception e) {
 			e.printStackTrace();
 			entity = new ResponseEntity<Integer>(HttpStatus.BAD_REQUEST);

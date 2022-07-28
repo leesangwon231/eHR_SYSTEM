@@ -434,12 +434,13 @@ function change(a){
 <script>
 $("#jnWdate").change(function(){    
 	var jnWdate = $('#jnWdate').val();
-	
+	var memNo = $('#memNo').val();
 	 $.ajax({
 		type : 'GET',
 		url : "/journal/checkDate",
 		data : {
 			jnWdate : jnWdate,
+			memNo : memNo
 		},
 		success : function(data) {
 			if(data==1){

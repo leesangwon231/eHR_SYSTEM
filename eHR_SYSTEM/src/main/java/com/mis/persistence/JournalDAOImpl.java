@@ -97,8 +97,8 @@ public class JournalDAOImpl implements JournalDAO {
 	}
 
 	@Override
-	public int checkDate(String jnWdate) throws Exception {
-		return session.selectOne(namespace + ".checkDate", jnWdate);
+	public int checkDate(JournalVO vo) throws Exception {
+		return session.selectOne(namespace + ".checkDate", vo);
 	}
 
 }

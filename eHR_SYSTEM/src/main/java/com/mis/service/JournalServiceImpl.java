@@ -157,8 +157,8 @@ public class JournalServiceImpl implements JournalService {
 	}
 
 	@Override
-	public int checkDate(String jnWdate) throws Exception {
-		return dao.checkDate(jnWdate);
+	public int checkDate(JournalVO vo) throws Exception {
+		return dao.checkDate(vo);
 	}
 
 }

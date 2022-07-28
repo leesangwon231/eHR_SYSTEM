@@ -5,7 +5,7 @@
 
 
 	<select id="list" resultType="com.mis.domain.JournalVO">
-		SELECT JN_NO,JN_WDATE,MEM_NO,JN_SATISFACTION,JN_APPROVAL FROM TBL_JOURNAL
+		SELECT JN_NO,JN_WDATE,MEM_NO,JN_SATISFACTION,JN_APPROVAL FROM TBL_JOURNAL ORDER BY JN_WDATE DESC, JN_APPROVAL ASC
 	</select>
 	
 	<select id="selectName" resultType="string">

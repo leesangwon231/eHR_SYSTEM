@@ -19,7 +19,7 @@
 	
 <!--이거 조인 해야 하는겅가용? 몰ㄹ무 무ㅜㅜㅜ  -->
 	<select id="listAll" resultType="com.mis.domain.JobgroupVO">
-		select * from tbl_jobgroup
+		select * from tbl_jobgroup order by jg_no desc
 	</select>
 	
 	

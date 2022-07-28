@@ -30,7 +30,7 @@
 
 	<select id="list" resultType="com.mis.domain.JobVO">
 		select j.job_no, j.job_name, g.jg_name from tbl_job j, tbl_jobgroup g
-		where j.jg_no = g.jg_no order by job_no asc
+		where j.jg_no = g.jg_no order by job_no desc
 	</select>
 	
 	<!-- <select id="listCriteria" resultType="com.mis.domain.BoardVO">

@@ -30,7 +30,7 @@ WHERE l_NO = #{lNo}
 	
 	<select id="list" resultType="com.mis.domain.LcategoryVO">
 	select a.l_no, a.l_name, b.job_name, b.jg_name from TBL_LCATEGORY a inner join (select job_name, jg_name, a.job_no from tbl_job a inner join tbl_jobgroup b on a.JG_NO = b.jg_no) b
-	on a.JOB_NO = b.job_no order by l_no asc
+	on a.JOB_NO = b.job_no order by l_no desc
 	</select>
 	
 	

@@ -423,7 +423,7 @@ $("#jnWdate").change(function(){
 			jnWdate : jnWdate,
 		},
 		success : function(data) {
-			if(data==1){
+			countif(data==1){
 				alert("이미 등록된 날짜 입니다 ");	
 				$('#jnWdate').val("");
 			}

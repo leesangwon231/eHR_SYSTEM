@@ -42,7 +42,7 @@
 	</delete> -->
 
 	<select id="list" resultType="com.mis.domain.JournalVO">
-		SELECT JN_NO,JN_WDATE,JN_SATISFACTION,JN_APPROVAL FROM TBL_JOURNAL WHERE MEM_NO = #{memNo}
+		SELECT JN_NO,JN_WDATE,JN_SATISFACTION,JN_APPROVAL FROM TBL_JOURNAL WHERE MEM_NO = #{memNo} ORDER BY JN_WDATE DESC, JN_APPROVAL DESC
 	</select>
 	
 	<select id="selectJnNo" resultType="int">
@@ -54,7 +54,7 @@
 	</select>
 	
    <select id="selectSlist" resultType="com.mis.domain.ScategoryVO">
-		SELECT S_NO , S_NAME FROM TBL_SCATEGORY WHERE L_NO = #{lNo}
+		SELECT S_NO , S_NAME FROM TBL_SCATEGORY WHERE L_NO = #{lNo} OR S_NO = 999
 	</select>
   	
   	<select id="selectAllListDTO" resultType="com.mis.dto.JournalDTO">
@@ -99,6 +99,6 @@
 	</select>
 	
 	<select id="checkDate" resultType="int">
-		SELECT COUNT(*) FROM TBL_JOURNAL WHERE JN_WDATE = #{jnWdate} 
+		SELECT COUNT(*) FROM TBL_JOURNAL WHERE MEM_NO = #{memNo} AND JN_WDATE = #{jnWdate}
 	</select>
 </mapper>

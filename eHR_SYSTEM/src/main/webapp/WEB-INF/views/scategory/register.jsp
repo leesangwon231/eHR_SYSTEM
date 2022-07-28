@@ -82,7 +82,7 @@
 								</div>
 
 								<div class="col-3">
-									<input type="text" id="sYear" name="sYear" class="form-control">
+									<input type="text" id="sYear" name="sYear" class="form-control" value="0">
 								</div>
 
 								<div class="col-1">
@@ -91,7 +91,7 @@
 
 								<div class="col-3">
 									<input type="text" id="sMonth" name="sMonth"
-										class="form-control">
+										class="form-control" value="0">
 								</div>
 							</div>
 
@@ -106,7 +106,7 @@
 
 								<div class="col-3">
 									<input type="text" id="sQuarter" name="sQuarter"
-										class="form-control">
+										class="form-control" value="0">
 								</div>
 
 								<div class="col-1">
@@ -114,7 +114,7 @@
 								</div>
 
 								<div class="col-3">
-									<input type="text" id="sDay" name="sDay" class="form-control">
+									<input type="text" id="sDay" name="sDay" class="form-control" value="0">
 								</div>
 							</div>
 

@@ -411,13 +411,18 @@ function change(a){
     		var jlistIndex = 'jnLIst['+index+'].sNo';
     		
     		if(ssNo == 999){
-    			
+    			$("#jndProgress"+index).val("");
+    			$("#jndNote"+index).val("");
     			document.getElementById('jndProgress'+index).readOnly = true;
     			document.getElementById('jndNote'+index).readOnly = true;
     			 $(".s"+index).val(ssNo);
 
     		}
     		else{
+    			$("#jndProgress"+index).val("");
+    			$("#jndNote"+index).val("");
+    			document.getElementById('jndProgress'+index).readOnly = false;
+    			document.getElementById('jndNote'+index).readOnly = false;
     			 $(".s"+index).val(ssNo);  
     		}
     		

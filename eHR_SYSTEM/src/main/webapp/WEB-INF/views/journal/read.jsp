@@ -73,7 +73,12 @@
 								                     <tr>
 								                       	<td>${time[status.index]}</td>
 								                        <td>${names[status.index]}</td>
-								                        <td>${jd.jndProgress} %</td>
+								                        <c:if test="${jd.jndProgress eq 0}">
+								                        	<td>-</td>
+								                        </c:if>
+								                        <c:if test="${jd.jndProgress ne 0}">
+								                        	<td>${jd.jndProgress} %</td>
+								                        </c:if>
 								                        <td>${jd.jndNote}</td>
 								                     </tr>
 								           		</c:forEach>

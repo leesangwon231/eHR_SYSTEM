@@ -92,22 +92,24 @@
 										<input type="hidden" name="jnLIst[${status.index}].sNo" id="jnLIst[${status.index}].sNo" class="s${status.index}" value="${jd.sNo}"></td>
 										
 										<c:if test="${jd.sNo eq '999'}">   
-										<td><input type="text" id="jndProgress${status.index}"
-										name="<c:url value='jnLIst[${status.index}].'/>jndProgress"
-										class="form-control" readonly="readonly"></td>
-									<td><input type="text" id="jndNote${status.index}"
-										name="<c:url value='jnLIst[${status.index}].'/>jndNote"
-										class="form-control" readonly="readonly"></td>
-									</c:if>
-									
-									<c:if test="${jd.sNo ne '999' }">   
-										<td><input type="text" id="jndProgress${status.index}"
-										name="<c:url value='jnLIst[${status.index}].'/>jndProgress"
-										class="form-control"></td>
-									<td><input type="text" id="jndNote${status.index}"
-										name="<c:url value='jnLIst[${status.index}].'/>jndNote"
-										class="form-control"></td>
-									</c:if>
+											<td><input type="text" id="jndProgress${status.index}"
+											name="<c:url value='jnLIst[${status.index}].'/>jndProgress"
+											class="form-control" readonly="readonly" value="${jd.jndProgress}"></td>
+											
+											<td><input type="text" id="jndNote${status.index}"
+											name="<c:url value='jnLIst[${status.index}].'/>jndNote"
+											class="form-control" readonly="readonly" value="${jd.jndNote}"></td>
+										</c:if>
+										
+										<c:if test="${jd.sNo ne '999' }">   
+											<td><input type="text" id="jndProgress${status.index}"
+											name="<c:url value='jnLIst[${status.index}].'/>jndProgress"
+											class="form-control" value="${jd.jndProgress}"></td>
+											
+											<td><input type="text" id="jndNote${status.index}"
+											name="<c:url value='jnLIst[${status.index}].'/>jndNote"
+											class="form-control" value="${jd.jndNote}"></td>
+										</c:if>
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -460,18 +462,22 @@ function change(a){
     		var jlistIndex = 'jnLIst['+index+'].sNo';
     		
     		
-			if(ssNo == 999){
-    			
+    		if(ssNo == 999){
+    			$("#jndProgress"+index).val("");
+    			$("#jndNote"+index).val("");
     			document.getElementById('jndProgress'+index).readOnly = true;
     			document.getElementById('jndNote'+index).readOnly = true;
     			 $(".s"+index).val(ssNo);
 
     		}
     		else{
+    			$("#jndProgress"+index).val("");
+    			$("#jndNote"+index).val("");
     			document.getElementById('jndProgress'+index).readOnly = false;
     			document.getElementById('jndNote'+index).readOnly = false;
     			 $(".s"+index).val(ssNo);  
     		}
+    		
     	}
 </script>
 
